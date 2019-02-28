@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="currentLeftProp" sid="860094626770799" static="0" type="number">0</variable>
+        <variable constant="1" name="PROP_NUMBER" sid="836736393543319" static="0" type="number">3</variable>
+        <event-block sid="896227532730628">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="114770701787281" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="520348498713226" type="ui_selector_left">
+                    <param id="0" name="Frame number">currentLeftProp</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="934480789627910">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="590467763581179" type="System">
+                    <param id="0" name="Variable">currentLeftProp</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="187367965979345" type="System">
+                    <param id="0" name="Variable">currentLeftProp</param>
+                    <param id="1" name="Value">PROP_NUMBER</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="153325023491112">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="241209805175450" type="System">
+                    <param id="0" name="Variable">currentLeftProp</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">PROP_NUMBER</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="876543938985856" type="System">
+                    <param id="0" name="Variable">currentLeftProp</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="850780752165457">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="772779494378476" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">ui_selector_left_next</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="798466111395605" type="System">
+                    <param id="0" name="Variable">currentLeftProp</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="858724934954950">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="136195495318397" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">ui_selector_left_previous</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="593797246746845" type="System">
+                    <param id="0" name="Variable">currentLeftProp</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="282183329966761">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="759719236362501" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">ui_clean</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="343846359592700" type="props" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="240082439606700" title="Spawn Props">
+            <sub-events>
+                <event-block sid="121653808784785">
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="358878020235703" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="515724670003123" type="System">
+                            <param id="0" name="Variable">currentLeftProp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="420527016988911" type="Mouse">
+                            <param id="0" name="Object">ui</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="792696259783480" type="System">
+                            <param id="0" name="Object to create">prop_box</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">Mouse.X</param>
+                            <param id="3" name="Y">Mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="541973389907980">
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="429861353482905" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="596723868866671" type="System">
+                            <param id="0" name="Variable">currentLeftProp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="375775586975177" type="Mouse">
+                            <param id="0" name="Object">ui</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="375295499368575" type="System">
+                            <param id="0" name="Object to create">prop_ball</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">Mouse.X</param>
+                            <param id="3" name="Y">Mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="897738476699147">
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="919537808531238" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="284825574387350" type="System">
+                            <param id="0" name="Variable">currentLeftProp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="783308402121671" type="Mouse">
+                            <param id="0" name="Object">ui</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="551475866383185" type="System">
+                            <param id="0" name="Object to create">prop_heavybox</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">Mouse.X</param>
+                            <param id="3" name="Y">Mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="463798875596263">
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="878934154525607" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="897460684881975" type="System">
+                            <param id="0" name="Variable">currentLeftProp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="256679101572295" type="Mouse">
+                            <param id="0" name="Object">ui</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="652575592657370" type="System">
+                            <param id="0" name="Object to create">prop_arrow</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">Mouse.X</param>
+                            <param id="3" name="Y">Mouse.Y</param>
+                        </action>
+                        <action behavior="Physics" id="1" name="Apply force towards position" sid="222747280928235" type="prop_arrow">
+                            <param id="0" name="Force">100</param>
+                            <param id="1" name="X">mouse.X</param>
+                            <param id="2" name="Y">mouse.Y</param>
+                            <param id="3" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
