@@ -1,0 +1,13 @@
+{
+	"name": "props",
+	"plugin-id": "Sprite",
+	"sid": 445454381656228,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"prop_ball",
+		"prop_crate",
+		"prop_heavycrate"
+	]
+}

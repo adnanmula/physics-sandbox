@@ -1,0 +1,56 @@
+{
+	"name": "ui_mouse_selector",
+	"plugin-id": "Sprite",
+	"sid": 580063701720366,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "index",
+			"type": "number",
+			"desc": "",
+			"sid": 302946016219265
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 13,
+						"height": 13,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4856456,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 13,
+						"height": 13,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3921979,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 529865599276047,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"name": "ui",
+	"plugin-id": "Sprite",
+	"sid": 704766589055012,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"ui_clean",
+		"ui_prop_selector"
+	]
+}

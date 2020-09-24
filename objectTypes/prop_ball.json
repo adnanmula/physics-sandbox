@@ -1,0 +1,63 @@
+{
+	"name": "prop_ball",
+	"plugin-id": "Sprite",
+	"sid": 204006183361398,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 730045910349881
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 11,
+						"height": 11,
+						"originX": 0.545455,
+						"originY": 0.545455,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2881208,
+						"collisionPoly": {
+							"points": [
+								0.170455,
+								0.190341,
+								0.502841,
+								0,
+								0.822443,
+								0.18608,
+								0.991477,
+								0.520597,
+								0.785511,
+								0.849787,
+								0.504971,
+								0.998757,
+								0.1875,
+								0.821023,
+								0.0397727,
+								0.514204
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 745990051878187,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
