@@ -1,7 +1,7 @@
 {
-	"name": "prop_water",
+	"name": "ui_eraser",
 	"plugin-id": "Sprite",
-	"sid": 532607340265200,
+	"sid": 947664557710838,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,25 +11,25 @@
 			{
 				"frames": [
 					{
-						"width": 2,
-						"height": 2,
+						"width": 22,
+						"height": 22,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2598378,
+						"imageSpriteId": 8049928,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 155237956399257,
+				"sid": 465199276772683,
 				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			}
 		],
 		"subfolders": []

@@ -1,0 +1,301 @@
+{
+	"name": "spawner",
+	"events": [
+		{
+			"functionName": "createProp",
+			"functionDescription": "",
+			"functionCategory": "prop",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "index",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 536799953408945
+				},
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 192491431398885
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 604443150957095
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 906527805110274,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 325422397209146,
+							"parameters": {
+								"variable": "index",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 433274995740447,
+							"parameters": {
+								"object-to-create": "prop_crate",
+								"layer": "\"main\"",
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 175465077282356
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 589103277158017,
+							"parameters": {
+								"variable": "index",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 928416977076637,
+							"parameters": {
+								"object-to-create": "prop_heavycrate",
+								"layer": "\"main\"",
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 953243897125947
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 552528468379956,
+							"parameters": {
+								"variable": "index",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 354365440207318,
+							"parameters": {
+								"object-to-create": "prop_ball",
+								"layer": "\"main\"",
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 659859840347004
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 231617480559353,
+							"parameters": {
+								"variable": "index",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 900244664574852,
+							"parameters": {
+								"object-to-create": "prop_solid",
+								"layer": "\"main\"",
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 170462272512497
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 427487331803901,
+							"parameters": {
+								"variable": "index",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 943016493297430,
+							"parameters": {
+								"object-to-create": "prop_water",
+								"layer": "\"main\"",
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 713784392564537
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "mouse-button-is-down",
+					"objectClass": "Mouse",
+					"sid": 221650699376845,
+					"parameters": {
+						"mouse-button": "left"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 297193085087189,
+					"parameters": {
+						"first-value": "currentMode",
+						"comparison": 0,
+						"second-value": "MODE_BRUSH"
+					}
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 975032081362263,
+					"parameters": {
+						"object": "ui"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 462250601327907,
+					"parameters": {
+						"object": "prop_dragable"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "createProp",
+					"sid": 123198556497900,
+					"parameters": [
+						"currentProp0",
+						"Mouse.X",
+						"Mouse.Y"
+					]
+				}
+			],
+			"sid": 689847709958798
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 510810212348563,
+					"parameters": {
+						"variable": "ALT_BRUSH_ENABLED"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 333789750035542,
+					"parameters": {
+						"first-value": "currentMode",
+						"comparison": 0,
+						"second-value": "MODE_BRUSH"
+					}
+				},
+				{
+					"id": "mouse-button-is-down",
+					"objectClass": "Mouse",
+					"sid": 391859860317785,
+					"parameters": {
+						"mouse-button": "right"
+					}
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 619408931783877,
+					"parameters": {
+						"object": "ui"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 247361559358135,
+					"parameters": {
+						"object": "prop_dragable"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "createProp",
+					"sid": 581116535105564,
+					"parameters": [
+						"currentProp1",
+						"Mouse.X",
+						"Mouse.Y"
+					]
+				}
+			],
+			"sid": 209006154246991
+		}
+	],
+	"sid": 100142716717916
+}
