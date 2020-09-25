@@ -1,2 +1,5 @@
 *.uistate.xml
 *.capx.backup1
+*.uistate.json
+.env
+/.idea
