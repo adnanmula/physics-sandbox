@@ -37,11 +37,21 @@
 			"author": "Scirra",
 			"version": "r217",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
+			"author": "Scirra",
+			"version": "r217",
+			"bundled": false
 		}
 	],
 	"uniqueId": "nzjq5ue38ks3",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"prop_water"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -54,7 +64,8 @@
 				"items": [
 					"prop_ball",
 					"prop_crate",
-					"prop_heavycrate"
+					"prop_heavycrate",
+					"prop_solid"
 				],
 				"subfolders": [],
 				"name": "props"
@@ -83,7 +94,8 @@
 	"families": {
 		"items": [
 			"props",
-			"ui"
+			"ui",
+			"prop_dragable"
 		],
 		"subfolders": []
 	},

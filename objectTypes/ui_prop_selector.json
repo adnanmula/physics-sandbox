@@ -94,6 +94,54 @@
 							}
 						],
 						"duration": 1
+					},
+					{
+						"width": 11,
+						"height": 11,
+						"originX": 0.545455,
+						"originY": 0.545455,
+						"originalSource": "C:\\Users\\adnan\\Desktop\\Physics Desktop\\app\\images\\prop_ball-sheet0.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2645215,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "right",
+								"x": 0.8181818181818182,
+								"y": 0.9090909090909091
+							},
+							{
+								"name": "left",
+								"x": 0.18181818181818182,
+								"y": 0.9090909090909091
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 11,
+						"height": 11,
+						"originX": 0.545455,
+						"originY": 0.545455,
+						"originalSource": "C:\\Users\\adnan\\Desktop\\Physics Desktop\\app\\images\\prop_ball-sheet0.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5157960,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "right",
+								"x": 0.8181818181818182,
+								"y": 0.9090909090909091
+							},
+							{
+								"name": "left",
+								"x": 0.18181818181818182,
+								"y": 0.9090909090909091
+							}
+						],
+						"duration": 1
 					}
 				],
 				"sid": 693914692534923,

@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "ALT_BRUSH_ENABLED",
 			"type": "boolean",
-			"initialValue": "true",
+			"initialValue": "false",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -385,6 +385,187 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"functionName": "createProp",
+					"functionDescription": "",
+					"functionCategory": "prop",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "index",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 536799953408945
+						},
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 192491431398885
+						},
+						{
+							"name": "y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 604443150957095
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 906527805110274,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 325422397209146,
+									"parameters": {
+										"variable": "index",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 433274995740447,
+									"parameters": {
+										"object-to-create": "prop_crate",
+										"layer": "\"main\"",
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 175465077282356
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 589103277158017,
+									"parameters": {
+										"variable": "index",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 928416977076637,
+									"parameters": {
+										"object-to-create": "prop_heavycrate",
+										"layer": "\"main\"",
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 953243897125947
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 552528468379956,
+									"parameters": {
+										"variable": "index",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 354365440207318,
+									"parameters": {
+										"object-to-create": "prop_ball",
+										"layer": "\"main\"",
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 659859840347004
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 231617480559353,
+									"parameters": {
+										"variable": "index",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 900244664574852,
+									"parameters": {
+										"object-to-create": "prop_solid",
+										"layer": "\"main\"",
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 170462272512497
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 427487331803901,
+									"parameters": {
+										"variable": "index",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 943016493297430,
+									"parameters": {
+										"object-to-create": "prop_water",
+										"layer": "\"main\"",
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 713784392564537
+						}
+					]
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -403,99 +584,29 @@
 								"object": "ui"
 							},
 							"isInverted": true
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 462250601327907,
+							"parameters": {
+								"object": "prop_dragable"
+							},
+							"isInverted": true
 						}
 					],
-					"actions": [],
-					"sid": 689847709958798,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 978623263395811,
-									"parameters": {
-										"variable": "currentProp0",
-										"comparison": 0,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 470808347640756,
-									"parameters": {
-										"object-to-create": "prop_crate",
-										"layer": "\"main\"",
-										"x": "Mouse.X",
-										"y": "Mouse.Y"
-									}
-								}
-							],
-							"sid": 152624169240887
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 747261144447014,
-									"parameters": {
-										"variable": "currentProp0",
-										"comparison": 0,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 748355415348103,
-									"parameters": {
-										"object-to-create": "prop_heavycrate",
-										"layer": "\"main\"",
-										"x": "Mouse.X",
-										"y": "Mouse.Y"
-									}
-								}
-							],
-							"sid": 369365628174442
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 339062237176551,
-									"parameters": {
-										"variable": "currentProp0",
-										"comparison": 0,
-										"value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 221945289970758,
-									"parameters": {
-										"object-to-create": "prop_ball",
-										"layer": "\"main\"",
-										"x": "Mouse.X",
-										"y": "Mouse.Y"
-									}
-								}
-							],
-							"sid": 300647972732049
+							"callFunction": "createProp",
+							"sid": 123198556497900,
+							"parameters": [
+								"currentProp0",
+								"Mouse.X",
+								"Mouse.Y"
+							]
 						}
-					]
+					],
+					"sid": 689847709958798
 				},
 				{
 					"eventType": "block",
@@ -524,99 +635,29 @@
 								"object": "ui"
 							},
 							"isInverted": true
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 247361559358135,
+							"parameters": {
+								"object": "prop_dragable"
+							},
+							"isInverted": true
 						}
 					],
-					"actions": [],
-					"sid": 209006154246991,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 287196515054035,
-									"parameters": {
-										"variable": "currentProp1",
-										"comparison": 0,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 414687296125420,
-									"parameters": {
-										"object-to-create": "prop_crate",
-										"layer": "\"main\"",
-										"x": "Mouse.X",
-										"y": "Mouse.Y"
-									}
-								}
-							],
-							"sid": 748124605740160
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 639267897372574,
-									"parameters": {
-										"variable": "currentProp1",
-										"comparison": 0,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 902104163712661,
-									"parameters": {
-										"object-to-create": "prop_heavycrate",
-										"layer": "\"main\"",
-										"x": "Mouse.X",
-										"y": "Mouse.Y"
-									}
-								}
-							],
-							"sid": 470925513183533
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 282652974079503,
-									"parameters": {
-										"variable": "currentProp1",
-										"comparison": 0,
-										"value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 838544058810026,
-									"parameters": {
-										"object-to-create": "prop_ball",
-										"layer": "\"main\"",
-										"x": "Mouse.X",
-										"y": "Mouse.Y"
-									}
-								}
-							],
-							"sid": 537701466409836
+							"callFunction": "createProp",
+							"sid": 581116535105564,
+							"parameters": [
+								"currentProp1",
+								"Mouse.X",
+								"Mouse.Y"
+							]
 						}
-					]
+					],
+					"sid": 209006154246991
 				}
 			],
 			"sid": 140177002984233

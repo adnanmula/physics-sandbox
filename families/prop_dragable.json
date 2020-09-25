@@ -1,0 +1,20 @@
+{
+	"name": "prop_dragable",
+	"plugin-id": "Sprite",
+	"sid": 982866108107514,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "DragnDrop",
+			"name": "DragDrop",
+			"sid": 642112768347106
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"prop_solid",
+		"prop_crate",
+		"prop_ball",
+		"prop_heavycrate"
+	]
+}

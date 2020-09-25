@@ -1,0 +1,37 @@
+{
+	"name": "prop_water",
+	"plugin-id": "Sprite",
+	"sid": 532607340265200,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 2,
+						"height": 2,
+						"originX": 3.5000025,
+						"originY": -0.9999975000000001,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2598378,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 155237956399257,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
