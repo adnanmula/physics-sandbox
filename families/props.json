@@ -3,7 +3,18 @@
 	"plugin-id": "Sprite",
 	"sid": 445454381656228,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 897950241764444
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 794083778256421
+		}
+	],
 	"effectTypes": [],
 	"members": [
 		"prop_ball",

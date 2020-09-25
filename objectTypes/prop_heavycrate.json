@@ -4,23 +4,7 @@
 	"sid": 243536145388234,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Physics",
-			"name": "Physics",
-			"sid": 708927165670613
-		},
-		{
-			"behaviorId": "DragnDrop",
-			"name": "DragDrop",
-			"sid": 619188943716904
-		},
-		{
-			"behaviorId": "destroy",
-			"name": "DestroyOutsideLayout",
-			"sid": 371191954917798
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [

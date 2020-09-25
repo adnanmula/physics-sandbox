@@ -7,6 +7,8 @@
 	"effectTypes": [],
 	"members": [
 		"ui_clean",
-		"ui_prop_selector"
+		"ui_prop_selector",
+		"ui_selector_alt",
+		"ui_selector"
 	]
 }

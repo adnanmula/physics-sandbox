@@ -3,6 +3,16 @@
 	"events": [
 		{
 			"eventType": "variable",
+			"name": "ALT_BRUSH_ENABLED",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 523534177849076
+		},
+		{
+			"eventType": "variable",
 			"name": "currentProp0",
 			"type": "number",
 			"initialValue": "0",
@@ -15,7 +25,7 @@
 			"eventType": "variable",
 			"name": "currentProp1",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "1",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -25,340 +35,591 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 759719236362501,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "ui_clean"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "props",
-					"sid": 343846359592700
-				}
-			],
-			"sid": 282183329966761
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "mouse-button-is-down",
-					"objectClass": "Mouse",
-					"sid": 141584699918991,
-					"parameters": {
-						"mouse-button": "left"
-					}
-				},
-				{
-					"id": "cursor-is-over-object",
-					"objectClass": "Mouse",
-					"sid": 376632554339536,
-					"parameters": {
-						"object": "ui"
-					},
-					"isInverted": true
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 790882713961832
 				}
 			],
 			"actions": [],
-			"sid": 805192033872683,
+			"sid": 959618449259224,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
+							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 283303471742525,
+							"sid": 273232327510320,
 							"parameters": {
-								"variable": "currentProp0",
-								"comparison": 0,
-								"value": "0"
+								"variable": "ALT_BRUSH_ENABLED"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 567469839015073,
+							"id": "set-visible",
+							"objectClass": "ui_selector",
+							"sid": 548289545956928,
 							"parameters": {
-								"object-to-create": "prop_crate",
-								"layer": "\"main\"",
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 880783440468414
+					"sid": 125036966209203,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 659089756277993,
+									"parameters": {
+										"object": "ui_selector_alt",
+										"expression": "ui_selector_alt.index = 0"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 693841782455238,
+									"parameters": {
+										"object": "ui_prop_selector",
+										"expression": "ui_prop_selector.index = currentProp0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "ui_selector_alt",
+									"sid": 594727599995092,
+									"parameters": {
+										"object": "ui_prop_selector",
+										"image-point-optional": "\"left\""
+									}
+								}
+							],
+							"sid": 467184816894402
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 460728694430021,
+									"parameters": {
+										"object": "ui_selector_alt",
+										"expression": "ui_selector_alt.index = 1"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 756902552548323,
+									"parameters": {
+										"object": "ui_prop_selector",
+										"expression": "ui_prop_selector.index = currentProp1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "ui_selector_alt",
+									"sid": 424792484962602,
+									"parameters": {
+										"object": "ui_prop_selector",
+										"image-point-optional": "\"right\""
+									}
+								}
+							],
+							"sid": 365310985698806
+						}
+					]
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
+							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 596557534907236,
+							"sid": 527735185195147,
 							"parameters": {
-								"variable": "currentProp0",
-								"comparison": 0,
-								"value": "1"
+								"variable": "ALT_BRUSH_ENABLED"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 927882078468111,
+							"parameters": {
+								"object": "ui_selector",
+								"expression": "ui_selector.index = 0"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 593280644957802,
+							"parameters": {
+								"object": "ui_prop_selector",
+								"expression": "ui_prop_selector.index = currentProp0"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 379865995773918,
+							"id": "set-visible",
+							"objectClass": "ui_selector_alt",
+							"sid": 547706534521688,
 							"parameters": {
-								"object-to-create": "prop_heavycrate",
-								"layer": "\"main\"",
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"visibility": "invisible"
 							}
-						}
-					],
-					"sid": 889154311085319
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+						},
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 298403227389077,
+							"id": "set-position-to-another-object",
+							"objectClass": "ui_selector",
+							"sid": 109080787208813,
 							"parameters": {
-								"variable": "currentProp0",
-								"comparison": 0,
-								"value": "2"
+								"object": "ui_prop_selector",
+								"image-point-optional": "0"
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 276934402874695,
-							"parameters": {
-								"object-to-create": "prop_ball",
-								"layer": "\"main\"",
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
-							}
-						}
-					],
-					"sid": 701813241203892
+					"sid": 613317468513377
 				}
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "mouse-button-is-down",
-					"objectClass": "Mouse",
-					"sid": 941291617709501,
-					"parameters": {
-						"mouse-button": "right"
-					}
-				},
-				{
-					"id": "cursor-is-over-object",
-					"objectClass": "Mouse",
-					"sid": 462255981934770,
-					"parameters": {
-						"object": "ui"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [],
-			"sid": 848827910388178,
+			"eventType": "group",
+			"disabled": false,
+			"title": "Ui",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 786912039457946,
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 607275912637193,
 							"parameters": {
-								"variable": "currentProp1",
-								"comparison": 0,
-								"value": "0"
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "ui_clean"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 539882401766116,
-							"parameters": {
-								"object-to-create": "prop_crate",
-								"layer": "\"main\"",
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
-							}
+							"id": "destroy",
+							"objectClass": "props",
+							"sid": 286800353611488
 						}
 					],
-					"sid": 893055757246703
+					"sid": 608690554606860
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 872925551765989,
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 899286211999413,
 							"parameters": {
-								"variable": "currentProp1",
-								"comparison": 0,
-								"value": "1"
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "ui_prop_selector"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "create-object",
+							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 455301825221032,
+							"sid": 982715515838695,
 							"parameters": {
-								"object-to-create": "prop_heavycrate",
-								"layer": "\"main\"",
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"variable": "currentProp0",
+								"value": "ui_prop_selector.index"
 							}
 						}
 					],
-					"sid": 572638855938550
+					"sid": 328403847720243,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 868911794779010,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 642229531230243,
+									"parameters": {
+										"object": "ui_selector_alt",
+										"expression": "ui_selector_alt.index = 0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "ui_selector_alt",
+									"sid": 239144572851320,
+									"parameters": {
+										"object": "ui_prop_selector",
+										"image-point-optional": "\"left\""
+									}
+								}
+							],
+							"sid": 329646721590502
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 557913490348862,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 726895013292256,
+									"parameters": {
+										"object": "ui_selector",
+										"expression": "ui_selector.index = 0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "ui_selector",
+									"sid": 564814399820247,
+									"parameters": {
+										"x": "ui_prop_selector.X",
+										"y": "ui_prop_selector.Y"
+									}
+								}
+							],
+							"sid": 666990799824175
+						}
+					]
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 585785118160897,
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 771291862811332,
 							"parameters": {
-								"variable": "currentProp1",
-								"comparison": 0,
-								"value": "2"
+								"mouse-button": "right",
+								"click-type": "clicked",
+								"object-clicked": "ui_prop_selector"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 661778828618421,
+							"parameters": {
+								"variable": "ALT_BRUSH_ENABLED"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 260416199945645,
+							"parameters": {
+								"object": "ui_selector_alt",
+								"expression": "ui_selector_alt.index = 1"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "create-object",
+							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 219910956525470,
+							"sid": 504329869234419,
 							"parameters": {
-								"object-to-create": "prop_ball",
-								"layer": "\"main\"",
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"variable": "currentProp1",
+								"value": "ui_prop_selector.index"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "ui_selector_alt",
+							"sid": 632884810041537,
+							"parameters": {
+								"object": "ui_prop_selector",
+								"image-point-optional": "\"right\""
 							}
 						}
 					],
-					"sid": 756592932744649
+					"sid": 431486447487865
 				}
-			]
+			],
+			"sid": 102539905604364
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Spawner",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 654769890951433,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "ui_prop_selector"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 221650699376845,
+							"parameters": {
+								"mouse-button": "left"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 975032081362263,
+							"parameters": {
+								"object": "ui"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 689847709958798,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 978623263395811,
+									"parameters": {
+										"variable": "currentProp0",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 470808347640756,
+									"parameters": {
+										"object-to-create": "prop_crate",
+										"layer": "\"main\"",
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 152624169240887
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 747261144447014,
+									"parameters": {
+										"variable": "currentProp0",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 748355415348103,
+									"parameters": {
+										"object-to-create": "prop_heavycrate",
+										"layer": "\"main\"",
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 369365628174442
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 339062237176551,
+									"parameters": {
+										"variable": "currentProp0",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 221945289970758,
+									"parameters": {
+										"object-to-create": "prop_ball",
+										"layer": "\"main\"",
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 300647972732049
+						}
+					]
 				},
 				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 239981046591970,
-					"parameters": {
-						"object": "ui_mouse_selector",
-						"expression": "ui_mouse_selector.index = 0"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 510810212348563,
+							"parameters": {
+								"variable": "ALT_BRUSH_ENABLED"
+							}
+						},
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 391859860317785,
+							"parameters": {
+								"mouse-button": "right"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 619408931783877,
+							"parameters": {
+								"object": "ui"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 209006154246991,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 287196515054035,
+									"parameters": {
+										"variable": "currentProp1",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 414687296125420,
+									"parameters": {
+										"object-to-create": "prop_crate",
+										"layer": "\"main\"",
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 748124605740160
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 639267897372574,
+									"parameters": {
+										"variable": "currentProp1",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 902104163712661,
+									"parameters": {
+										"object-to-create": "prop_heavycrate",
+										"layer": "\"main\"",
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 470925513183533
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 282652974079503,
+									"parameters": {
+										"variable": "currentProp1",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 838544058810026,
+									"parameters": {
+										"object-to-create": "prop_ball",
+										"layer": "\"main\"",
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 537701466409836
+						}
+					]
 				}
 			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 235691744667365,
-					"parameters": {
-						"variable": "currentProp0",
-						"value": "ui_prop_selector.index"
-					}
-				},
-				{
-					"id": "set-position-to-another-object",
-					"objectClass": "ui_mouse_selector",
-					"sid": 441119462639336,
-					"parameters": {
-						"object": "ui_prop_selector",
-						"image-point-optional": "\"left\""
-					}
-				}
-			],
-			"sid": 338142840226365
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 227003849721034,
-					"parameters": {
-						"mouse-button": "right",
-						"click-type": "clicked",
-						"object-clicked": "ui_prop_selector"
-					}
-				},
-				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 393811092633359,
-					"parameters": {
-						"object": "ui_mouse_selector",
-						"expression": "ui_mouse_selector.index = 1"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 198137935771577,
-					"parameters": {
-						"variable": "currentProp1",
-						"value": "ui_prop_selector.index"
-					}
-				},
-				{
-					"id": "set-position-to-another-object",
-					"objectClass": "ui_mouse_selector",
-					"sid": 612871240940320,
-					"parameters": {
-						"object": "ui_prop_selector",
-						"image-point-optional": "\"right\""
-					}
-				}
-			],
-			"sid": 494969733861050
+			"sid": 140177002984233
 		}
 	],
 	"sid": 465004340330817

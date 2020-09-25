@@ -32,14 +32,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "DragnDrop",
-			"name": "Drag & Drop",
-			"author": "Scirra",
-			"version": "r217",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "destroy",
 			"name": "Destroy outside layout",
 			"author": "Scirra",
@@ -49,9 +41,7 @@
 	],
 	"uniqueId": "nzjq5ue38ks3",
 	"objectTypes": {
-		"items": [
-			"ui_mouse_selector"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -79,7 +69,9 @@
 			{
 				"items": [
 					"ui_clean",
-					"ui_prop_selector"
+					"ui_prop_selector",
+					"ui_selector_alt",
+					"ui_selector"
 				],
 				"subfolders": [],
 				"name": "ui"
