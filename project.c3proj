@@ -214,10 +214,10 @@
 	"properties": {
 		"description": "",
 		"version": "0.1",
-		"author": "DMs",
+		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "http://",
-		"appId": "com.demigrantsoft.physicsdesktop",
+		"appId": "com.adnanmula.physicsdesktop",
 		"pixelRounding": false,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
