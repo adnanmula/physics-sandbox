@@ -3,3 +3,4 @@
 *.uistate.json
 .env
 /.idea
+/node_modules
