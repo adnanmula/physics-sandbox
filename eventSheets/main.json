@@ -51,7 +51,7 @@
 			"eventType": "variable",
 			"name": "ALT_BRUSH_ENABLED",
 			"type": "boolean",
-			"initialValue": "true",
+			"initialValue": "false",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
