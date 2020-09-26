@@ -19,6 +19,8 @@
 	"members": [
 		"prop_ball",
 		"prop_crate",
-		"prop_heavycrate"
+		"prop_heavycrate",
+		"prop_solid",
+		"prop_water"
 	]
 }

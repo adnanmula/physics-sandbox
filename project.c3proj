@@ -16,6 +16,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r217",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -37,6 +45,14 @@
 			"author": "Scirra",
 			"version": "r217",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
+			"author": "Scirra",
+			"version": "r217",
+			"bundled": false
 		}
 	],
 	"uniqueId": "nzjq5ue38ks3",
@@ -45,7 +61,8 @@
 		"subfolders": [
 			{
 				"items": [
-					"Mouse"
+					"Mouse",
+					"Browser"
 				],
 				"subfolders": [],
 				"name": "system"
@@ -54,7 +71,9 @@
 				"items": [
 					"prop_ball",
 					"prop_crate",
-					"prop_heavycrate"
+					"prop_heavycrate",
+					"prop_solid",
+					"prop_water"
 				],
 				"subfolders": [],
 				"name": "props"
@@ -71,7 +90,8 @@
 					"ui_clean",
 					"ui_prop_selector",
 					"ui_selector_alt",
-					"ui_selector"
+					"ui_selector",
+					"ui_eraser"
 				],
 				"subfolders": [],
 				"name": "ui"
@@ -83,7 +103,8 @@
 	"families": {
 		"items": [
 			"props",
-			"ui"
+			"ui",
+			"prop_dragable"
 		],
 		"subfolders": []
 	},
@@ -95,7 +116,10 @@
 	},
 	"eventSheets": {
 		"items": [
-			"main"
+			"main",
+			"ui",
+			"spawner",
+			"eraser"
 		],
 		"subfolders": []
 	},
@@ -190,10 +214,10 @@
 	"properties": {
 		"description": "",
 		"version": "0.1",
-		"author": "DMs",
+		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "http://",
-		"appId": "com.demigrantsoft.physicsdesktop",
+		"appId": "com.adnanmula.physicsdesktop",
 		"pixelRounding": false,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",

@@ -1,7 +1,7 @@
 {
-	"name": "prop_crate",
+	"name": "prop_solid",
 	"plugin-id": "Sprite",
-	"sid": 781422027548309,
+	"sid": 811226407980185,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4927796,
+						"imageSpriteId": 826015,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 185324072234814,
+				"sid": 497185147464260,
 				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,

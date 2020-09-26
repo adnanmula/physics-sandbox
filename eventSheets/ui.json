@@ -1,0 +1,557 @@
+{
+	"name": "ui",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 607275912637193,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "ui_clean"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "props",
+					"sid": 286800353611488
+				}
+			],
+			"sid": 608690554606860
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 828258408318413,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "ui_eraser"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "modeToggle",
+					"sid": 804258553744773,
+					"parameters": [
+						"\"\""
+					]
+				}
+			],
+			"sid": 777197190085962
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 899286211999413,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "ui_prop_selector"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 982715515838695,
+					"parameters": {
+						"variable": "currentProp0",
+						"value": "ui_prop_selector.index"
+					}
+				}
+			],
+			"sid": 328403847720243,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 868911794779010,
+							"parameters": {
+								"variable": "ALT_BRUSH_ENABLED"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 642229531230243,
+							"parameters": {
+								"object": "ui_selector_alt",
+								"expression": "ui_selector_alt.index = 0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "ui_selector_alt",
+							"sid": 239144572851320,
+							"parameters": {
+								"object": "ui_prop_selector",
+								"image-point-optional": "\"left\""
+							}
+						},
+						{
+							"callFunction": "modeToggle",
+							"sid": 618883751417979,
+							"parameters": [
+								"MODE_BRUSH"
+							]
+						}
+					],
+					"sid": 329646721590502
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 557913490348862,
+							"parameters": {
+								"variable": "ALT_BRUSH_ENABLED"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 726895013292256,
+							"parameters": {
+								"object": "ui_selector",
+								"expression": "ui_selector.index = 0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "ui_selector",
+							"sid": 564814399820247,
+							"parameters": {
+								"x": "ui_prop_selector.X",
+								"y": "ui_prop_selector.Y"
+							}
+						},
+						{
+							"callFunction": "modeToggle",
+							"sid": 146274811816214,
+							"parameters": [
+								"MODE_BRUSH"
+							]
+						}
+					],
+					"sid": 666990799824175
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 771291862811332,
+					"parameters": {
+						"mouse-button": "right",
+						"click-type": "clicked",
+						"object-clicked": "ui_prop_selector"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 661778828618421,
+					"parameters": {
+						"variable": "ALT_BRUSH_ENABLED"
+					}
+				},
+				{
+					"id": "pick-by-evaluate",
+					"objectClass": "System",
+					"sid": 260416199945645,
+					"parameters": {
+						"object": "ui_selector_alt",
+						"expression": "ui_selector_alt.index = 1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 504329869234419,
+					"parameters": {
+						"variable": "currentProp1",
+						"value": "ui_prop_selector.index"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "ui_selector_alt",
+					"sid": 632884810041537,
+					"parameters": {
+						"object": "ui_prop_selector",
+						"image-point-optional": "\"right\""
+					}
+				}
+			],
+			"sid": 431486447487865
+		},
+		{
+			"functionName": "modeToggle",
+			"functionDescription": "",
+			"functionCategory": "ui",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "force",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 732929451331742
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 356844586723266,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "mode",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 376165251100972
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 542725929338419,
+							"parameters": {
+								"first-value": "force",
+								"comparison": 0,
+								"second-value": "\"\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 876401505786931,
+							"parameters": {
+								"first-value": "currentMode",
+								"comparison": 0,
+								"second-value": "MODE_BRUSH"
+							}
+						},
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 541448117536239,
+							"parameters": {
+								"object": "ui_selector"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 328649700532667,
+							"parameters": {
+								"variable": "mode",
+								"value": "MODE_ERASER"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ui_selector",
+							"sid": 457331688262227,
+							"parameters": {
+								"x": "ui_eraser.X",
+								"y": "ui_eraser.Y"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ui_selector",
+							"sid": 879627100822298,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 840139079884837
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 725897112360211,
+							"parameters": {
+								"first-value": "force",
+								"comparison": 0,
+								"second-value": "\"\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 129269951515375,
+							"parameters": {
+								"first-value": "currentMode",
+								"comparison": 0,
+								"second-value": "MODE_ERASER"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 926962924425800,
+							"parameters": {
+								"object": "ui_prop_selector",
+								"expression": "ui_prop_selector.index = currentProp0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 354015886621137,
+							"parameters": {
+								"variable": "mode",
+								"value": "MODE_BRUSH"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ui_selector",
+							"sid": 807796623730321,
+							"parameters": {
+								"x": "ui_prop_selector.X",
+								"y": "ui_prop_selector.Y"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ui_selector",
+							"sid": 632650916641413,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 584187801140148
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 593184007064180,
+							"parameters": {
+								"first-value": "force",
+								"comparison": 0,
+								"second-value": "MODE_BRUSH"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 957711021727539,
+							"parameters": {
+								"variable": "mode",
+								"value": "MODE_BRUSH"
+							}
+						}
+					],
+					"sid": 192330407243488,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 112023515489894,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ui_selector",
+									"sid": 235327869365178,
+									"parameters": {
+										"visibility": "toggle"
+									}
+								}
+							],
+							"sid": 158145064935649
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 437168293501640,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ui_selector",
+									"sid": 722641440067422,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 954015384761773
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 578067966064728,
+							"parameters": {
+								"first-value": "force",
+								"comparison": 0,
+								"second-value": "MODE_ERASER"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 465033124783645,
+							"parameters": {
+								"variable": "mode",
+								"value": "MODE_ERASER"
+							}
+						}
+					],
+					"sid": 318692307218889,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 922410459733370,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "ui_selector",
+									"sid": 864172446573982,
+									"parameters": {
+										"x": "ui_eraser.X",
+										"y": "ui_eraser.Y"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ui_selector",
+									"sid": 683240023632577,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 531820590637544
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 864684819904828,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ui_selector",
+									"sid": 721097131970874,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 280390791621263
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 102943309062818,
+							"parameters": {
+								"variable": "currentMode",
+								"value": "mode"
+							}
+						}
+					],
+					"sid": 446100239493718
+				}
+			]
+		}
+	],
+	"sid": 283603127988573
+}
