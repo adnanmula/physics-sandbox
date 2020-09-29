@@ -28,7 +28,7 @@
 						"height": 12,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "C:\\Users\\adnan\\Desktop\\Physics Desktop\\app\\images\\prop_box-sheet0.png",
+						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 288062,
@@ -76,10 +76,10 @@
 						"height": 12,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "C:\\Users\\adnan\\Desktop\\Physics Desktop\\app\\images\\prop_ball-sheet0.png",
+						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2230831,
+						"imageSpriteId": 5885387,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
@@ -100,7 +100,7 @@
 						"height": 12,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "C:\\Users\\adnan\\Desktop\\Physics Desktop\\app\\images\\prop_ball-sheet0.png",
+						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 883794,
@@ -124,10 +124,10 @@
 						"height": 12,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "C:\\Users\\adnan\\Desktop\\Physics Desktop\\app\\images\\prop_ball-sheet0.png",
+						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4945691,
+						"imageSpriteId": 9885326,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
