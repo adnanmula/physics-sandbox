@@ -122,7 +122,8 @@
 		"items": [
 			"props",
 			"ui",
-			"prop_dragable"
+			"prop_dragable",
+			"toolbar_item"
 		],
 		"subfolders": []
 	},

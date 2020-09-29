@@ -88,7 +88,8 @@
 				{
 					"id": "is-on-mobile",
 					"objectClass": "PlatformInfo",
-					"sid": 460387441032446
+					"sid": 460387441032446,
+					"disabled": true
 				}
 			],
 			"actions": [
@@ -102,7 +103,83 @@
 					}
 				}
 			],
-			"sid": 588893151483275
+			"sid": 588893151483275,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "current_x",
+					"type": "number",
+					"initialValue": "150",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 682707871832663
+				},
+				{
+					"eventType": "variable",
+					"name": "current_y",
+					"type": "number",
+					"initialValue": "50",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 638652330961173
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 162702871724095,
+							"parameters": {
+								"object": "toolbar_item",
+								"expression": "toolbar_item.toolbar_index",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "toolbar_item",
+							"sid": 238733030297700,
+							"parameters": {
+								"width": "Self.Width * 1.3",
+								"height": "Self.Height * 1.3"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "toolbar_item",
+							"sid": 164384720647519,
+							"parameters": {
+								"x": "current_x",
+								"y": "current_y"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 989517673534809,
+							"parameters": {
+								"variable": "current_x",
+								"value": "toolbar_item.Width * 1.2"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 484743840024398,
+							"parameters": {
+								"type": "log",
+								"message": "ui.UID"
+							}
+						}
+					],
+					"sid": 574175273948084
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -269,6 +346,15 @@
 							"parameters": {
 								"object": "ui_prop_selector",
 								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "ui_selector",
+							"sid": 831218339053041,
+							"parameters": {
+								"width": "ui_prop_selector.Width + 2",
+								"height": "ui_prop_selector.Height + 2"
 							}
 						}
 					],

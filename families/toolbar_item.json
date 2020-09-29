@@ -1,0 +1,20 @@
+{
+	"name": "toolbar_item",
+	"plugin-id": "Sprite",
+	"sid": 981163580594798,
+	"instanceVariables": [
+		{
+			"name": "toolbar_index",
+			"type": "number",
+			"desc": "",
+			"sid": 362047591169535
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"ui_eraser",
+		"ui_clean",
+		"ui_prop_selector"
+	]
+}
