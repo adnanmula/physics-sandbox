@@ -15,6 +15,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "ALT_BRUSH_ENABLED",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 425319569785103
+		},
+		{
+			"eventType": "variable",
 			"name": "currentProp0",
 			"type": "number",
 			"initialValue": "0",
@@ -49,16 +59,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ALT_BRUSH_ENABLED",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 389812966350628
-		},
-		{
-			"eventType": "variable",
 			"name": "MODE_ERASER",
 			"type": "string",
 			"initialValue": "mode_eraser",
@@ -83,10 +83,47 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
+					"sid": 351528968935779
+				},
+				{
+					"id": "is-on-mobile",
+					"objectClass": "PlatformInfo",
+					"sid": 460387441032446
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 976625068048753,
+					"parameters": {
+						"variable": "ALT_BRUSH_ENABLED",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 588893151483275
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
 					"sid": 790882713961832
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "scroll-to-position",
+					"objectClass": "System",
+					"sid": 180623191455485,
+					"parameters": {
+						"x": "LayoutWidth / 2",
+						"y": "LayoutHeight"
+					}
+				}
+			],
 			"sid": 959618449259224,
 			"children": [
 				{

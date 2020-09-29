@@ -5,214 +5,383 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 607275912637193,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "ui_clean"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "props",
-					"sid": 286800353611488
-				}
-			],
-			"sid": 608690554606860
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 828258408318413,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "ui_eraser"
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "modeToggle",
-					"sid": 804258553744773,
-					"parameters": [
-						"\"\""
-					]
-				}
-			],
-			"sid": 777197190085962
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 899286211999413,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "ui_prop_selector"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
+					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 982715515838695,
+					"sid": 389158507515460
+				},
+				{
+					"id": "is-on-mobile",
+					"objectClass": "PlatformInfo",
+					"sid": 778161076845971
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 116619109893039,
 					"parameters": {
-						"variable": "currentProp0",
-						"value": "ui_prop_selector.index"
+						"group-name": "\"Ui - Desktop\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 743918445757924,
+					"parameters": {
+						"group-name": "\"Ui - Mobile\"",
+						"state": "activated"
 					}
 				}
 			],
-			"sid": 328403847720243,
+			"sid": 408824750412551
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Ui - Desktop",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 868911794779010,
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 313071740251050,
 							"parameters": {
-								"variable": "ALT_BRUSH_ENABLED"
-							}
-						},
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 642229531230243,
-							"parameters": {
-								"object": "ui_selector_alt",
-								"expression": "ui_selector_alt.index = 0"
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "ui_clean"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-position-to-another-object",
-							"objectClass": "ui_selector_alt",
-							"sid": 239144572851320,
-							"parameters": {
-								"object": "ui_prop_selector",
-								"image-point-optional": "\"left\""
-							}
-						},
-						{
-							"callFunction": "modeToggle",
-							"sid": 618883751417979,
-							"parameters": [
-								"MODE_BRUSH"
-							]
+							"id": "destroy",
+							"objectClass": "props",
+							"sid": 153124037959855
 						}
 					],
-					"sid": 329646721590502
+					"sid": 457147498183596
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 557913490348862,
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 810395651331540,
 							"parameters": {
-								"variable": "ALT_BRUSH_ENABLED"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 726895013292256,
-							"parameters": {
-								"object": "ui_selector",
-								"expression": "ui_selector.index = 0"
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "ui_eraser"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-position",
-							"objectClass": "ui_selector",
-							"sid": 564814399820247,
-							"parameters": {
-								"x": "ui_prop_selector.X",
-								"y": "ui_prop_selector.Y"
-							}
-						},
-						{
 							"callFunction": "modeToggle",
-							"sid": 146274811816214,
+							"sid": 390685874038542,
 							"parameters": [
-								"MODE_BRUSH"
+								"\"\""
 							]
 						}
 					],
-					"sid": 666990799824175
+					"sid": 823869412530106
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 101850756464679,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "ui_prop_selector"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 975739954140825,
+							"parameters": {
+								"variable": "currentProp0",
+								"value": "ui_prop_selector.index"
+							}
+						}
+					],
+					"sid": 319689844858828,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 385285592288468,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 471042873594540,
+									"parameters": {
+										"object": "ui_selector_alt",
+										"expression": "ui_selector_alt.index = 0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "ui_selector_alt",
+									"sid": 447159207492770,
+									"parameters": {
+										"object": "ui_prop_selector",
+										"image-point-optional": "\"left\""
+									}
+								},
+								{
+									"callFunction": "modeToggle",
+									"sid": 633296491085177,
+									"parameters": [
+										"MODE_BRUSH"
+									]
+								}
+							],
+							"sid": 810264515611420
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 398871866546789,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 410075969314308,
+									"parameters": {
+										"object": "ui_selector",
+										"expression": "ui_selector.index = 0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "ui_selector",
+									"sid": 305722658013086,
+									"parameters": {
+										"x": "ui_prop_selector.X",
+										"y": "ui_prop_selector.Y"
+									}
+								},
+								{
+									"callFunction": "modeToggle",
+									"sid": 973704665227925,
+									"parameters": [
+										"MODE_BRUSH"
+									]
+								}
+							],
+							"sid": 560621576421804
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 198133701949644,
+							"parameters": {
+								"mouse-button": "right",
+								"click-type": "clicked",
+								"object-clicked": "ui_prop_selector"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 248521168342125,
+							"parameters": {
+								"variable": "ALT_BRUSH_ENABLED"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 537019549911522,
+							"parameters": {
+								"object": "ui_selector_alt",
+								"expression": "ui_selector_alt.index = 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 554630303266112,
+							"parameters": {
+								"variable": "currentProp1",
+								"value": "ui_prop_selector.index"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "ui_selector_alt",
+							"sid": 357149951791657,
+							"parameters": {
+								"object": "ui_prop_selector",
+								"image-point-optional": "\"right\""
+							}
+						}
+					],
+					"sid": 174842956678580
 				}
-			]
+			],
+			"sid": 331685499866591
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Ui - Mobile",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
 				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 771291862811332,
-					"parameters": {
-						"mouse-button": "right",
-						"click-type": "clicked",
-						"object-clicked": "ui_prop_selector"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 962233245837378,
+							"parameters": {
+								"object": "ui_clean"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "props",
+							"sid": 690620625765538
+						}
+					],
+					"sid": 239707979158222
 				},
 				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 661778828618421,
-					"parameters": {
-						"variable": "ALT_BRUSH_ENABLED"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 509995004933413,
+							"parameters": {
+								"object": "ui_eraser"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "modeToggle",
+							"sid": 631527178187538,
+							"parameters": [
+								"\"\""
+							]
+						}
+					],
+					"sid": 777412919119443
 				},
 				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 260416199945645,
-					"parameters": {
-						"object": "ui_selector_alt",
-						"expression": "ui_selector_alt.index = 1"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 192810337756964,
+							"parameters": {
+								"object": "ui_prop_selector"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 571633097404612,
+							"parameters": {
+								"variable": "currentProp0",
+								"value": "ui_prop_selector.index"
+							}
+						}
+					],
+					"sid": 287733703878771,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 156426945164591,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 543051527850805,
+									"parameters": {
+										"object": "ui_selector",
+										"expression": "ui_selector.index = 0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "ui_selector",
+									"sid": 375546342508054,
+									"parameters": {
+										"x": "ui_prop_selector.X",
+										"y": "ui_prop_selector.Y"
+									}
+								},
+								{
+									"callFunction": "modeToggle",
+									"sid": 589030977142350,
+									"parameters": [
+										"MODE_BRUSH"
+									]
+								}
+							],
+							"sid": 741202768163147
+						}
+					]
 				}
 			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 504329869234419,
-					"parameters": {
-						"variable": "currentProp1",
-						"value": "ui_prop_selector.index"
-					}
-				},
-				{
-					"id": "set-position-to-another-object",
-					"objectClass": "ui_selector_alt",
-					"sid": 632884810041537,
-					"parameters": {
-						"object": "ui_prop_selector",
-						"image-point-optional": "\"right\""
-					}
-				}
-			],
-			"sid": 431486447487865
+			"sid": 416321248541553
 		},
 		{
 			"functionName": "modeToggle",

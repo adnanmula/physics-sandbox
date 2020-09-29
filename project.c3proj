@@ -24,6 +24,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r218",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "PlatformInfo",
+			"name": "Platform info",
+			"author": "Scirra",
+			"version": "r218",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -62,7 +78,9 @@
 			{
 				"items": [
 					"Mouse",
-					"Browser"
+					"Browser",
+					"Touch",
+					"PlatformInfo"
 				],
 				"subfolders": [],
 				"name": "system"
@@ -220,7 +238,7 @@
 		"appId": "com.adnanmula.physicsdesktop",
 		"pixelRounding": false,
 		"useLoaderLayout": false,
-		"fullscreenMode": "letterbox-scale",
+		"fullscreenMode": "scale-outer",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [

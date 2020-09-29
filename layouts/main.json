@@ -114,9 +114,9 @@
 						}
 					},
 					"world": {
-						"x": 960.0000000000001,
-						"y": 1141.815551758,
-						"width": 1973,
+						"x": 1501.5,
+						"y": 1361,
+						"width": 3964,
 						"height": 101,
 						"originX": 0.5,
 						"originY": 0.6,
@@ -705,8 +705,8 @@
 	"sid": 102319988278545,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 1920,
-	"height": 1080,
+	"width": 3000,
+	"height": 1300,
 	"unboundedScrolling": false,
 	"eventSheet": "main"
 }
