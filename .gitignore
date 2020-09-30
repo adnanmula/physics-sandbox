@@ -4,5 +4,7 @@
 
 .env
 /.idea
-/node_modules
-/build/electron
+/build/node_modules
+/build/app
+/build/html
+/build/export

@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "build-win": "electron-packager ../build/html --overwrite --asar --platform=win32 --arch=ia32 --prune --out=build/electron"
+    "build-win": "electron-packager html --platform=win32 --arch=ia32 --prune --out=export --icon=icon.ico --overwrite"
   },
   "repository": {
     "type": "git",
