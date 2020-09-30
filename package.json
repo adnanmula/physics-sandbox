@@ -1,11 +1,26 @@
 {
-  "name": "physics-desktop",
-  "version": "0.0.1",
+  "name": "physics-sandbox",
+  "productName": "Physics Sandbox",
+  "version": "0.1.0",
+  "description": "",
   "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
+  "dependencies": {},
   "devDependencies": {
+    "electron": "^10.1.3",
     "electron-packager": "^15.1.0"
-  }
+  },
+  "scripts": {
+    "build-win": "electron-packager . physics-sandbox --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=build/electron/win --version-string.ProductName=\"Physics Sandbox\"",
+    "build-linux": "electron-packager . physics-sandbox --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=build/electron/linux"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adnanmula/physics-sandbox.git"
+  },
+  "author": "Adnan Mula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adnanmula/physics-sandbox/issues"
+  },
+  "homepage": "https://github.com/adnanmula/physics-sandbox#readme"
 }

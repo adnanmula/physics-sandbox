@@ -4,3 +4,4 @@
 .env
 /.idea
 /node_modules
+/builds
