@@ -1,7 +1,8 @@
+# Construct
 *.uistate.xml
-*.capx.backup1
 *.uistate.json
+
 .env
 /.idea
 /node_modules
-/builds
+/build/electron

@@ -10,8 +10,8 @@
     "electron-packager": "^15.1.0"
   },
   "scripts": {
-    "build-win": "electron-packager . physics-sandbox --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=build/electron/win --version-string.ProductName=\"Physics Sandbox\"",
-    "build-linux": "electron-packager . physics-sandbox --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=build/electron/linux"
+    "build-win": "electron-packager . physics-sandbox --overwrite --asar --platform=win32 --arch=ia32 --prune=true --out=build/electron --version-string.ProductName=\"Physics Sandbox\"",
+    "build-linux": "electron-packager ./build/html physics-sandbox --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=build/electron"
   },
   "repository": {
     "type": "git",
