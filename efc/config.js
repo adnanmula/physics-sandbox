@@ -1,0 +1,41 @@
+module.exports = isProd => ({
+  electron: '6.0.1',
+  errorLogging: true,
+  singleInstance: false,
+  window: {
+    width: 640,
+    height: 360,
+    fullscreen: isProd,
+    frame: true,
+    transparent: false,
+    toolbar: true,
+    alwaysOnTop: false,
+  },
+  build: {
+	  asar: true,
+	  dir: '.',
+	  out: 'dist',
+	  overwrite: true,
+	  icon: 'icon/icon.png',
+	  platform: 'win32',
+	  arch: 'ia32',
+	  prune: true,
+  },
+  debug: {
+    showConfig: false,
+  },
+  developer: {
+    showConstructDevTools: !isProd,
+    autoClose: !isProd,
+    autoReload: !isProd,
+    showChromeDevTools: !isProd,
+    overlay: null,
+  },
+  project: {
+    name: 'PhysicsSandbox',
+    description: 'Just a physics playground for you to mess with.',
+    author: 'AdnanMula',
+    version: '0.1.0',
+  },
+  switches: [],
+});
