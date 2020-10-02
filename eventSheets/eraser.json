@@ -5,75 +5,162 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "cursor-is-over-object",
-					"objectClass": "Mouse",
-					"sid": 741785622462605,
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 827500705269782
+				},
+				{
+					"id": "is-on-mobile",
+					"objectClass": "PlatformInfo",
+					"sid": 782518615144846
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 722509091487475,
 					"parameters": {
-						"object": "props"
+						"group-name": "\"Eraser - Desktop\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 659975109409495,
+					"parameters": {
+						"group-name": "\"Eraser - Mobile\"",
+						"state": "activated"
 					}
 				}
 			],
-			"actions": [],
-			"sid": 925090484889440,
+			"sid": 172940495882752
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Eraser - Desktop",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "mouse-button-is-down",
+							"id": "cursor-is-over-object",
 							"objectClass": "Mouse",
-							"sid": 273183658358097,
+							"sid": 553819414146547,
 							"parameters": {
-								"mouse-button": "left"
-							}
-						},
-						{
-							"id": "mouse-button-is-down",
-							"objectClass": "Mouse",
-							"sid": 262728840690089,
-							"parameters": {
-								"mouse-button": "right"
-							}
-						},
-						{
-							"id": "mouse-button-is-down",
-							"objectClass": "Mouse",
-							"sid": 848684184071949,
-							"parameters": {
-								"mouse-button": "middle"
+								"object": "props"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 179076042885802,
+					"sid": 649158872597543,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 272472643973407,
+									"id": "mouse-button-is-down",
+									"objectClass": "Mouse",
+									"sid": 281313194030344,
 									"parameters": {
-										"first-value": "currentMode",
-										"comparison": 0,
-										"second-value": "MODE_ERASER"
+										"mouse-button": "left"
+									}
+								},
+								{
+									"id": "mouse-button-is-down",
+									"objectClass": "Mouse",
+									"sid": 815194181937158,
+									"parameters": {
+										"mouse-button": "right"
+									}
+								},
+								{
+									"id": "mouse-button-is-down",
+									"objectClass": "Mouse",
+									"sid": 129458488250778,
+									"parameters": {
+										"mouse-button": "middle"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 202929044960713,
+							"children": [
 								{
-									"id": "destroy",
-									"objectClass": "props",
-									"sid": 947917785067056
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 799650627331796,
+											"parameters": {
+												"first-value": "currentMode",
+												"comparison": 0,
+												"second-value": "MODE_ERASER"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "props",
+											"sid": 730021663287538
+										}
+									],
+									"sid": 424195829670015
 								}
 							],
-							"sid": 728491480726895
+							"isOrBlock": true
+						}
+					]
+				}
+			],
+			"sid": 509185275754842
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Eraser - Mobile",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 896109338074493,
+							"parameters": {
+								"object": "props"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 744545735450102,
+							"parameters": {
+								"first-value": "currentMode",
+								"comparison": 0,
+								"second-value": "MODE_ERASER"
+							}
 						}
 					],
-					"isOrBlock": true
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "props",
+							"sid": 716922501445221
+						}
+					],
+					"sid": 305242357986937
 				}
-			]
+			],
+			"sid": 733522897856697
 		}
 	],
 	"sid": 992280667819824

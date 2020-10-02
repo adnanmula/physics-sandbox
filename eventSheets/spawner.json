@@ -2,6 +2,42 @@
 	"name": "spawner",
 	"events": [
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 601457109278398
+				},
+				{
+					"id": "is-on-mobile",
+					"objectClass": "PlatformInfo",
+					"sid": 654394466128035
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 524970347486094,
+					"parameters": {
+						"group-name": "\"Spawner - Desktop\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 322781543216311,
+					"parameters": {
+						"group-name": "\"Spawner - Mobile\"",
+						"state": "activated"
+					}
+				}
+			],
+			"sid": 696576420471924
+		},
+		{
 			"functionName": "createProp",
 			"functionDescription": "",
 			"functionCategory": "prop",
@@ -53,12 +89,12 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 433274995740447,
+							"sid": 956722803368109,
 							"parameters": {
 								"object-to-create": "prop_crate",
 								"layer": "\"main\"",
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"x": "x",
+								"y": "y"
 							}
 						}
 					],
@@ -82,12 +118,12 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 928416977076637,
+							"sid": 564185356421417,
 							"parameters": {
 								"object-to-create": "prop_heavycrate",
 								"layer": "\"main\"",
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"x": "x",
+								"y": "y"
 							}
 						}
 					],
@@ -111,12 +147,12 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 354365440207318,
+							"sid": 398248520343866,
 							"parameters": {
 								"object-to-create": "prop_ball",
 								"layer": "\"main\"",
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"x": "x",
+								"y": "y"
 							}
 						}
 					],
@@ -140,12 +176,12 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 900244664574852,
+							"sid": 969054170974748,
 							"parameters": {
 								"object-to-create": "prop_solid",
 								"layer": "\"main\"",
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"x": "x",
+								"y": "y"
 							}
 						}
 					],
@@ -169,12 +205,12 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 943016493297430,
+							"sid": 428328009953642,
 							"parameters": {
 								"object-to-create": "prop_water",
 								"layer": "\"main\"",
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"x": "x",
+								"y": "y"
 							}
 						}
 					],
@@ -183,118 +219,207 @@
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Spawner - Desktop",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "mouse-button-is-down",
-					"objectClass": "Mouse",
-					"sid": 221650699376845,
-					"parameters": {
-						"mouse-button": "left"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 668637092095645,
+							"parameters": {
+								"mouse-button": "left"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 744924142914750,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 745727995549730,
+									"parameters": {
+										"first-value": "currentMode",
+										"comparison": 0,
+										"second-value": "MODE_BRUSH"
+									}
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 608743836230173,
+									"parameters": {
+										"object": "ui"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 535384820436587,
+									"parameters": {
+										"object": "prop_dragable"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "createProp",
+									"sid": 933771773779409,
+									"parameters": [
+										"currentProp0",
+										"Mouse.X",
+										"Mouse.Y"
+									]
+								}
+							],
+							"sid": 664027268002967
+						}
+					],
+					"isOrBlock": true
 				},
 				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 297193085087189,
-					"parameters": {
-						"first-value": "currentMode",
-						"comparison": 0,
-						"second-value": "MODE_BRUSH"
-					}
-				},
-				{
-					"id": "cursor-is-over-object",
-					"objectClass": "Mouse",
-					"sid": 975032081362263,
-					"parameters": {
-						"object": "ui"
-					},
-					"isInverted": true
-				},
-				{
-					"id": "cursor-is-over-object",
-					"objectClass": "Mouse",
-					"sid": 462250601327907,
-					"parameters": {
-						"object": "prop_dragable"
-					},
-					"isInverted": true
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 424028948478590,
+							"parameters": {
+								"variable": "ALT_BRUSH_ENABLED"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 543493586375596,
+							"parameters": {
+								"first-value": "currentMode",
+								"comparison": 0,
+								"second-value": "MODE_BRUSH"
+							}
+						},
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 741544595438876,
+							"parameters": {
+								"mouse-button": "right"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 735337839188706,
+							"parameters": {
+								"object": "ui"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 210975397578005,
+							"parameters": {
+								"object": "prop_dragable"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "createProp",
+							"sid": 937991900017431,
+							"parameters": [
+								"currentProp1",
+								"Mouse.X",
+								"Mouse.Y"
+							]
+						}
+					],
+					"sid": 911667024731654
 				}
 			],
-			"actions": [
-				{
-					"callFunction": "createProp",
-					"sid": 123198556497900,
-					"parameters": [
-						"currentProp0",
-						"Mouse.X",
-						"Mouse.Y"
-					]
-				}
-			],
-			"sid": 689847709958798
+			"sid": 454719857598832
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Spawner - Mobile",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 510810212348563,
-					"parameters": {
-						"variable": "ALT_BRUSH_ENABLED"
-					}
-				},
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 333789750035542,
-					"parameters": {
-						"first-value": "currentMode",
-						"comparison": 0,
-						"second-value": "MODE_BRUSH"
-					}
-				},
-				{
-					"id": "mouse-button-is-down",
-					"objectClass": "Mouse",
-					"sid": 391859860317785,
-					"parameters": {
-						"mouse-button": "right"
-					}
-				},
-				{
-					"id": "cursor-is-over-object",
-					"objectClass": "Mouse",
-					"sid": 619408931783877,
-					"parameters": {
-						"object": "ui"
-					},
-					"isInverted": true
-				},
-				{
-					"id": "cursor-is-over-object",
-					"objectClass": "Mouse",
-					"sid": 247361559358135,
-					"parameters": {
-						"object": "prop_dragable"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "createProp",
-					"sid": 581116535105564,
-					"parameters": [
-						"currentProp1",
-						"Mouse.X",
-						"Mouse.Y"
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-touch",
+							"objectClass": "Touch",
+							"sid": 675374251272907
+						}
+					],
+					"actions": [],
+					"sid": 880683732999622,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 725354832623196,
+									"parameters": {
+										"first-value": "currentMode",
+										"comparison": 0,
+										"second-value": "MODE_BRUSH"
+									}
+								},
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 135586461136524,
+									"parameters": {
+										"object": "ui"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 847446299406378,
+									"parameters": {
+										"object": "prop_dragable"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "createProp",
+									"sid": 452674308057136,
+									"parameters": [
+										"currentProp0",
+										"Touch.X",
+										"Touch.Y"
+									]
+								}
+							],
+							"sid": 400036502300679
+						}
 					]
 				}
 			],
-			"sid": 209006154246991
+			"sid": 535457105402774
 		}
 	],
 	"sid": 100142716717916

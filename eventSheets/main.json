@@ -15,6 +15,26 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "ALT_BRUSH_ENABLED",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 425319569785103
+		},
+		{
+			"eventType": "variable",
+			"name": "toolbar_items",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 738698832102234
+		},
+		{
+			"eventType": "variable",
 			"name": "currentProp0",
 			"type": "number",
 			"initialValue": "0",
@@ -49,13 +69,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ALT_BRUSH_ENABLED",
-			"type": "boolean",
-			"initialValue": "true",
+			"name": "TOOLBAR_SPACE",
+			"type": "number",
+			"initialValue": "10",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 389812966350628
+			"sid": 539338254978774
 		},
 		{
 			"eventType": "variable",
@@ -83,11 +103,191 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 790882713961832
+					"sid": 351528968935779
 				}
 			],
-			"actions": [],
-			"sid": 959618449259224,
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 752107909597615,
+					"parameters": {
+						"variable": "toolbar_items",
+						"value": "toolbar_item.Count - 1"
+					}
+				}
+			],
+			"sid": 588893151483275
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 256892119849340
+				},
+				{
+					"id": "is-on-mobile",
+					"objectClass": "PlatformInfo",
+					"sid": 116972060517098
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 777693583085926,
+					"parameters": {
+						"variable": "ALT_BRUSH_ENABLED",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "toolbar_item",
+					"sid": 899623736986191,
+					"parameters": {
+						"width": "Self.Width * 2",
+						"height": "Self.Height * 2"
+					}
+				}
+			],
+			"sid": 150741812153094,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 464396343610697
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 408777997796572,
+							"parameters": {
+								"variable": "x",
+								"value": "Functions.getFirstXForToolbar"
+							}
+						}
+					],
+					"sid": 349627275658686
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 591064587195979,
+							"parameters": {
+								"object": "toolbar_item",
+								"expression": "toolbar_item.toolbar_index",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "toolbar_item",
+							"sid": 287687888578123,
+							"parameters": {
+								"x": "x"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 774822397292477,
+							"parameters": {
+								"variable": "x",
+								"value": "toolbar_item.Width + TOOLBAR_SPACE"
+							}
+						}
+					],
+					"sid": 341179584159183
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "initUi",
+							"sid": 484007145496715
+						}
+					],
+					"sid": 417777260650690
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 995910552426169
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "initUi",
+					"sid": 222874405083116
+				}
+			],
+			"sid": 751491838282316
+		},
+		{
+			"functionName": "getFirstXForToolbar",
+			"functionDescription": "",
+			"functionCategory": "ui",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 107678090346393,
+					"parameters": {
+						"value": "960 - (((toolbar_item.Count - 1) * toolbar_item.Width) + ((toolbar_item.Count - 2) * TOOLBAR_SPACE)) / 2"
+					}
+				}
+			],
+			"sid": 492494194082234
+		},
+		{
+			"functionName": "initUi",
+			"functionDescription": "",
+			"functionCategory": "ui",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "scroll-to-position",
+					"objectClass": "System",
+					"sid": 355727342262801,
+					"parameters": {
+						"x": "LayoutWidth / 2",
+						"y": "LayoutHeight"
+					}
+				}
+			],
+			"sid": 690331073868604,
 			"children": [
 				{
 					"eventType": "block",
@@ -95,7 +295,7 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 273232327510320,
+							"sid": 482959467195019,
 							"parameters": {
 								"variable": "ALT_BRUSH_ENABLED"
 							}
@@ -105,13 +305,13 @@
 						{
 							"id": "set-visible",
 							"objectClass": "ui_selector",
-							"sid": 548289545956928,
+							"sid": 765722327675285,
 							"parameters": {
 								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 125036966209203,
+					"sid": 660652489784697,
 					"children": [
 						{
 							"eventType": "block",
@@ -119,7 +319,7 @@
 								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 659089756277993,
+									"sid": 383350527967817,
 									"parameters": {
 										"object": "ui_selector_alt",
 										"expression": "ui_selector_alt.index = 0"
@@ -128,7 +328,7 @@
 								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 693841782455238,
+									"sid": 437117265791358,
 									"parameters": {
 										"object": "ui_prop_selector",
 										"expression": "ui_prop_selector.index = currentProp0"
@@ -137,16 +337,24 @@
 							],
 							"actions": [
 								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 951396892856195,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
 									"id": "set-position-to-another-object",
 									"objectClass": "ui_selector_alt",
-									"sid": 594727599995092,
+									"sid": 658371552564488,
 									"parameters": {
 										"object": "ui_prop_selector",
 										"image-point-optional": "\"left\""
 									}
 								}
 							],
-							"sid": 467184816894402
+							"sid": 636061766899586
 						},
 						{
 							"eventType": "block",
@@ -154,7 +362,7 @@
 								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 460728694430021,
+									"sid": 789920546525184,
 									"parameters": {
 										"object": "ui_selector_alt",
 										"expression": "ui_selector_alt.index = 1"
@@ -163,7 +371,7 @@
 								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 756902552548323,
+									"sid": 624029151394226,
 									"parameters": {
 										"object": "ui_prop_selector",
 										"expression": "ui_prop_selector.index = currentProp1"
@@ -172,16 +380,24 @@
 							],
 							"actions": [
 								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 377912401701824,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
 									"id": "set-position-to-another-object",
 									"objectClass": "ui_selector_alt",
-									"sid": 424792484962602,
+									"sid": 448004933906676,
 									"parameters": {
 										"object": "ui_prop_selector",
 										"image-point-optional": "\"right\""
 									}
 								}
 							],
-							"sid": 365310985698806
+							"sid": 620420919064722
 						}
 					]
 				},
@@ -191,7 +407,7 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 527735185195147,
+							"sid": 365639720830190,
 							"parameters": {
 								"variable": "ALT_BRUSH_ENABLED"
 							},
@@ -200,7 +416,7 @@
 						{
 							"id": "pick-by-evaluate",
 							"objectClass": "System",
-							"sid": 927882078468111,
+							"sid": 600648531414623,
 							"parameters": {
 								"object": "ui_selector",
 								"expression": "ui_selector.index = 0"
@@ -209,7 +425,7 @@
 						{
 							"id": "pick-by-evaluate",
 							"objectClass": "System",
-							"sid": 593280644957802,
+							"sid": 138779031072805,
 							"parameters": {
 								"object": "ui_prop_selector",
 								"expression": "ui_prop_selector.index = currentProp0"
@@ -220,22 +436,39 @@
 						{
 							"id": "set-visible",
 							"objectClass": "ui_selector_alt",
-							"sid": 547706534521688,
+							"sid": 110408931817065,
 							"parameters": {
 								"visibility": "invisible"
 							}
 						},
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 403379764340175,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
 							"id": "set-position-to-another-object",
 							"objectClass": "ui_selector",
-							"sid": 109080787208813,
+							"sid": 525055142403259,
 							"parameters": {
 								"object": "ui_prop_selector",
 								"image-point-optional": "0"
 							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "ui_selector",
+							"sid": 452948930060602,
+							"parameters": {
+								"width": "ui_prop_selector.Width + 3",
+								"height": "ui_prop_selector.Height + 3"
+							}
 						}
 					],
-					"sid": 613317468513377
+					"sid": 553775667589458
 				}
 			]
 		}

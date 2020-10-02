@@ -24,6 +24,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r218",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "PlatformInfo",
+			"name": "Platform info",
+			"author": "Scirra",
+			"version": "r218",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -53,6 +69,14 @@
 			"author": "Scirra",
 			"version": "r218",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
+			"author": "Scirra",
+			"version": "r218",
+			"bundled": false
 		}
 	],
 	"uniqueId": "nzjq5ue38ks3",
@@ -62,7 +86,9 @@
 			{
 				"items": [
 					"Mouse",
-					"Browser"
+					"Browser",
+					"Touch",
+					"PlatformInfo"
 				],
 				"subfolders": [],
 				"name": "system"
@@ -104,7 +130,8 @@
 		"items": [
 			"props",
 			"ui",
-			"prop_dragable"
+			"prop_dragable",
+			"toolbar_item"
 		],
 		"subfolders": []
 	},
@@ -220,7 +247,7 @@
 		"appId": "com.adnanmula.physicsdesktop",
 		"pixelRounding": false,
 		"useLoaderLayout": false,
-		"fullscreenMode": "letterbox-scale",
+		"fullscreenMode": "scale-outer",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
