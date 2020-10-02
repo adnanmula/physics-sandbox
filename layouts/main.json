@@ -70,8 +70,8 @@
 						}
 					},
 					"world": {
-						"x": 54,
-						"y": -161.50835401367436,
+						"x": -1905,
+						"y": -1810,
 						"width": 82.01171875,
 						"height": 82.01171875,
 						"originX": 0.545455,
@@ -167,8 +167,8 @@
 						}
 					},
 					"world": {
-						"x": 275,
-						"y": -161.50835401367436,
+						"x": -1684,
+						"y": -1810,
 						"width": 82.01171875,
 						"height": 82.01171875,
 						"originX": 0.545455,
@@ -220,8 +220,8 @@
 						}
 					},
 					"world": {
-						"x": 165,
-						"y": -161.50835401367436,
+						"x": -1794,
+						"y": -1810,
 						"width": 82.01171875,
 						"height": 82.01171875,
 						"originX": 0.545455,
@@ -273,8 +273,8 @@
 						}
 					},
 					"world": {
-						"x": 54,
-						"y": -258.9447927133896,
+						"x": -1905,
+						"y": -1907,
 						"width": 82.01171875,
 						"height": 82.01171875,
 						"originX": 0.545455,
@@ -320,8 +320,8 @@
 						}
 					},
 					"world": {
-						"x": 159.7801789477257,
-						"y": -261.0473724121623,
+						"x": -1799,
+						"y": -1909,
 						"width": 14.911221590909092,
 						"height": 14.911221590909092,
 						"originX": 0.5,
@@ -380,7 +380,17 @@
 						"index": 0,
 						"prop": "Crate"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "none",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 726,
 						"y": 73,
@@ -411,11 +421,21 @@
 					"instanceVariables": {
 						"toolbar_index": 5
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "none",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 1116,
 						"y": 73,
-						"width": 50.578512396694215,
+						"width": 68.4297520661157,
 						"height": 65.45454545454545,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -444,7 +464,17 @@
 						"index": 1,
 						"prop": "Heavy crate"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "none",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 804,
 						"y": 73,
@@ -477,7 +507,17 @@
 						"index": 2,
 						"prop": "Ball"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "none",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 882,
 						"y": 73,
@@ -510,7 +550,17 @@
 						"index": 3,
 						"prop": "Solid"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "none",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 960,
 						"y": 73,
@@ -543,7 +593,17 @@
 						"index": 4,
 						"prop": "Water"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "none",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 1038,
 						"y": 73,
@@ -576,8 +636,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 126,
-						"y": -39.49188158336631,
+						"x": -1833,
+						"y": -1687,
 						"width": 20.98376316673261,
 						"height": 20.98376316673261,
 						"originX": 0.5,
@@ -607,8 +667,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 149,
-						"y": -39.49188158336631,
+						"x": -1810,
+						"y": -1687,
 						"width": 20.98376316673261,
 						"height": 20.98376316673261,
 						"originX": 0.5,
@@ -636,7 +696,17 @@
 					"instanceVariables": {
 						"toolbar_index": 6
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "none",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 1194,
 						"y": 73,
@@ -669,8 +739,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 53.27801669921874,
-						"y": -62,
+						"x": -1906,
+						"y": -1710,
 						"width": 76,
 						"height": 76,
 						"originX": 0.5,

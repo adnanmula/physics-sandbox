@@ -10,7 +10,13 @@
 			"sid": 362047591169535
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 155427477050640
+		}
+	],
 	"effectTypes": [],
 	"members": [
 		"ui_eraser",

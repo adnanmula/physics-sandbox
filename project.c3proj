@@ -69,6 +69,14 @@
 			"author": "Scirra",
 			"version": "r218",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
+			"author": "Scirra",
+			"version": "r218",
+			"bundled": false
 		}
 	],
 	"uniqueId": "nzjq5ue38ks3",
