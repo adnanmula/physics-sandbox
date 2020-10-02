@@ -1,5 +1,7 @@
 # Physics Sandbox
 
+![](animations/media/banner/banner1.png)  
+
 ## Build
 
 0- Install efc (electron for construct) `npm i @efc/cli`  
