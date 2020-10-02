@@ -2,9 +2,11 @@
 *.uistate.xml
 *.uistate.json
 
+# Node
+/node_modules
+
 # Electron for construct
-/efc/app
-/efc/dist
+/efc
 
 .env
 /.idea

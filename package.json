@@ -6,12 +6,13 @@
   "main": "main.js",
   "dependencies": {},
   "devDependencies": {
-    "electron": "^10.1.3",
-    "electron-packager": "^15.1.0"
+    "@efc/cli": "^3.1.5"
   },
   "scripts": {
-    "start": "electron .",
-    "build-win": "electron-packager ../build/html --overwrite --asar --platform=win32 --arch=ia32 --prune --out=build/electron"
+    "start": "echo Check the README.md",
+    "new": "efc new -n efc --no-preview",
+    "preview": "cd efc; efc preview -z app/app.zip",
+    "build": "cd efc; efc build -p"
   },
   "repository": {
     "type": "git",
