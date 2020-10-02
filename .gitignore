@@ -1,5 +1,12 @@
+# Construct
 *.uistate.xml
-*.capx.backup1
 *.uistate.json
+
+# Node
+/node_modules
+
+# Electron for construct
+/efc
+
 .env
 /.idea

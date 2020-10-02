@@ -1,0 +1,27 @@
+{
+  "name": "physics-sandbox",
+  "productName": "Physics Sandbox",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@efc/cli": "^3.1.5"
+  },
+  "scripts": {
+    "start": "echo Check the README.md",
+    "new": "efc new -n efc --no-preview",
+    "preview": "cd efc; efc preview -z app/app.zip",
+    "build": "cd efc; efc build -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adnanmula/physics-sandbox.git"
+  },
+  "author": "Adnan Mula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adnanmula/physics-sandbox/issues"
+  },
+  "homepage": "https://github.com/adnanmula/physics-sandbox#readme"
+}
