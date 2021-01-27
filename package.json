@@ -6,7 +6,7 @@
   "main": "main.js",
   "dependencies": {},
   "devDependencies": {
-    "@efc/cli": "^3.1.5"
+    "@efc/cli": "^3.1.6"
   },
   "scripts": {
     "start": "echo Check the README.md",
