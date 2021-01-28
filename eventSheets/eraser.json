@@ -217,10 +217,10 @@
 								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 515729847776113,
+									"sid": 629489855507235,
 									"parameters": {
 										"object": "prop_liquid",
-										"expression": "distance(Touch.X, Touch.Y, prop_liquid.X, prop_liquid.Y) < 50"
+										"expression": "distance(Touch.X, Touch.Y, prop_liquid.X, prop_liquid.Y) < 100"
 									}
 								}
 							],

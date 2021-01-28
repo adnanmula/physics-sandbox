@@ -115,6 +115,16 @@
 						"variable": "toolbar_items",
 						"value": "toolbar_item.Count - 1"
 					}
+				},
+				{
+					"id": "set-stepping-iterations",
+					"objectClass": "prop_water",
+					"sid": 247298053199607,
+					"behaviorType": "Physics",
+					"parameters": {
+						"velocity-iterations": "6",
+						"position-iterations": "2"
+					}
 				}
 			],
 			"sid": 588893151483275

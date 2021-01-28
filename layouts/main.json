@@ -43,9 +43,7 @@
 						"live-preview": false
 					},
 					"uid": 1,
-					"instanceVariables": {
-						"type": "solid"
-					},
+					"instanceVariables": {},
 					"behaviors": {
 						"DestroyOutsideLayout": {
 							"properties": {}
@@ -72,8 +70,8 @@
 						}
 					},
 					"world": {
-						"x": -1905,
-						"y": -1810,
+						"x": -1211,
+						"y": -1102,
 						"width": 82.01171875,
 						"height": 82.01171875,
 						"originX": 0.545455,
@@ -142,9 +140,7 @@
 						"live-preview": false
 					},
 					"uid": 4,
-					"instanceVariables": {
-						"type": "solid"
-					},
+					"instanceVariables": {},
 					"behaviors": {
 						"DestroyOutsideLayout": {
 							"properties": {}
@@ -171,10 +167,10 @@
 						}
 					},
 					"world": {
-						"x": -1684,
-						"y": -1810,
-						"width": 82.01171875,
-						"height": 82.01171875,
+						"x": -990,
+						"y": -1102,
+						"width": 82.011719,
+						"height": 82.011719,
 						"originX": 0.545455,
 						"originY": 0.545455,
 						"color": [
@@ -197,9 +193,7 @@
 						"live-preview": false
 					},
 					"uid": 25,
-					"instanceVariables": {
-						"type": "solid"
-					},
+					"instanceVariables": {},
 					"behaviors": {
 						"DestroyOutsideLayout": {
 							"properties": {}
@@ -226,8 +220,8 @@
 						}
 					},
 					"world": {
-						"x": -1794,
-						"y": -1810,
+						"x": -1100,
+						"y": -1102,
 						"width": 82.01171875,
 						"height": 82.01171875,
 						"originX": 0.545455,
@@ -252,9 +246,7 @@
 						"live-preview": false
 					},
 					"uid": 12,
-					"instanceVariables": {
-						"type": "solid"
-					},
+					"instanceVariables": {},
 					"behaviors": {
 						"DestroyOutsideLayout": {
 							"properties": {}
@@ -281,8 +273,8 @@
 						}
 					},
 					"world": {
-						"x": -1905,
-						"y": -1907,
+						"x": -1211,
+						"y": -1199,
 						"width": 82.01171875,
 						"height": 82.01171875,
 						"originX": 0.545455,
@@ -307,9 +299,7 @@
 						"live-preview": false
 					},
 					"uid": 14,
-					"instanceVariables": {
-						"type": "liquid"
-					},
+					"instanceVariables": {},
 					"behaviors": {
 						"DestroyOutsideLayout": {
 							"properties": {}
@@ -317,7 +307,7 @@
 						"Physics": {
 							"properties": {
 								"immovable": false,
-								"collision-mask": "circle",
+								"collision-mask": "use-collision-polygon",
 								"prevent-rotation": false,
 								"density": 0.1,
 								"friction": 0,
@@ -330,10 +320,10 @@
 						}
 					},
 					"world": {
-						"x": -1799,
-						"y": -1909,
-						"width": 14.911221590909092,
-						"height": 14.911221590909092,
+						"x": -1111,
+						"y": -1192,
+						"width": 64.45028823228182,
+						"height": 64.45028823228182,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -348,7 +338,19 @@
 				}
 			],
 			"sid": 969717844955551,
-			"effectTypes": [],
+			"effectTypes": [
+				{
+					"effectId": "alphaclamp",
+					"name": "AlphaClamp",
+					"instance": {
+						"parameters": {
+							"threshold": 0.5,
+							"lower-clamp": 0,
+							"upper-clamp": 1
+						}
+					}
+				}
+			],
 			"isInitiallyVisible": true,
 			"color": [
 				1,
@@ -646,8 +648,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": -1833,
-						"y": -1687,
+						"x": -1139,
+						"y": -979,
 						"width": 20.98376316673261,
 						"height": 20.98376316673261,
 						"originX": 0.5,
@@ -677,8 +679,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": -1810,
-						"y": -1687,
+						"x": -1116,
+						"y": -979,
 						"width": 20.98376316673261,
 						"height": 20.98376316673261,
 						"originX": 0.5,
@@ -749,8 +751,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": -1906,
-						"y": -1710,
+						"x": -1212,
+						"y": -1002,
 						"width": 76,
 						"height": 76,
 						"originX": 0.5,

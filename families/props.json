@@ -2,14 +2,7 @@
 	"name": "props",
 	"plugin-id": "Sprite",
 	"sid": 445454381656228,
-	"instanceVariables": [
-		{
-			"name": "type",
-			"type": "string",
-			"desc": "",
-			"sid": 105271607683134
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "destroy",
