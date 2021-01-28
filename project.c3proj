@@ -77,6 +77,14 @@
 			"author": "Scirra",
 			"version": "r225",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "alphaclamp",
+			"name": "Alpha clamp",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
 		}
 	],
 	"uniqueId": "nzjq5ue38ks3",
