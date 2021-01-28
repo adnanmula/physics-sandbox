@@ -96,7 +96,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 799650627331796,
+											"sid": 875341195894293,
 											"parameters": {
 												"first-value": "currentMode",
 												"comparison": 0,
@@ -106,12 +106,14 @@
 									],
 									"actions": [
 										{
-											"id": "destroy",
-											"objectClass": "props",
-											"sid": 730021663287538
+											"callFunction": "eraser_destroy",
+											"sid": 306683063130286,
+											"parameters": [
+												"props.UID"
+											]
 										}
 									],
-									"sid": 424195829670015
+									"sid": 833916494647838
 								}
 							],
 							"isOrBlock": true
@@ -152,15 +154,106 @@
 					],
 					"actions": [
 						{
-							"id": "destroy",
-							"objectClass": "props",
-							"sid": 716922501445221
+							"callFunction": "eraser_destroy",
+							"sid": 259389672642853,
+							"parameters": [
+								"props.UID"
+							]
 						}
 					],
 					"sid": 305242357986937
 				}
 			],
 			"sid": 733522897856697
+		},
+		{
+			"functionName": "eraser_destroy",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "prop_uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Destroy given prop",
+					"sid": 337358023200265
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 526253850814581,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "props",
+							"sid": 226279903052525,
+							"parameters": {
+								"unique-id": "prop_uid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 814204780254151,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 976600070979081,
+									"parameters": {
+										"first-value": "prop_liquid.PickedCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 515729847776113,
+									"parameters": {
+										"object": "prop_liquid",
+										"expression": "distance(Touch.X, Touch.Y, prop_liquid.X, prop_liquid.Y) < 50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "prop_liquid",
+									"sid": 452122393548375
+								}
+							],
+							"sid": 468369840573648
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 896914600825124
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "props",
+									"sid": 308714305177126
+								}
+							],
+							"sid": 917815851292071
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 992280667819824

@@ -1,0 +1,11 @@
+{
+	"name": "prop_liquid",
+	"plugin-id": "Sprite",
+	"sid": 842729672780609,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"prop_water"
+	]
+}
