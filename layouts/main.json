@@ -43,7 +43,9 @@
 						"live-preview": false
 					},
 					"uid": 1,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"type": "solid"
+					},
 					"behaviors": {
 						"DestroyOutsideLayout": {
 							"properties": {}
@@ -140,7 +142,9 @@
 						"live-preview": false
 					},
 					"uid": 4,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"type": "solid"
+					},
 					"behaviors": {
 						"DestroyOutsideLayout": {
 							"properties": {}
@@ -193,7 +197,9 @@
 						"live-preview": false
 					},
 					"uid": 25,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"type": "solid"
+					},
 					"behaviors": {
 						"DestroyOutsideLayout": {
 							"properties": {}
@@ -246,7 +252,9 @@
 						"live-preview": false
 					},
 					"uid": 12,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"type": "solid"
+					},
 					"behaviors": {
 						"DestroyOutsideLayout": {
 							"properties": {}
@@ -299,7 +307,9 @@
 						"live-preview": false
 					},
 					"uid": 14,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"type": "liquid"
+					},
 					"behaviors": {
 						"DestroyOutsideLayout": {
 							"properties": {}
