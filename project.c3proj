@@ -1,9 +1,9 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 22500,
+	"savedWithRelease": 23300,
 	"name": "Physics Sandbox",
 	"runtime": "c3",
-	"useWorker": "auto",
+	"useWorker": "dom",
 	"bundleAddons": false,
 	"usedAddons": [
 		{
@@ -11,7 +11,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r225",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r225",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Touch",
 			"name": "Touch",
 			"author": "Scirra",
-			"version": "r225",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "PlatformInfo",
 			"name": "Platform info",
 			"author": "Scirra",
-			"version": "r225",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r225",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -51,7 +51,7 @@
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
-			"version": "r225",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -59,7 +59,7 @@
 			"id": "destroy",
 			"name": "Destroy outside layout",
 			"author": "Scirra",
-			"version": "r225",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -67,7 +67,7 @@
 			"id": "DragnDrop",
 			"name": "Drag & Drop",
 			"author": "Scirra",
-			"version": "r225",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -75,7 +75,7 @@
 			"id": "Anchor",
 			"name": "Anchor",
 			"author": "Scirra",
-			"version": "r225",
+			"version": "r233",
 			"bundled": false
 		},
 		{
@@ -83,7 +83,7 @@
 			"id": "alphaclamp",
 			"name": "Alpha clamp",
 			"author": "Scirra",
-			"version": "r225",
+			"version": "r233",
 			"bundled": false
 		}
 	],
@@ -161,7 +161,32 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
+			"items": [
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 560952711206329,
+					"script-info": {
+						"purpose": "main"
+					}
+				},
+				{
+					"name": "PropCrate.js",
+					"type": "application/javascript",
+					"sid": 407754180184811,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "PropBall.js",
+					"type": "application/javascript",
+					"sid": 154179289950087,
+					"script-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"sound": {
@@ -248,7 +273,7 @@
 		]
 	},
 	"properties": {
-		"description": "",
+		"description": "Just a physics playground for you to mess with.",
 		"version": "0.1",
 		"author": "Adnan Mula",
 		"authorEmail": "",
@@ -279,9 +304,10 @@
 			0
 		],
 		"useHighDpi": true,
-		"orientations": "any",
+		"orientations": "landscape",
 		"enableWebGL": true,
 		"gpuPreference": "high-performance",
+		"scriptsType": "module",
 		"framerateMode": "vsync",
 		"compositingMode": "standard",
 		"sampling": "nearest",

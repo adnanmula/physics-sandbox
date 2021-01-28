@@ -72,12 +72,57 @@
 			"sid": 906527805110274,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "x1",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 255523448869711
+				},
+				{
+					"eventType": "variable",
+					"name": "y1",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 108575806139061
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 747682352860611,
+							"parameters": {
+								"variable": "x1",
+								"value": "x"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 256652104666657,
+							"parameters": {
+								"variable": "y1",
+								"value": "y"
+							}
+						}
+					],
+					"sid": 175465077282356
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 325422397209146,
+							"sid": 732437974278433,
 							"parameters": {
 								"variable": "index",
 								"comparison": 0,
@@ -89,16 +134,22 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 956722803368109,
+							"sid": 345303069676381,
+							"disabled": true,
 							"parameters": {
 								"object-to-create": "prop_crate",
 								"layer": "\"main\"",
 								"x": "x",
-								"y": "y"
+								"y": "y",
+								"create-hierarchy": false
 							}
+						},
+						{
+							"type": "script",
+							"script": "PropCrateInstance.create(runtime, localVars.x1, localVars.y1);"
 						}
 					],
-					"sid": 175465077282356
+					"sid": 835593075782118
 				},
 				{
 					"eventType": "block",
@@ -123,7 +174,8 @@
 								"object-to-create": "prop_heavycrate",
 								"layer": "\"main\"",
 								"x": "x",
-								"y": "y"
+								"y": "y",
+								"create-hierarchy": false
 							}
 						}
 					],
@@ -148,12 +200,18 @@
 							"id": "create-object",
 							"objectClass": "System",
 							"sid": 398248520343866,
+							"disabled": true,
 							"parameters": {
 								"object-to-create": "prop_ball",
 								"layer": "\"main\"",
 								"x": "x",
-								"y": "y"
+								"y": "y",
+								"create-hierarchy": false
 							}
+						},
+						{
+							"type": "script",
+							"script": "PropBallInstance.create(runtime, localVars.x1, localVars.y1);"
 						}
 					],
 					"sid": 659859840347004
@@ -181,7 +239,8 @@
 								"object-to-create": "prop_solid",
 								"layer": "\"main\"",
 								"x": "x",
-								"y": "y"
+								"y": "y",
+								"create-hierarchy": false
 							}
 						}
 					],
@@ -210,7 +269,8 @@
 								"object-to-create": "prop_water",
 								"layer": "\"main\"",
 								"x": "x",
-								"y": "y"
+								"y": "y",
+								"create-hierarchy": false
 							}
 						}
 					],
