@@ -1,14 +1,14 @@
-export default class PropCrateInstance extends ISpriteInstance
+export default class PropWaterInstance extends ISpriteInstance
 {
-	static get ID() { return 0; }
-
+	static get ID() { return 4; }
+	
 	static create(runtime, x, y)
 	{
-		const instance = runtime.objects.prop_crate.createInstance("main", x, y);
-		
-		instance.behaviors.Physics.density = 1;
-		instance.behaviors.Physics.friction = 0.5;
-		instance.behaviors.Physics.elasticity = 0.2;
+		const instance = runtime.objects.prop_water.createInstance("main", x, y);
+
+		instance.behaviors.Physics.density = 0.1;
+		instance.behaviors.Physics.friction = 0;
+		instance.behaviors.Physics.elasticity = 0.5;
 		instance.behaviors.Physics.linearDamping = 0;
 		instance.behaviors.Physics.angularDamping = 0.01;
 		instance.behaviors.Physics.isImmovable = false;
