@@ -3,7 +3,7 @@
 ## Build
 
 0- Install efc (electron for construct) `npm i @efc/cli`  
-1- Export Construct project to html to `/efc/app/app.zip` as zip  
+1- Export Construct project to html to `/efc/app` unziped  
 2- Run `npm run new`  
 3- Edit `/efc/config.js`  
 4- Run `npm run build`  
@@ -12,14 +12,14 @@
 ## config.js example
 
 ```javascript
-module.exports = isProd => ({
+module.exports = config => ({
   electron: '6.0.1',
   errorLogging: true,
   singleInstance: false,
   window: {
     width: 640,
     height: 360,
-    fullscreen: isProd,
+    fullscreen: false,
     frame: true,
     transparent: false,
     toolbar: true,
@@ -27,7 +27,7 @@ module.exports = isProd => ({
   },
   build: {
     asar: true,
-    dir: 'app/app.zip',
+    dir: 'app',
     out: 'dist',
     overwrite: true,
     icon: '../animations/icon/icon.png',
@@ -39,10 +39,10 @@ module.exports = isProd => ({
     showConfig: false,
   },
   developer: {
-    showConstructDevTools: !isProd,
-    autoClose: !isProd,
-    autoReload: !isProd,
-    showChromeDevTools: !isProd,
+    showConstructDevTools: false,
+    autoClose: false,
+    autoReload: false,
+    showChromeDevTools: false,
     overlay: null,
   },
   project: {

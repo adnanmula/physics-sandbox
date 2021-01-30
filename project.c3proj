@@ -314,7 +314,7 @@
 	},
 	"properties": {
 		"description": "Just a physics playground for you to mess with.",
-		"version": "0.1",
+		"version": "0.1.2",
 		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "http://",

@@ -526,17 +526,60 @@
 								"x": "ui_prop_selector.X",
 								"y": "ui_prop_selector.Y"
 							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "ui_selector",
-							"sid": 632650916641413,
-							"parameters": {
-								"visibility": "invisible"
-							}
 						}
 					],
-					"sid": 584187801140148
+					"sid": 584187801140148,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 487144463576259,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ui_selector",
+									"sid": 116783103182953,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 982300834824905
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 228091017309231,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ui_selector",
+									"sid": 971937291860982,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 942912285533461
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -549,6 +592,14 @@
 								"first-value": "force",
 								"comparison": 0,
 								"second-value": "MODE_BRUSH"
+							}
+						},
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 907604323410128,
+							"parameters": {
+								"object": "ui_selector"
 							}
 						}
 					],
@@ -581,9 +632,9 @@
 								{
 									"id": "set-visible",
 									"objectClass": "ui_selector",
-									"sid": 235327869365178,
+									"sid": 586900185131998,
 									"parameters": {
-										"visibility": "toggle"
+										"visibility": "invisible"
 									}
 								}
 							],
@@ -627,6 +678,14 @@
 								"first-value": "force",
 								"comparison": 0,
 								"second-value": "MODE_ERASER"
+							}
+						},
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 688504818640026,
+							"parameters": {
+								"object": "ui_selector"
 							}
 						}
 					],
