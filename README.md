@@ -56,10 +56,10 @@ module.exports = config => ({
 });
 ```
 
-![](animations/media/gifs/1.png) 
-![](animations/media/gifs/2.png) 
-![](animations/media/gifs/3.png) 
-![](animations/media/gifs/4.png) 
+![](animations/media/gifs/1.gif) 
+![](animations/media/gifs/2.gif) 
+![](animations/media/gifs/3.gif) 
+![](animations/media/gifs/4.gif) 
 ![](animations/media/screenshots/new/3.png) 
 ![](animations/media/screenshots/new/5.png) 
 ![](animations/media/screenshots/new/6.png) 
