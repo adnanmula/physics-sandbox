@@ -24,6 +24,7 @@ module.exports = config => ({
     transparent: false,
     toolbar: true,
     alwaysOnTop: false,
+    resizable: false,
   },
   build: {
     asar: true,
@@ -55,7 +56,9 @@ module.exports = config => ({
 });
 ```
 
-![](animations/media/screenshots/1.png) 
-![](animations/media/screenshots/4.png) 
-![](animations/media/screenshots/2.png) 
-![](animations/media/screenshots/3.png) 
+![](animations/media/screenshots/new/1.png) 
+![](animations/media/screenshots/new/2.png) 
+![](animations/media/screenshots/new/3.png) 
+![](animations/media/screenshots/new/4.png) 
+![](animations/media/screenshots/new/5.png) 
+![](animations/media/screenshots/new/6.png) 
