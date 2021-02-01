@@ -56,13 +56,8 @@ module.exports = config => ({
 });
 ```
 
-![](animations/media/gifs/1.gif) 
-![](animations/media/gifs/2.gif) 
-![](animations/media/gifs/3.gif) 
-![](animations/media/gifs/4.gif) 
-![](animations/media/screenshots/new/3.png) 
-![](animations/media/screenshots/new/5.png) 
-![](animations/media/screenshots/new/6.png) 
-![](animations/media/screenshots/new/1.png) 
-![](animations/media/screenshots/new/2.png) 
-![](animations/media/screenshots/new/4.png) 
+<img src="animations/media/gifs/1.gif" width="45%"> <img src="animations/media/gifs/2.gif" width="45%">  
+<img src="animations/media/gifs/3.gif" width="45%"> <img src="animations/media/gifs/4.gif" width="45%">  
+<img src="animations/media/screenshots/new/2.png" width="45%"> <img src="animations/media/screenshots/new/5.png" width="45%">  
+<img src="animations/media/screenshots/new/1.png" width="45%"> <img src="animations/media/screenshots/new/6.png" width="45%">  
+<img src="animations/media/screenshots/new/3.png" width="45%"> <img src="animations/media/screenshots/new/4.png" width="45%">  
