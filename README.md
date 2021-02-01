@@ -50,12 +50,16 @@ module.exports = config => ({
     name: 'PhysicsSandbox',
     description: 'Just a physics playground for you to mess with.',
     author: 'AdnanMula',
-    version: '0.1.0',
+    version: '0.1.2',
   },
   switches: [],
 });
 ```
 
+![](animations/media/gifs/1.png) 
+![](animations/media/gifs/2.png) 
+![](animations/media/gifs/3.png) 
+![](animations/media/gifs/4.png) 
 ![](animations/media/screenshots/new/3.png) 
 ![](animations/media/screenshots/new/5.png) 
 ![](animations/media/screenshots/new/6.png) 
