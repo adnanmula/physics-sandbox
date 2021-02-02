@@ -1,0 +1,49 @@
+{
+	"name": "prop_blackhole",
+	"plugin-id": "Sprite",
+	"sid": 702376075626058,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 45,
+						"height": 45,
+						"originX": 0.545455,
+						"originY": 0.545455,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6129751,
+						"collisionPoly": {
+							"points": [
+								0.17777777777777778,
+								0.17777777777777778,
+								0.822222222222222,
+								0.17777777777777778,
+								0.822222222222222,
+								0.822222222222222,
+								0.17777777777777778,
+								0.822222222222222
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 424673329918348,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

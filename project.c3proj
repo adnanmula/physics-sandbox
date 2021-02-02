@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 23300,
+	"savedWithRelease": 23400,
 	"name": "Physics Sandbox",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -11,7 +11,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r233",
+			"version": "r234",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r233",
+			"version": "r234",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Touch",
 			"name": "Touch",
 			"author": "Scirra",
-			"version": "r233",
+			"version": "r234",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "PlatformInfo",
 			"name": "Platform info",
 			"author": "Scirra",
-			"version": "r233",
+			"version": "r234",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r233",
+			"version": "r234",
 			"bundled": false
 		},
 		{
@@ -51,7 +51,7 @@
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
-			"version": "r233",
+			"version": "r234",
 			"bundled": false
 		},
 		{
@@ -59,7 +59,7 @@
 			"id": "destroy",
 			"name": "Destroy outside layout",
 			"author": "Scirra",
-			"version": "r233",
+			"version": "r234",
 			"bundled": false
 		},
 		{
@@ -67,7 +67,7 @@
 			"id": "DragnDrop",
 			"name": "Drag & Drop",
 			"author": "Scirra",
-			"version": "r233",
+			"version": "r234",
 			"bundled": false
 		},
 		{
@@ -75,7 +75,7 @@
 			"id": "Anchor",
 			"name": "Anchor",
 			"author": "Scirra",
-			"version": "r233",
+			"version": "r234",
 			"bundled": false
 		},
 		{
@@ -83,7 +83,7 @@
 			"id": "alphaclamp",
 			"name": "Alpha clamp",
 			"author": "Scirra",
-			"version": "r233",
+			"version": "r234",
 			"bundled": false
 		}
 	],
@@ -107,7 +107,8 @@
 					"prop_crate",
 					"prop_heavycrate",
 					"prop_solid",
-					"prop_water"
+					"prop_water",
+					"prop_blackhole"
 				],
 				"subfolders": [],
 				"name": "props"
@@ -225,6 +226,22 @@
 					"script-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "PropBlackHole.js",
+					"type": "application/javascript",
+					"sid": 862384847103023,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "utils.js",
+					"type": "application/javascript",
+					"sid": 256078139843437,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -314,7 +331,7 @@
 	},
 	"properties": {
 		"description": "Just a physics playground for you to mess with.",
-		"version": "0.1.2",
+		"version": "0.1.3",
 		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "http://",
