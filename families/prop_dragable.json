@@ -15,6 +15,7 @@
 		"prop_solid",
 		"prop_crate",
 		"prop_ball",
-		"prop_heavycrate"
+		"prop_heavycrate",
+		"prop_blackhole"
 	]
 }

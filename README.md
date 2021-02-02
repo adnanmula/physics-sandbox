@@ -24,7 +24,6 @@ module.exports = config => ({
     transparent: false,
     toolbar: true,
     alwaysOnTop: false,
-    resizable: false,
   },
   build: {
     asar: true,
@@ -50,7 +49,7 @@ module.exports = config => ({
     name: 'PhysicsSandbox',
     description: 'Just a physics playground for you to mess with.',
     author: 'AdnanMula',
-    version: '0.1.2',
+    version: '0.1.3',
   },
   switches: [],
 });

@@ -3,6 +3,7 @@ import PropHeavyCrateInstance from "./PropHeavyCrate.js";
 import PropBallInstance from "./PropBall.js";
 import PropSolidInstance from "./PropSolid.js";
 import PropWaterInstance from "./PropWater.js";
+import PropBlackHoleInstance from "./PropBlackHole.js";
 
 runOnStartup(async runtime =>
 {
@@ -11,15 +12,26 @@ runOnStartup(async runtime =>
 	runtime.objects.prop_ball.setInstanceClass(PropBallInstance);
 	runtime.objects.prop_solid.setInstanceClass(PropSolidInstance);
 	runtime.objects.prop_water.setInstanceClass(PropWaterInstance);
+	runtime.objects.prop_blackhole.setInstanceClass(PropBlackHoleInstance);
 
-	//runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
+	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
 });
 
 function OnBeforeProjectStart(runtime)
 {
-	runtime.addEventListener("tick", () => Tick(runtime));
+	setInterval(() => processBlackHoles(runtime), 100);
+
+	//runtime.addEventListener("tick", () => Tick(runtime));
 }
 
-function Tick(runtime)
+//function Tick(runtime)
+//{
+//}
+
+function processBlackHoles(runtime)
 {
+	for (const blackHole of runtime.objects.prop_blackhole.instances())
+	{
+		blackHole.pull(runtime);
+	}
 }
