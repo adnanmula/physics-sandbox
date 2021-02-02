@@ -24,7 +24,6 @@ module.exports = config => ({
     transparent: false,
     toolbar: true,
     alwaysOnTop: false,
-    resizable: false,
   },
   build: {
     asar: true,
