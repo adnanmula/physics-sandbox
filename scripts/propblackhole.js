@@ -3,7 +3,7 @@ import * as Util from "./utils.js";
 export default class PropBlackHoleInstance extends ISpriteInstance
 {
 	static get ID() { return 5; }
-	get PULL_RADIUS() { return 500; }
+	get PULL_RADIUS() { return 400; }
 	get PULL_FORCE() { return 500; }
 
 	constructor()

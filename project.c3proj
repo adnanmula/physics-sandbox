@@ -89,9 +89,7 @@
 	],
 	"uniqueId": "nzjq5ue38ks3",
 	"objectTypes": {
-		"items": [
-			"prop_blackhole"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -109,7 +107,8 @@
 					"prop_crate",
 					"prop_heavycrate",
 					"prop_solid",
-					"prop_water"
+					"prop_water",
+					"prop_blackhole"
 				],
 				"subfolders": [],
 				"name": "props"
@@ -332,7 +331,7 @@
 	},
 	"properties": {
 		"description": "Just a physics playground for you to mess with.",
-		"version": "0.1.2",
+		"version": "0.1.3",
 		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "http://",
