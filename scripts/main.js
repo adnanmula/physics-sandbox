@@ -34,6 +34,11 @@ function OnBeforeProjectStart(runtime)
 
 function ProcessBlackHoles(runtime)
 {
+	if (runtime.dt == 0)
+	{
+		return;
+	}
+	
 	for (const blackHole of runtime.objects.prop_blackhole.instances())
 	{
 		blackHole.pull(runtime);

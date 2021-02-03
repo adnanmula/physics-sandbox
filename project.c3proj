@@ -40,6 +40,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r234",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -96,7 +104,8 @@
 					"Mouse",
 					"Browser",
 					"Touch",
-					"PlatformInfo"
+					"PlatformInfo",
+					"Keyboard"
 				],
 				"subfolders": [],
 				"name": "system"

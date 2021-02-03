@@ -481,6 +481,39 @@
 					"sid": 553775667589458
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 619656555213822,
+					"parameters": {
+						"key": 80
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 527642066532106,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 599428604799337,
+					"parameters": {
+						"time-scale": "timescale = 0 ? 1 : 0"
+					}
+				}
+			],
+			"sid": 165595098390292,
+			"isOrBlock": true
 		}
 	],
 	"sid": 465004340330817
