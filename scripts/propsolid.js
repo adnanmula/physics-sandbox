@@ -1,6 +1,6 @@
 export default class PropSolidInstance extends ISpriteInstance
 {
-	static get ID() { return 3; }
+	get type() { return 'dragable'; }
 
 	constructor()
 	{

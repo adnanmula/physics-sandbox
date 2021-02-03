@@ -1,6 +1,6 @@
 export default class PropHeavyCrateInstance extends ISpriteInstance
 {
-	static get ID() { return 1; }
+	get type() { return 'dragable'; }
 
 	constructor()
 	{

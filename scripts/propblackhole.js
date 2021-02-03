@@ -2,9 +2,10 @@ import * as Util from "./utils.js";
 
 export default class PropBlackHoleInstance extends ISpriteInstance
 {
-	static get ID() { return 5; }
 	get PULL_RADIUS() { return 500; }
 	get PULL_FORCE() { return 500; }
+	get PULL_FORCE_LIQUID() { return 50; }
+	get type() { return 'dragable'; }
 
 	constructor()
 	{
@@ -40,7 +41,13 @@ export default class PropBlackHoleInstance extends ISpriteInstance
 		
 			if (Util.distanceTo(this.x, this.y, prop.x, prop.y) < this.PULL_RADIUS)
 			{
-				prop.behaviors.Physics.applyForceTowardPosition(prop.behaviors.Physics.density * this.PULL_FORCE, this.x, this.y, 0);
+				let force = prop.behaviors.Physics.density * this.PULL_FORCE;
+				
+				if (prop.type == "liquid") {
+					force = prop.behaviors.Physics.density * this.PULL_FORCE_LIQUID;
+				}
+			
+				prop.behaviors.Physics.applyForceTowardPosition(force, this.x, this.y, 0);
 			}
 		}
 	}

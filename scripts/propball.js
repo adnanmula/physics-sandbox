@@ -1,6 +1,6 @@
 export default class PropBallInstance extends ISpriteInstance
 {
-	static get ID() { return 2; }
+	get type() { return 'dragable'; }
 
 	constructor()
 	{

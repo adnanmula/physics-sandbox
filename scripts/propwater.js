@@ -1,6 +1,6 @@
 export default class PropWaterInstance extends ISpriteInstance
 {
-	static get ID() { return 4; }
+	get type() { return 'liquid'; }
 	
 	constructor()
 	{
