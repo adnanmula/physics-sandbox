@@ -166,7 +166,7 @@
 			"disabled": false,
 			"title": "Spawner - Mobile",
 			"description": "",
-			"isActiveOnStart": true,
+			"isActiveOnStart": false,
 			"children": [
 				{
 					"eventType": "block",
@@ -262,6 +262,27 @@
 				}
 			],
 			"sid": 535457105402774
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "props",
+					"sid": 747358963836662,
+					"parameters": {
+						"object": "prop_blackhole"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "props",
+					"sid": 118397316411719
+				}
+			],
+			"sid": 149041964741120
 		}
 	],
 	"sid": 100142716717916

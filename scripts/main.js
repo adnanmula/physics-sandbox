@@ -21,16 +21,16 @@ function OnBeforeProjectStart(runtime)
 {
 	setInterval(() => ProcessBlackHoles(runtime), 100);
 
-	runtime.addEventListener("tick", () => Tick(runtime));
+	//runtime.addEventListener("tick", () => Tick(runtime));
 }
 
-function Tick(runtime)
-{
-	for (const blackHole of runtime.objects.prop_blackhole.instances())
-	{
-		blackHole.absorb(runtime);
-	}
-}
+// function Tick(runtime)
+// {
+// 	for (const blackHole of runtime.objects.prop_blackhole.instances())
+// 	{
+// 		blackHole.absorb(runtime);
+// 	}
+// }
 
 function ProcessBlackHoles(runtime)
 {

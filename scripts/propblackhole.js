@@ -3,7 +3,7 @@ import * as Util from "./utils.js";
 export default class PropBlackHoleInstance extends ISpriteInstance
 {
 	static get ID() { return 5; }
-	get PULL_RADIUS() { return 400; }
+	get PULL_RADIUS() { return 500; }
 	get PULL_FORCE() { return 500; }
 
 	constructor()
@@ -45,18 +45,18 @@ export default class PropBlackHoleInstance extends ISpriteInstance
 		}
 	}
 	
-	absorb(runtime)
-	{
-		for (const prop of runtime.objects.props.instances())
-		{	
-			if (prop.uid == this.uid) {
-				continue;
-			}
-		
-			if (Util.distanceTo(this.x, this.y, prop.x, prop.y) < this.width)
-			{
-				prop.destroy();
-			}
-		}
-	}
+// 	absorb(runtime)
+// 	{
+// 		for (const prop of runtime.objects.props.instances())
+// 		{	
+// 			if (prop.uid == this.uid) {
+// 				continue;
+// 			}
+			
+// 			if (Util.distanceTo(this.x, this.y, prop.x, prop.y) < this.width * 0.7)
+// 			{
+// 				prop.destroy();
+// 			}
+// 		}
+// 	}
 }
