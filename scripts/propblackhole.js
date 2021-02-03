@@ -44,4 +44,19 @@ export default class PropBlackHoleInstance extends ISpriteInstance
 			}
 		}
 	}
+	
+	absorb(runtime)
+	{
+		for (const prop of runtime.objects.props.instances())
+		{	
+			if (prop.uid == this.uid) {
+				continue;
+			}
+		
+			if (Util.distanceTo(this.x, this.y, prop.x, prop.y) < this.width)
+			{
+				prop.destroy();
+			}
+		}
+	}
 }

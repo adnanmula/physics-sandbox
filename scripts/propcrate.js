@@ -15,7 +15,6 @@ export default class PropCrateInstance extends ISpriteInstance
  		this.behaviors.Physics.isBullet = false;
  		this.behaviors.Physics.isPreventRotation = false;
  		this.behaviors.Physics.isEnabled = true;
-	
 	}
 
 	static create(runtime, x, y)

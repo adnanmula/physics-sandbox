@@ -19,16 +19,20 @@ runOnStartup(async runtime =>
 
 function OnBeforeProjectStart(runtime)
 {
-	setInterval(() => processBlackHoles(runtime), 100);
+	setInterval(() => ProcessBlackHoles(runtime), 100);
 
-	//runtime.addEventListener("tick", () => Tick(runtime));
+	runtime.addEventListener("tick", () => Tick(runtime));
 }
 
-//function Tick(runtime)
-//{
-//}
+function Tick(runtime)
+{
+	for (const blackHole of runtime.objects.prop_blackhole.instances())
+	{
+		blackHole.absorb(runtime);
+	}
+}
 
-function processBlackHoles(runtime)
+function ProcessBlackHoles(runtime)
 {
 	for (const blackHole of runtime.objects.prop_blackhole.instances())
 	{

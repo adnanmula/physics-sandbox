@@ -22,4 +22,3 @@ export default class PropBallInstance extends ISpriteInstance
 		runtime.objects.prop_ball.createInstance("main", x, y);
 	}
 }
-
