@@ -1,4 +1,4 @@
-export default class PropSolidInstance extends ISpriteInstance
+export default class PropWallInstance extends ISpriteInstance
 {
 	get type() { return 'dragable'; }
 
@@ -19,6 +19,6 @@ export default class PropSolidInstance extends ISpriteInstance
 
 	static create(runtime, x, y)
 	{
-		runtime.objects.prop_solid.createInstance("main", x, y);
+		runtime.objects.prop_wall.createInstance("main", x, y);
 	}
 }

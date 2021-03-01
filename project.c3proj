@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 23402,
+	"savedWithRelease": 23700,
 	"name": "Physics Sandbox",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -11,7 +11,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Touch",
 			"name": "Touch",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "PlatformInfo",
 			"name": "Platform info",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,7 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -51,7 +51,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -59,7 +59,15 @@
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r237",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -67,7 +75,7 @@
 			"id": "destroy",
 			"name": "Destroy outside layout",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -75,7 +83,7 @@
 			"id": "DragnDrop",
 			"name": "Drag & Drop",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -83,7 +91,7 @@
 			"id": "Anchor",
 			"name": "Anchor",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r237",
 			"bundled": false
 		},
 		{
@@ -91,7 +99,7 @@
 			"id": "alphaclamp",
 			"name": "Alpha clamp",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r237",
 			"bundled": false
 		}
 	],
@@ -115,9 +123,10 @@
 					"prop_ball",
 					"prop_crate",
 					"prop_heavycrate",
-					"prop_solid",
+					"prop_wall",
 					"prop_water",
-					"prop_blackhole"
+					"prop_blackhole",
+					"prop_water_steam"
 				],
 				"subfolders": [],
 				"name": "props"
@@ -150,7 +159,9 @@
 			"ui",
 			"prop_dragable",
 			"toolbar_item",
-			"prop_liquid"
+			"prop_liquid",
+			"prop_steam",
+			"prop_solid"
 		],
 		"subfolders": []
 	},
@@ -165,7 +176,8 @@
 			"main",
 			"ui",
 			"spawner",
-			"eraser"
+			"eraser",
+			"physics"
 		],
 		"subfolders": []
 	},
@@ -181,22 +193,6 @@
 					}
 				},
 				{
-					"name": "PropCrate.js",
-					"type": "application/javascript",
-					"sid": 407754180184811,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "PropBall.js",
-					"type": "application/javascript",
-					"sid": 154179289950087,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
 					"name": "imports.js",
 					"type": "application/javascript",
 					"sid": 860485918722038,
@@ -205,25 +201,9 @@
 					}
 				},
 				{
-					"name": "PropHeavyCrate.js",
+					"name": "utils.js",
 					"type": "application/javascript",
-					"sid": 531497755228718,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "PropWater.js",
-					"type": "application/javascript",
-					"sid": 840931020048456,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "PropSolid.js",
-					"type": "application/javascript",
-					"sid": 719318366880709,
+					"sid": 256078139843437,
 					"script-info": {
 						"purpose": "none"
 					}
@@ -235,25 +215,72 @@
 					"script-info": {
 						"purpose": "none"
 					}
-				},
-				{
-					"name": "PropBlackHole.js",
-					"type": "application/javascript",
-					"sid": 862384847103023,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "utils.js",
-					"type": "application/javascript",
-					"sid": 256078139843437,
-					"script-info": {
-						"purpose": "none"
-					}
 				}
 			],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "PropBall.js",
+							"type": "application/javascript",
+							"sid": 154179289950087,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropBlackHole.js",
+							"type": "application/javascript",
+							"sid": 862384847103023,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropCrate.js",
+							"type": "application/javascript",
+							"sid": 407754180184811,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropHeavyCrate.js",
+							"type": "application/javascript",
+							"sid": 531497755228718,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropWall.js",
+							"type": "application/javascript",
+							"sid": 719318366880709,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropWater.js",
+							"type": "application/javascript",
+							"sid": 840931020048456,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropWaterSteam.js",
+							"type": "application/javascript",
+							"sid": 855944356458295,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "props"
+				}
+			]
 		},
 		"sound": {
 			"items": [],

@@ -1,8 +1,9 @@
 import PropCrateInstance from "./PropCrate.js";
 import PropHeavyCrateInstance from "./PropHeavyCrate.js";
 import PropBallInstance from "./PropBall.js";
-import PropSolidInstance from "./PropSolid.js";
+import PropWallInstance from "./PropWall.js";
 import PropWaterInstance from "./PropWater.js";
+import PropWaterSteamInstance from "./PropWaterSteam.js";
 import PropBlackHoleInstance from "./PropBlackHole.js";
 
 export default class PropController
@@ -13,9 +14,10 @@ export default class PropController
 			PropCrateInstance,
 			PropHeavyCrateInstance,
 			PropBallInstance,
-			PropSolidInstance,
+			PropWallInstance,
 			PropWaterInstance,
-			PropBlackHoleInstance
+			PropBlackHoleInstance,
+			PropWaterSteamInstance
 		];
 	
 		props[propId].create(runtime, x, y)

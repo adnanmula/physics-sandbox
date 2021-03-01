@@ -12,7 +12,7 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"prop_solid",
+		"prop_wall",
 		"prop_crate",
 		"prop_ball",
 		"prop_heavycrate",

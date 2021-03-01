@@ -1,7 +1,7 @@
 {
-	"name": "prop_water",
+	"name": "prop_water_steam",
 	"plugin-id": "Sprite",
-	"sid": 532607340265200,
+	"sid": 217212295396643,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -17,8 +17,8 @@
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
-						"exportQuality": 1,
-						"imageSpriteId": 2623696,
+						"exportQuality": 0.8,
+						"imageSpriteId": 5457420,
 						"collisionPoly": {
 							"points": [
 								0.30000000000000004,
@@ -35,13 +35,13 @@
 						"duration": 1
 					}
 				],
-				"sid": 155237956399257,
-				"name": "Default",
+				"sid": 367537393848894,
+				"name": "default",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			}
 		],
 		"subfolders": []

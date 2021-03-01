@@ -1,0 +1,17 @@
+{
+	"name": "prop_solid",
+	"plugin-id": "Sprite",
+	"sid": 391449258270531,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 213580685443970
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"prop_wall"
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"name": "prop_steam",
+	"plugin-id": "Sprite",
+	"sid": 746834961259807,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"prop_water_steam"
+	]
+}

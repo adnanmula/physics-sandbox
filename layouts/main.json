@@ -87,7 +87,7 @@
 					}
 				},
 				{
-					"type": "prop_solid",
+					"type": "prop_wall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Default",
@@ -119,6 +119,12 @@
 							"properties": {
 								"axes": "both",
 								"enabled": true
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
 							}
 						}
 					},
@@ -216,6 +222,12 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": true
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
 							}
 						}
 					},
@@ -373,10 +385,57 @@
 						}
 					},
 					"world": {
-						"x": -1111,
-						"y": -1192,
+						"x": -1124.9038902273612,
+						"y": -1199.9174959927545,
 						"width": 64.45028823228182,
 						"height": 64.45028823228182,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "prop_water_steam",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 24,
+					"instanceVariables": {},
+					"behaviors": {
+						"DestroyOutsideLayout": {
+							"properties": {}
+						},
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": true,
+								"density": 0.1,
+								"friction": 1,
+								"elasticity": 0,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": -1025.2640035428533,
+						"y": -1215.153730277119,
+						"width": 91.90629011773856,
+						"height": 91.90629011773856,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -761,7 +820,7 @@
 					},
 					"uid": 22,
 					"instanceVariables": {
-						"toolbar_index": 5
+						"toolbar_index": 7
 					},
 					"behaviors": {
 						"Anchor": {
@@ -775,7 +834,7 @@
 						}
 					},
 					"world": {
-						"x": 1155.5,
+						"x": 1225.5,
 						"y": 73,
 						"width": 68.4297520661157,
 						"height": 65.45454545454545,
@@ -802,7 +861,7 @@
 					},
 					"uid": 23,
 					"instanceVariables": {
-						"toolbar_index": 6
+						"toolbar_index": 8
 					},
 					"behaviors": {
 						"Anchor": {
@@ -816,7 +875,7 @@
 						}
 					},
 					"world": {
-						"x": 1233.5,
+						"x": 1303.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -851,6 +910,49 @@
 						"y": -1002,
 						"width": 76,
 						"height": 76,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ui_prop_selector",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 6,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 26,
+					"instanceVariables": {
+						"toolbar_index": 6,
+						"index": 6,
+						"prop": "WaterSteam"
+					},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "none",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1149.1270668494085,
+						"y": 74.50267545841939,
+						"width": 65.45454545454545,
+						"height": 65.45454545454545,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

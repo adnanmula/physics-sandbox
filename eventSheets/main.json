@@ -7,6 +7,10 @@
 		},
 		{
 			"eventType": "include",
+			"includeSheet": "physics"
+		},
+		{
+			"eventType": "include",
 			"includeSheet": "spawner"
 		},
 		{
@@ -118,8 +122,8 @@
 				},
 				{
 					"id": "set-stepping-iterations",
-					"objectClass": "prop_water",
-					"sid": 247298053199607,
+					"objectClass": "prop_wall",
+					"sid": 861969772572345,
 					"behaviorType": "Physics",
 					"parameters": {
 						"velocity-iterations": "6",
