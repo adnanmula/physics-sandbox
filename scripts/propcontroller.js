@@ -8,7 +8,7 @@ import PropBlackHoleInstance from "./PropBlackHole.js";
 
 export default class PropController
 {
-	static create(runtime, propId, x, y)
+	static create(propId, x, y)
 	{
 		let props = [
 			PropCrateInstance,
@@ -20,6 +20,6 @@ export default class PropController
 			PropWaterSteamInstance
 		];
 	
-		props[propId].create(runtime, x, y)
+		props[propId].create(x, y)
 	}
 }

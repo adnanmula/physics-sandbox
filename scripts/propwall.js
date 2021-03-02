@@ -1,6 +1,8 @@
-export default class PropWallInstance extends ISpriteInstance
+import Prop from "./Prop.js";
+
+export default class PropWallInstance extends Prop
 {
-	get type() { return 'dragable'; }
+	get traits() { return [super.TRAIT_DRAGABLE]; }
 
 	constructor()
 	{
@@ -17,8 +19,13 @@ export default class PropWallInstance extends ISpriteInstance
 		this.behaviors.Physics.isEnabled = true;
 	}
 
-	static create(runtime, x, y)
+	static create(x, y)
 	{
-		runtime.objects.prop_wall.createInstance("main", x, y);
+		globalThis.runtime.objects.prop_wall.createInstance("main", x, y);
+	}
+	
+	applyGravity()
+	{
+		return;
 	}
 }

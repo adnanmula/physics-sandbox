@@ -1,11 +1,13 @@
 import * as Util from "./utils.js";
+import Prop from "./Prop.js";
 
-export default class PropBlackHoleInstance extends ISpriteInstance
+export default class PropBlackHoleInstance extends Prop
 {
 	get PULL_RADIUS() { return 500; }
 	get PULL_FORCE() { return 500; }
 	get PULL_FORCE_LIQUID() { return 50; }
-	get type() { return 'dragable'; }
+	
+	get traits() { return [super.TRAIT_DRAGABLE]; }
 
 	constructor()
 	{
@@ -22,13 +24,15 @@ export default class PropBlackHoleInstance extends ISpriteInstance
 		this.behaviors.Physics.isEnabled = true;
 	}
 
-	static create(runtime, x, y)
+	static create(x, y)
 	{
-		runtime.objects.prop_blackhole.createInstance("main", x, y);
+		globalThis.runtime.objects.prop_blackhole.createInstance("main", x, y);
 	}
 	
-	pull(runtime)
+	pull()
 	{
+		const runtime = globalThis.runtime;
+		
 		if (true == Util.isOutsideLayout(this)) {
 			return;
 		}
@@ -52,18 +56,28 @@ export default class PropBlackHoleInstance extends ISpriteInstance
 		}
 	}
 	
-// 	absorb(runtime)
+	applyGravity()
+	{
+		return;
+	}
+	
+// 	absorb()
 // 	{
-// 		for (const prop of runtime.objects.props.instances())
+// 		for (const prop of globalThis.runtime.objects.props.instances())
 // 		{	
 // 			if (prop.uid == this.uid) {
 // 				continue;
 // 			}
 			
-// 			if (Util.distanceTo(this.x, this.y, prop.x, prop.y) < this.width * 0.7)
-// 			{
-// 				prop.destroy();
-// 			}
+// // 			if (Util.distanceTo(this.x, this.y, prop.x, prop.y) < this.width * 0.7)
+// // 			{
+// // 				prop.destroy();
+// // 			}
+
+// // 			if (this.testOverlap(prop))
+// // 			{
+// // 				prop.destroy();
+// // 			}
 // 		}
 // 	}
 }

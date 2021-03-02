@@ -420,9 +420,9 @@
 							"properties": {
 								"immovable": false,
 								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": true,
+								"prevent-rotation": false,
 								"density": 0.1,
-								"friction": 1,
+								"friction": 0,
 								"elasticity": 0,
 								"linear-damping": 0,
 								"angular-damping": 0.01,

@@ -1,6 +1,9 @@
-export default class PropHeavyCrateInstance extends ISpriteInstance
+import * as Utils from "./utils.js";
+import Prop from "./Prop.js";
+
+export default class PropHeavyCrateInstance extends Prop
 {
-	get type() { return 'dragable'; }
+	get traits() { return [super.TRAIT_DRAGABLE]; }
 
 	constructor()
 	{
@@ -17,8 +20,13 @@ export default class PropHeavyCrateInstance extends ISpriteInstance
 		this.behaviors.Physics.isEnabled = true;
 	}
 
-	static create(runtime, x, y)
+	static create(x, y)
 	{
-		runtime.objects.prop_heavycrate.createInstance("main", x, y);
+		globalThis.runtime.objects.prop_heavycrate.createInstance("main", x, y);
+	}
+	
+	applyGravity()
+	{
+		super.applyGravity(this.behaviors.Physics.mass, Utils.toRadians(90));
 	}
 }

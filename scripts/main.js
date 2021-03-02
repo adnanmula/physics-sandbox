@@ -8,6 +8,8 @@ import PropBlackHoleInstance from "./PropBlackHole.js";
 
 runOnStartup(async runtime =>
 {
+	globalThis.runtime = runtime;
+
 	runtime.objects.prop_crate.setInstanceClass(PropCrateInstance);
 	runtime.objects.prop_heavycrate.setInstanceClass(PropHeavyCrateInstance);
 	runtime.objects.prop_ball.setInstanceClass(PropBallInstance);
@@ -16,26 +18,40 @@ runOnStartup(async runtime =>
 	runtime.objects.prop_water_steam.setInstanceClass(PropWaterSteamInstance);
 	runtime.objects.prop_blackhole.setInstanceClass(PropBlackHoleInstance);
 
-	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
+	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart());
 });
 
-function OnBeforeProjectStart(runtime)
+function OnBeforeProjectStart()
 {
-	setInterval(() => ProcessBlackHoles(runtime), 100);
+	const runtime = globalThis.runtime;
 
-	//runtime.addEventListener("tick", () => Tick(runtime));
+	setInterval(() => ProcessBlackHoles(), 100);
+
+	runtime.addEventListener("tick", () => Tick(runtime));
 }
 
-// function Tick(runtime)
-// {
-// 	for (const blackHole of runtime.objects.prop_blackhole.instances())
-// 	{
-// 		blackHole.absorb(runtime);
-// 	}
-// }
-
-function ProcessBlackHoles(runtime)
+function Tick()
 {
+	if (runtime.dt == 0)
+	{
+		return;
+	}
+	
+	for (const instance of globalThis.runtime.objects.props.instances())
+	{
+		instance.applyGravity();
+	}
+
+// 	for (const blackHole of globalThis.runtime.objects.prop_blackhole.instances())
+// 	{
+// 		blackHole.absorb();
+// 	}
+}
+
+function ProcessBlackHoles()
+{
+	const runtime = globalThis.runtime;
+	
 	if (runtime.dt == 0)
 	{
 		return;

@@ -1,6 +1,9 @@
-export default class PropWaterInstance extends ISpriteInstance
+import * as Utils from "./utils.js";
+import Prop from "./Prop.js";
+
+export default class PropWaterInstance extends Prop
 {
-	get type() { return 'liquid'; }
+	get traits() { return [super.TRAIT_LIQUID]; }
 	
 	constructor()
 	{
@@ -17,8 +20,13 @@ export default class PropWaterInstance extends ISpriteInstance
 		this.behaviors.Physics.isEnabled = true;
 	}
 	
-	static create(runtime, x, y)
+	static create(x, y)
 	{
-		runtime.objects.prop_water.createInstance("main", x, y);
+		globalThis.runtime.objects.prop_water.createInstance("main", x, y);
+	}
+	
+	applyGravity()
+	{
+		super.applyGravity(this.behaviors.Physics.mass, Utils.toRadians(90));
 	}
 }
