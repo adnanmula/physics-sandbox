@@ -48,8 +48,32 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r238",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r238",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r238",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
 			"author": "Scirra",
 			"version": "r238",
 			"bundled": false
@@ -74,14 +98,6 @@
 			"type": "behavior",
 			"id": "destroy",
 			"name": "Destroy outside layout",
-			"author": "Scirra",
-			"version": "r238",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "DragnDrop",
-			"name": "Drag & Drop",
 			"author": "Scirra",
 			"version": "r238",
 			"bundled": false
@@ -126,9 +142,18 @@
 					"prop_wall",
 					"prop_water",
 					"prop_blackhole",
-					"prop_water_steam"
+					"prop_water_steam",
+					"prop_fire"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"particles_fire"
+						],
+						"subfolders": [],
+						"name": "particles"
+					}
+				],
 				"name": "props"
 			},
 			{
@@ -152,7 +177,15 @@
 		]
 	},
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"particles_fire",
+				"prop_fire"
+			],
+			"selectMode": "normal"
+		}
+	],
 	"families": {
 		"items": [
 			"props",
@@ -177,7 +210,8 @@
 			"ui",
 			"spawner",
 			"eraser",
-			"physics"
+			"physics",
+			"js"
 		],
 		"subfolders": []
 	},

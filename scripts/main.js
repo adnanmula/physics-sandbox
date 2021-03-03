@@ -25,8 +25,6 @@ function OnBeforeProjectStart()
 {
 	const runtime = globalThis.runtime;
 
-	setInterval(() => ProcessBlackHoles(), 100);
-
 	runtime.addEventListener("tick", () => Tick(runtime));
 }
 
@@ -39,26 +37,6 @@ function Tick()
 	
 	for (const instance of globalThis.runtime.objects.props.instances())
 	{
-		instance.applyGravity();
-	}
-
-// 	for (const blackHole of globalThis.runtime.objects.prop_blackhole.instances())
-// 	{
-// 		blackHole.absorb();
-// 	}
-}
-
-function ProcessBlackHoles()
-{
-	const runtime = globalThis.runtime;
-	
-	if (runtime.dt == 0)
-	{
-		return;
-	}
-	
-	for (const blackHole of runtime.objects.prop_blackhole.instances())
-	{
-		blackHole.pull(runtime);
+		instance.tick();
 	}
 }

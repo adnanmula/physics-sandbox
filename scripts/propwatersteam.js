@@ -1,4 +1,4 @@
-import * as Utils from "./utils.js";
+import * as Util from "./utils.js";
 import Prop from "./Prop.js";
 
 export default class PropWaterSteamInstance extends Prop
@@ -25,8 +25,8 @@ export default class PropWaterSteamInstance extends Prop
 		globalThis.runtime.objects.prop_water_steam.createInstance("main", x, y);
 	}
 	
-	applyGravity()
+	tick()
 	{
-		super.applyGravity(this.behaviors.Physics.mass, Utils.toRadians(270));
+		this.applyGravity(this.behaviors.Physics.mass / 4, Util.toRadians(270));
 	}
 }

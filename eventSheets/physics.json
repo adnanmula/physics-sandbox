@@ -19,6 +19,16 @@
 					"parameters": {
 						"gravity": "0"
 					}
+				},
+				{
+					"id": "enabledisable-collisions",
+					"objectClass": "prop_blackhole",
+					"sid": 700546341402756,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "props",
+						"state": "disable"
+					}
 				}
 			],
 			"sid": 116101154591891
@@ -42,7 +52,36 @@
 					"sid": 118397316411719
 				}
 			],
-			"sid": 149041964741120
+			"sid": 149041964741120,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "prop_fire",
+					"sid": 892334641594528
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "particles_fire",
+					"sid": 892432328024007,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "prop_fire",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"width-type": "no",
+						"height-type": "no",
+						"z": true
+					}
+				}
+			],
+			"sid": 439437084659681
 		}
 	],
 	"sid": 499630380292425

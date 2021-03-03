@@ -1,4 +1,3 @@
-import * as Utils from "./utils.js";
 import Prop from "./Prop.js";
 
 export default class PropCrateInstance extends Prop
@@ -23,10 +22,5 @@ export default class PropCrateInstance extends Prop
 	static create(x, y)
 	{
 		globalThis.runtime.objects.prop_crate.createInstance("main", x, y);
-	}
-	
-	applyGravity()
-	{
-		super.applyGravity(this.behaviors.Physics.mass, Utils.toRadians(90));
 	}
 }

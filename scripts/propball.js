@@ -24,9 +24,4 @@ export default class PropBallInstance extends Prop
 	{
 		globalThis.runtime.objects.prop_ball.createInstance("main", x, y);
 	}
-	
-	applyGravity()
-	{
-		super.applyGravity(this.behaviors.Physics.mass, Utils.toRadians(90));
-	}
 }

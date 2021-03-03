@@ -23,9 +23,4 @@ export default class PropWallInstance extends Prop
 	{
 		globalThis.runtime.objects.prop_wall.createInstance("main", x, y);
 	}
-	
-	applyGravity()
-	{
-		return;
-	}
 }

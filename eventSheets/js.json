@@ -1,0 +1,27 @@
+{
+	"name": "js",
+	"events": [
+		{
+			"functionName": "tickCount",
+			"functionDescription": "Returns current tick count.",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 353889302670538,
+					"parameters": {
+						"value": "tickcount"
+					}
+				}
+			],
+			"sid": 163601778192184
+		}
+	],
+	"sid": 877668586331215
+}
