@@ -1,0 +1,24 @@
+{
+	"name": "prop_voluble",
+	"plugin-id": "Sprite",
+	"sid": 404393334351857,
+	"instanceVariables": [
+		{
+			"name": "lifespan",
+			"type": "number",
+			"desc": "",
+			"sid": 721249506851369
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 453573919315453
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"prop_fire"
+	]
+}

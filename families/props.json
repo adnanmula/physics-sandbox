@@ -23,6 +23,7 @@
 		"prop_wall",
 		"prop_water",
 		"prop_blackhole",
-		"prop_water_steam"
+		"prop_water_steam",
+		"prop_fire"
 	]
 }

@@ -29,31 +29,19 @@
 						"object": "props",
 						"state": "disable"
 					}
-				}
-			],
-			"sid": 116101154591891
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+				},
 				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "props",
-					"sid": 747358963836662,
+					"id": "enabledisable-collisions",
+					"objectClass": "prop_fire",
+					"sid": 709841157106083,
+					"behaviorType": "Physics",
 					"parameters": {
-						"object": "prop_blackhole"
+						"object": "props",
+						"state": "disable"
 					}
 				}
 			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "props",
-					"sid": 118397316411719
-				}
-			],
-			"sid": 149041964741120,
-			"disabled": true
+			"sid": 116101154591891
 		},
 		{
 			"eventType": "block",
@@ -82,6 +70,52 @@
 				}
 			],
 			"sid": 439437084659681
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "prop_voluble",
+					"sid": 899656845539088
+				}
+			],
+			"actions": [
+				{
+					"id": "start-timer",
+					"objectClass": "prop_voluble",
+					"sid": 661706863276478,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "Self.lifespan",
+						"type": "once",
+						"tag": "\"lifespan\""
+					}
+				}
+			],
+			"sid": 204467613554762
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "prop_voluble",
+					"sid": 233954169475881,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"lifespan\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "prop_voluble",
+					"sid": 939448903702571
+				}
+			],
+			"sid": 408801732799438
 		}
 	],
 	"sid": 499630380292425

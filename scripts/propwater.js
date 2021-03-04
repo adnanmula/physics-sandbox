@@ -1,8 +1,11 @@
 import Prop from "./Prop.js";
 
-export default class PropWaterInstance extends Prop
+export default class PropWater extends Prop
 {
-	get traits() { return [super.TRAIT_LIQUID]; }
+	get traits()
+	{
+		return [super.TRAIT_LIQUID];
+	}
 	
 	constructor()
 	{

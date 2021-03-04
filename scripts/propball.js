@@ -1,9 +1,12 @@
 import * as Utils from "./utils.js";
 import Prop from "./Prop.js";
 
-export default class PropBallInstance extends Prop
+export default class PropBall extends Prop
 {
-	get traits() { return [super.TRAIT_DRAGABLE]; }
+	get traits()
+	{
+		return [super.TRAIT_DRAGGABLE];
+	}
 
 	constructor()
 	{

@@ -72,14 +72,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "DragnDrop",
-			"name": "Drag & Drop",
-			"author": "Scirra",
-			"version": "r238",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
@@ -104,8 +96,24 @@
 		},
 		{
 			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
+			"author": "Scirra",
+			"version": "r238",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Anchor",
 			"name": "Anchor",
+			"author": "Scirra",
+			"version": "r238",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
 			"author": "Scirra",
 			"version": "r238",
 			"bundled": false
@@ -193,8 +201,9 @@
 			"prop_dragable",
 			"toolbar_item",
 			"prop_liquid",
-			"prop_steam",
-			"prop_solid"
+			"prop_gas",
+			"prop_solid",
+			"prop_voluble"
 		],
 		"subfolders": []
 	},
@@ -314,6 +323,14 @@
 							"name": "Prop.js",
 							"type": "application/javascript",
 							"sid": 272906487330361,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropFire.js",
+							"type": "application/javascript",
+							"sid": 913280091019354,
 							"script-info": {
 								"purpose": "none"
 							}

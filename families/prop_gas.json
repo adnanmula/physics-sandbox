@@ -1,11 +1,12 @@
 {
-	"name": "prop_steam",
+	"name": "prop_gas",
 	"plugin-id": "Sprite",
 	"sid": 746834961259807,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"prop_water_steam"
+		"prop_water_steam",
+		"prop_fire"
 	]
 }

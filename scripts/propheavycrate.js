@@ -1,9 +1,12 @@
 import Prop from "./Prop.js";
 
-export default class PropHeavyCrateInstance extends Prop
+export default class PropHeavyCrate extends Prop
 {
-	get traits() { return [super.TRAIT_DRAGABLE]; }
-
+	get traits()
+	{
+		return [super.TRAIT_DRAGGABLE];
+	}
+	
 	constructor()
 	{
 		super();
