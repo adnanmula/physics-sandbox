@@ -33,11 +33,10 @@
 				{
 					"id": "enabledisable-collisions",
 					"objectClass": "prop_fire",
-					"sid": 709841157106083,
-					"disabled": true,
+					"sid": 627672781698362,
 					"behaviorType": "Physics",
 					"parameters": {
-						"object": "props",
+						"object": "prop_gas",
 						"state": "disable"
 					}
 				}
@@ -197,6 +196,17 @@
 							"id": "destroy",
 							"objectClass": "prop_fire",
 							"sid": 599740231091177
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "prop_crate",
+							"sid": 315954585021414,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Self.burning_time",
+								"type": "once",
+								"tag": "\"burning_time\""
+							}
 						}
 					],
 					"sid": 606857579135062
@@ -232,6 +242,15 @@
 							}
 						},
 						{
+							"id": "stop-timer",
+							"objectClass": "prop_crate",
+							"sid": 219921001968969,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"burning_time\""
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "prop_water",
 							"sid": 941210010559039
@@ -253,6 +272,40 @@
 				}
 			],
 			"sid": 241845656432357
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "prop_flammable_solid",
+					"sid": 291031053134836,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"burning_time\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "prop_flammable_solid",
+					"sid": 897440432302622,
+					"parameters": {
+						"animation": "\"burned\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "prop_flammable_solid",
+					"sid": 879817795437597,
+					"parameters": {
+						"frame-number": "floor(random(0,3))"
+					}
+				}
+			],
+			"sid": 174085345251272
 		}
 	],
 	"sid": 499630380292425
