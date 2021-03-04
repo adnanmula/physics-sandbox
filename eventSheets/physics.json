@@ -34,6 +34,7 @@
 					"id": "enabledisable-collisions",
 					"objectClass": "prop_fire",
 					"sid": 709841157106083,
+					"disabled": true,
 					"behaviorType": "Physics",
 					"parameters": {
 						"object": "props",
@@ -76,14 +77,14 @@
 			"conditions": [
 				{
 					"id": "on-created",
-					"objectClass": "prop_voluble",
+					"objectClass": "prop_limited_lifespan",
 					"sid": 899656845539088
 				}
 			],
 			"actions": [
 				{
 					"id": "start-timer",
-					"objectClass": "prop_voluble",
+					"objectClass": "prop_limited_lifespan",
 					"sid": 661706863276478,
 					"behaviorType": "Timer",
 					"parameters": {
@@ -100,7 +101,7 @@
 			"conditions": [
 				{
 					"id": "on-timer",
-					"objectClass": "prop_voluble",
+					"objectClass": "prop_limited_lifespan",
 					"sid": 233954169475881,
 					"behaviorType": "Timer",
 					"parameters": {
@@ -111,11 +112,147 @@
 			"actions": [
 				{
 					"id": "destroy",
-					"objectClass": "prop_voluble",
+					"objectClass": "prop_limited_lifespan",
 					"sid": 939448903702571
 				}
 			],
 			"sid": 408801732799438
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Fire",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_fire",
+							"sid": 551648228595266,
+							"parameters": {
+								"object": "prop_water"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 518514708042336,
+							"parameters": {
+								"object-to-create": "prop_water_steam",
+								"layer": "\"main\"",
+								"x": "prop_fire.X",
+								"y": "prop_fire.Y",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "prop_fire",
+							"sid": 840248461523554
+						},
+						{
+							"id": "destroy",
+							"objectClass": "prop_water",
+							"sid": 490644031479350
+						}
+					],
+					"sid": 375406768400533
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_fire",
+							"sid": 649632286168409,
+							"parameters": {
+								"object": "prop_crate"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "prop_crate",
+							"sid": 494503347254589,
+							"parameters": {
+								"animation": "\"default\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "prop_crate",
+							"sid": 612849958418109,
+							"parameters": {
+								"animation": "\"burning\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "prop_fire",
+							"sid": 599740231091177
+						}
+					],
+					"sid": 606857579135062
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_water",
+							"sid": 473322269706092,
+							"parameters": {
+								"object": "prop_crate"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "prop_crate",
+							"sid": 871434689450898,
+							"parameters": {
+								"animation": "\"burning\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "prop_crate",
+							"sid": 591871649806182,
+							"parameters": {
+								"animation": "\"default\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "prop_water",
+							"sid": 941210010559039
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 852929025892001,
+							"parameters": {
+								"object-to-create": "prop_water_steam",
+								"layer": "\"main\"",
+								"x": "prop_crate.X",
+								"y": "prop_crate.Y",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 975992576076370
+				}
+			],
+			"sid": 241845656432357
 		}
 	],
 	"sid": 499630380292425

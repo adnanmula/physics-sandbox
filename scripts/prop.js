@@ -6,7 +6,7 @@ export default class Prop extends ISpriteInstance
 	get TRAIT_LIQUID() { return 'liquid'; }
 	get TRAIT_GAS() { return 'gas'; }
 	get TRAIT_FLAMABLE() { return 'flamable'; }
-	get TRAIT_VOLUBLE() { return 'voluble'; }
+	get TRAIT_LIMITED_LIFESPAN() { return 'limited-lifespan'; }
 
 	tick()
 	{

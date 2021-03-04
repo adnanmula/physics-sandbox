@@ -237,6 +237,38 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 322652276902671,
+									"parameters": {
+										"first-value": "prop_gas.PickedCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 861824013324770,
+									"parameters": {
+										"object": "prop_gas",
+										"expression": "distance(Touch.X, Touch.Y, prop_gas.X, prop_gas.Y) < 100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "prop_gas",
+									"sid": 348791142666855
+								}
+							],
+							"sid": 830073661519677
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "else",
 									"objectClass": "System",
 									"sid": 896914600825124

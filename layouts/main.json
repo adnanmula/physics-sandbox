@@ -96,7 +96,7 @@
 					"type": "prop_crate",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Default",
+						"initial-animation": "default",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -379,10 +379,10 @@
 						}
 					},
 					"world": {
-						"x": -1025.2640035428533,
-						"y": -1215.153730277119,
-						"width": 91.90629011773856,
-						"height": 91.90629011773856,
+						"x": -1049.78055658115,
+						"y": -1190.6371772388222,
+						"width": 42.873184041145045,
+						"height": 42.873184041145045,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -520,24 +520,24 @@
 						"acceleration": -150,
 						"gravity": 0,
 						"angle-randomiser": 0,
-						"life-speed-randomiser": 800,
+						"life-speed-randomiser": 200,
 						"opacity-randomiser": 0,
 						"destroy-mode": "fade-to-invisible",
-						"timeout": 1
+						"timeout": 0.4
 					},
 					"uid": 29,
 					"instanceVariables": {},
 					"behaviors": {
 						"Pin": {
 							"properties": {
-								"destroy": false
+								"destroy": true
 							}
 						}
 					},
 					"world": {
 						"x": -956.8889058430991,
 						"y": -954.2222137451167,
-						"width": 100,
+						"width": 51.13199797709202,
 						"height": 100,
 						"originX": 0,
 						"originY": 0.5,

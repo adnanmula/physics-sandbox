@@ -203,7 +203,7 @@
 			"prop_liquid",
 			"prop_gas",
 			"prop_solid",
-			"prop_voluble"
+			"prop_limited_lifespan"
 		],
 		"subfolders": []
 	},
