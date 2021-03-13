@@ -138,7 +138,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Fire",
+			"title": "Fire and burning",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -258,10 +258,10 @@
 						{
 							"id": "start-timer",
 							"objectClass": "prop_flammable_solid",
-							"sid": 765952927977960,
+							"sid": 707331598075788,
 							"behaviorType": "Timer",
 							"parameters": {
-								"duration": "Self.burning_time",
+								"duration": "Self.consuming_time",
 								"type": "once",
 								"tag": "\"consuming_time\""
 							}
@@ -395,6 +395,245 @@
 						}
 					],
 					"sid": 845313994466747
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_flammable_solid",
+							"sid": 346062128392140,
+							"parameters": {
+								"object": "prop_flammable_solid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 965991475552010,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "instance_0_animation",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 938903924904455
+						},
+						{
+							"eventType": "variable",
+							"name": "instance_0_uid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 604934346457931
+						},
+						{
+							"eventType": "variable",
+							"name": "instance_1_animation",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 286720755887051
+						},
+						{
+							"eventType": "variable",
+							"name": "instance_1_uid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 183585849656261
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-nth-instance",
+									"objectClass": "System",
+									"sid": 283901311024459,
+									"parameters": {
+										"object": "prop_flammable_solid",
+										"instance": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 604689949087526,
+									"parameters": {
+										"variable": "instance_0_animation",
+										"value": "prop_flammable_solid.AnimationName"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 879377629505432,
+									"parameters": {
+										"variable": "instance_0_uid",
+										"value": "prop_flammable_solid.UID"
+									}
+								}
+							],
+							"sid": 885556452235019
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-nth-instance",
+									"objectClass": "System",
+									"sid": 166511312931734,
+									"parameters": {
+										"object": "prop_flammable_solid",
+										"instance": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 581325349837090,
+									"parameters": {
+										"variable": "instance_1_animation",
+										"value": "prop_flammable_solid.AnimationName"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 302741831183620,
+									"parameters": {
+										"variable": "instance_1_uid",
+										"value": "prop_flammable_solid.UID"
+									}
+								}
+							],
+							"sid": 995841886671965
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 429235465579626,
+									"parameters": {
+										"first-value": "instance_0_animation",
+										"comparison": 0,
+										"second-value": "\"burning\""
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 559722645263641,
+									"parameters": {
+										"first-value": "instance_1_animation",
+										"comparison": 0,
+										"second-value": "\"default\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 196052007775720,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "prop_flammable_solid",
+											"sid": 831959440601493,
+											"parameters": {
+												"unique-id": "instance_1_uid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "prop_flammable_solid",
+											"sid": 610023962398658,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "Self.propagation_time",
+												"type": "once",
+												"tag": "\"propagation_time\""
+											}
+										}
+									],
+									"sid": 129595178288634
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 911238686686565,
+									"parameters": {
+										"first-value": "instance_1_animation",
+										"comparison": 0,
+										"second-value": "\"burning\""
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 930420332215451,
+									"parameters": {
+										"first-value": "instance_0_animation",
+										"comparison": 0,
+										"second-value": "\"default\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 174152032265982,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "prop_flammable_solid",
+											"sid": 871271671378751,
+											"parameters": {
+												"unique-id": "instance_0_uid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "prop_flammable_solid",
+											"sid": 819679157431278,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "Self.propagation_time",
+												"type": "once",
+												"tag": "\"propagation_time\""
+											}
+										}
+									],
+									"sid": 406347562465019
+								}
+							]
+						}
+					]
 				}
 			],
 			"sid": 241845656432357
@@ -462,6 +701,43 @@
 				}
 			],
 			"sid": 445009623436752
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "prop_flammable_solid",
+					"sid": 974414410955339,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"propagation_time\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "prop_flammable_solid",
+					"sid": 746840906972926,
+					"parameters": {
+						"animation": "\"burning\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "prop_flammable_solid",
+					"sid": 749334185883219,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "Self.burning_time",
+						"type": "once",
+						"tag": "\"burning_time\""
+					}
+				}
+			],
+			"sid": 920921218881465
 		}
 	],
 	"sid": 499630380292425

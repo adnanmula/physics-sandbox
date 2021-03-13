@@ -103,7 +103,9 @@
 					},
 					"uid": 1,
 					"instanceVariables": {
-						"burning_time": 3
+						"burning_time": 3,
+						"consuming_time": 1,
+						"propagation_time": 0.2
 					},
 					"behaviors": {
 						"DestroyOutsideLayout": {

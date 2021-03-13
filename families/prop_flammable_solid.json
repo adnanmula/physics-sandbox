@@ -8,6 +8,18 @@
 			"type": "number",
 			"desc": "",
 			"sid": 577769872873085
+		},
+		{
+			"name": "consuming_time",
+			"type": "number",
+			"desc": "",
+			"sid": 305593775738942
+		},
+		{
+			"name": "propagation_time",
+			"type": "number",
+			"desc": "",
+			"sid": 806002585935185
 		}
 	],
 	"behaviorTypes": [
