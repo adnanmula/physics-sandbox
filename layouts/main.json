@@ -181,12 +181,17 @@
 								"enabled": true,
 								"tags": ""
 							}
+						},
+						"ScrollTo": {
+							"properties": {
+								"enabled": true
+							}
 						}
 					},
 					"world": {
-						"x": 1501.5,
-						"y": 1361,
-						"width": 3964,
+						"x": 1999,
+						"y": 2262,
+						"width": 4270.9969960248645,
 						"height": 101,
 						"originX": 0.5,
 						"originY": 0.6,
@@ -196,7 +201,7 @@
 							1,
 							1
 						],
-						"angle": 0,
+						"angle": 6.283178272127439,
 						"zElevation": 0
 					}
 				},
@@ -1199,8 +1204,8 @@
 	"sid": 102319988278545,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 3000,
-	"height": 1300,
+	"width": 4000,
+	"height": 2200,
 	"unboundedScrolling": false,
 	"eventSheet": "main"
 }

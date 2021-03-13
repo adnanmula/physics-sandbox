@@ -805,7 +805,7 @@
 				{
 					"id": "set-position",
 					"objectClass": "ui_text",
-					"sid": 357438047139715,
+					"sid": 126881933814791,
 					"parameters": {
 						"x": "toolbar_item.X - toolbar_item.Width / 4",
 						"y": "toolbar_item.Y + 35"
