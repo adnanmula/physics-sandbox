@@ -234,6 +234,30 @@
 							}
 						],
 						"duration": 1
+					},
+					{
+						"width": 45,
+						"height": 45,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9502106,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "right",
+								"x": 0.8181818181818182,
+								"y": 0.9090909090909091
+							},
+							{
+								"name": "left",
+								"x": 0.18181818181818182,
+								"y": 0.9090909090909091
+							}
+						],
+						"duration": 1
 					}
 				],
 				"sid": 693914692534923,

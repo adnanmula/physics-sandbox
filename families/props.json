@@ -24,6 +24,7 @@
 		"prop_water",
 		"prop_blackhole",
 		"prop_water_steam",
-		"prop_fire"
+		"prop_fire",
+		"prop_tnt"
 	]
 }

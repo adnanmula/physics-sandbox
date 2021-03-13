@@ -4,7 +4,10 @@ export default class PropCrate extends Prop
 {
 	get traits()
 	{
-		return [super.TRAIT_DRAGGABLE];
+		return [
+			super.TRAIT_DRAGGABLE,
+			super.TRAIT_FLAMMABLE_SOLID
+		];
 	}
 	
 	constructor()

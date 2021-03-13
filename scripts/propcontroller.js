@@ -6,6 +6,7 @@ import PropWater from "./PropWater.js";
 import PropWaterSteam from "./PropWaterSteam.js";
 import PropFire from "./PropFire.js";
 import PropBlackHole from "./PropBlackHole.js";
+import PropTnt from "./PropTnt.js";
 
 export default class PropController
 {
@@ -19,9 +20,15 @@ export default class PropController
 			PropWater,
 			PropBlackHole,
 			PropWaterSteam,
-			PropFire
+			PropFire,
+			PropTnt
 		];
 	
 		props[propId].create(x, y)
+	}
+	
+	static find(uid)
+	{
+		return globalThis.runtime.getInstanceByUid(uid);
 	}
 }

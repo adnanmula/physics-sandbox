@@ -167,7 +167,8 @@
 					"prop_water",
 					"prop_blackhole",
 					"prop_water_steam",
-					"prop_fire"
+					"prop_fire",
+					"prop_tnt"
 				],
 				"subfolders": [
 					{
@@ -221,7 +222,8 @@
 			"prop_gas",
 			"prop_solid",
 			"prop_limited_lifespan",
-			"prop_flammable_solid"
+			"prop_flammable_solid",
+			"prop_explosive"
 		],
 		"subfolders": []
 	},
@@ -349,6 +351,14 @@
 							"name": "PropFire.js",
 							"type": "application/javascript",
 							"sid": 913280091019354,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropTnt.js",
+							"type": "application/javascript",
+							"sid": 234986223865570,
 							"script-info": {
 								"purpose": "none"
 							}

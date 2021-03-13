@@ -48,80 +48,6 @@
 			"conditions": [
 				{
 					"id": "on-created",
-					"objectClass": "prop_fire",
-					"sid": 892334641594528
-				}
-			],
-			"actions": [
-				{
-					"id": "pin-to-object-properties",
-					"objectClass": "particles_fire",
-					"sid": 892432328024007,
-					"behaviorType": "Pin",
-					"parameters": {
-						"pin-to": "prop_fire",
-						"x": true,
-						"y": true,
-						"angle": false,
-						"width-type": "no",
-						"height-type": "no",
-						"z": true
-					}
-				}
-			],
-			"sid": 439437084659681
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-created",
-					"objectClass": "prop_limited_lifespan",
-					"sid": 899656845539088
-				}
-			],
-			"actions": [
-				{
-					"id": "start-timer",
-					"objectClass": "prop_limited_lifespan",
-					"sid": 661706863276478,
-					"behaviorType": "Timer",
-					"parameters": {
-						"duration": "Self.lifespan",
-						"type": "once",
-						"tag": "\"lifespan\""
-					}
-				}
-			],
-			"sid": 204467613554762
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "prop_limited_lifespan",
-					"sid": 233954169475881,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "\"lifespan\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "prop_limited_lifespan",
-					"sid": 939448903702571
-				}
-			],
-			"sid": 408801732799438
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-created",
 					"objectClass": "prop_blackhole",
 					"sid": 363285568741294
 				}
@@ -136,9 +62,37 @@
 			"sid": 867870574009879
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "prop_fire",
+					"sid": 198166419970972
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "particles_fire",
+					"sid": 884472619703132,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "prop_fire",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"width-type": "no",
+						"height-type": "no",
+						"z": true
+					}
+				}
+			],
+			"sid": 374687865821971
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Fire and burning",
+			"title": "Flammable solid",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -634,110 +588,243 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "prop_flammable_solid",
+							"sid": 904685693776171,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"burning_time\""
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "prop_flammable_solid",
+							"sid": 507817416302428,
+							"parameters": {
+								"animation": "\"burning\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "prop_flammable_solid",
+							"sid": 579412501953270,
+							"parameters": {
+								"animation": "\"burned\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "prop_flammable_solid",
+							"sid": 879021025477852,
+							"parameters": {
+								"frame-number": "floor(random(0,3))"
+							}
+						}
+					],
+					"sid": 992930831788850
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "prop_flammable_solid",
+							"sid": 582588485658353,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"consuming_time\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "prop_flammable_solid",
+							"sid": 772875415115220
+						}
+					],
+					"sid": 471980814792697
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "prop_flammable_solid",
+							"sid": 816724841343991,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"propagation_time\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "prop_flammable_solid",
+							"sid": 896207184386368,
+							"parameters": {
+								"animation": "\"burning\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "prop_flammable_solid",
+							"sid": 557962229538060,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Self.burning_time",
+								"type": "once",
+								"tag": "\"burning_time\""
+							}
+						}
+					],
+					"sid": 865884168119338
 				}
 			],
 			"sid": 241845656432357
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Explosives",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-timer",
-					"objectClass": "prop_flammable_solid",
-					"sid": 291031053134836,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "\"burning_time\""
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_fire",
+							"sid": 427759220055766,
+							"parameters": {
+								"object": "prop_explosive"
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "prop_explosive",
+							"sid": 983258493031541,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"detonating_time\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "prop_explosive",
+							"sid": 150647333948552,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Self.detonation_time",
+								"type": "once",
+								"tag": "\"detonating_time\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "prop_explosive",
+							"sid": 771226516902756,
+							"parameters": {
+								"animation": "\"detonating\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 952296541405096
 				},
 				{
-					"id": "is-animation-playing",
-					"objectClass": "prop_flammable_solid",
-					"sid": 775879309792878,
-					"parameters": {
-						"animation": "\"burning\""
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "prop_explosive",
+							"sid": 894792861717998,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"detonating_time\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "const explosive = runtime.objects.prop_explosive.getFirstPickedInstance();\nexplosive.explode();"
+						}
+					],
+					"sid": 259640703826684
 				}
 			],
-			"actions": [
-				{
-					"id": "set-animation",
-					"objectClass": "prop_flammable_solid",
-					"sid": 897440432302622,
-					"parameters": {
-						"animation": "\"burned\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-animation-frame",
-					"objectClass": "prop_flammable_solid",
-					"sid": 879817795437597,
-					"parameters": {
-						"frame-number": "floor(random(0,3))"
-					}
-				}
-			],
-			"sid": 174085345251272
+			"sid": 647878788354602
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Limited lifespan",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-timer",
-					"objectClass": "prop_flammable_solid",
-					"sid": 972447153588516,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "\"consuming_time\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "prop_flammable_solid",
-					"sid": 258115516674278
-				}
-			],
-			"sid": 445009623436752
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "prop_flammable_solid",
-					"sid": 974414410955339,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "\"propagation_time\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation",
-					"objectClass": "prop_flammable_solid",
-					"sid": 746840906972926,
-					"parameters": {
-						"animation": "\"burning\"",
-						"from": "beginning"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "prop_limited_lifespan",
+							"sid": 162483116266601
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "prop_limited_lifespan",
+							"sid": 513568398220712,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Self.lifespan",
+								"type": "once",
+								"tag": "\"lifespan\""
+							}
+						}
+					],
+					"sid": 268347992908926
 				},
 				{
-					"id": "start-timer",
-					"objectClass": "prop_flammable_solid",
-					"sid": 749334185883219,
-					"behaviorType": "Timer",
-					"parameters": {
-						"duration": "Self.burning_time",
-						"type": "once",
-						"tag": "\"burning_time\""
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "prop_limited_lifespan",
+							"sid": 596594207626919,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"lifespan\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "prop_limited_lifespan",
+							"sid": 803008164315474
+						}
+					],
+					"sid": 166838670935022
 				}
 			],
-			"sid": 920921218881465
+			"sid": 645974069911592
 		}
 	],
 	"sid": 499630380292425

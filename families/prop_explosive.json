@@ -1,0 +1,24 @@
+{
+	"name": "prop_explosive",
+	"plugin-id": "Sprite",
+	"sid": 559745917326010,
+	"instanceVariables": [
+		{
+			"name": "detonation_time",
+			"type": "number",
+			"desc": "",
+			"sid": 292577488833338
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 944193821724248
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"prop_tnt"
+	]
+}

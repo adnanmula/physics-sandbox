@@ -676,21 +676,6 @@
 				}
 			],
 			"sid": 999834133817755
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "mouse-button-is-down",
-					"objectClass": "Mouse",
-					"sid": 855752251583956,
-					"parameters": {
-						"mouse-button": "middle"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 373817409093311
 		}
 	],
 	"sid": 465004340330817
