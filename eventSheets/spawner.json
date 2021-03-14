@@ -262,6 +262,62 @@
 				}
 			],
 			"sid": 535457105402774
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "prop_blackhole",
+					"sid": 363285568741294
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-bottom",
+					"objectClass": "prop_blackhole",
+					"sid": 752044742301876
+				}
+			],
+			"sid": 867870574009879
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "prop_fire",
+					"sid": 198166419970972
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "particles_fire",
+					"sid": 884472619703132,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "prop_fire",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"width-type": "no",
+						"height-type": "no",
+						"z": true
+					}
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "prop_fire",
+					"sid": 248565706271367
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "particles_fire",
+					"sid": 413866782763166
+				}
+			],
+			"sid": 374687865821971
 		}
 	],
 	"sid": 100142716717916
