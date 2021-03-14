@@ -3,7 +3,8 @@ import Prop from "./Prop.js";
 
 export default class PropTnt extends Prop
 {
-	get EXPLOSION_RADIUS() { return 300 };
+	get EXPLOSION_GENERAL_RADIUS() { return 500 };
+	get EXPLOSION_BURN_RADIUS() { return 400 };
 	get EXPLOSION_FORCE() { return 250 };
 
 	get traits()
@@ -27,6 +28,8 @@ export default class PropTnt extends Prop
  		this.behaviors.Physics.isBullet = false;
  		this.behaviors.Physics.isPreventRotation = false;
  		this.behaviors.Physics.isEnabled = true;
+		
+		this.instVars.detonation_time = 3;
 	}
 
 	static create(x, y)
@@ -34,7 +37,24 @@ export default class PropTnt extends Prop
 		globalThis.runtime.objects.prop_tnt.createInstance("main", x, y);
 	}
 	
-	explode()
+	isLitFuse()
+	{
+		return this.animationName === 'detonating';
+	}
+	
+	lightFuse()
+	{
+		if (true === this.isLitFuse())
+		{
+			return;
+		}
+	
+		this.setAnimation('detonating', 'beginning');
+	
+		setTimeout(function(self) { self.detonate(); }, this.instVars.detonation_time * 1000, this);
+	}
+	
+	detonate()
 	{
 		const runtime = globalThis.runtime;
 		
@@ -44,8 +64,15 @@ export default class PropTnt extends Prop
 				continue;
 			}
 		
-			if (Util.distanceTo(this.x, this.y, prop.x, prop.y) < this.EXPLOSION_RADIUS)
+			const distance = Util.distanceTo(this.x, this.y, prop.x, prop.y);
+		
+			if (distance < this.EXPLOSION_GENERAL_RADIUS)
 			{
+				if (prop.traits.includes(super.TRAIT_FLAMMABLE_SOLID) && distance < this.EXPLOSION_BURN_RADIUS)
+				{
+					prop.setOnFire();
+				}
+			
 				let force = prop.behaviors.Physics.mass * this.EXPLOSION_FORCE;
 				let angle =  Math.atan2(prop.y - this.y, prop.x - this.x);
 	

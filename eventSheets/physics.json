@@ -664,62 +664,15 @@
 							"parameters": {
 								"object": "prop_explosive"
 							}
-						},
-						{
-							"id": "is-timer-running",
-							"objectClass": "prop_explosive",
-							"sid": 983258493031541,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"detonating_time\""
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "start-timer",
-							"objectClass": "prop_explosive",
-							"sid": 150647333948552,
-							"behaviorType": "Timer",
-							"parameters": {
-								"duration": "Self.detonation_time",
-								"type": "once",
-								"tag": "\"detonating_time\""
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "prop_explosive",
-							"sid": 771226516902756,
-							"parameters": {
-								"animation": "\"detonating\"",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 952296541405096
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-timer",
-							"objectClass": "prop_explosive",
-							"sid": 894792861717998,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"detonating_time\""
-							}
 						}
 					],
 					"actions": [
 						{
 							"type": "script",
-							"script": "const explosive = runtime.objects.prop_explosive.getFirstPickedInstance();\nexplosive.explode();"
+							"script": "const explosive = runtime.objects.prop_explosive.getFirstPickedInstance();\nexplosive.lightFuse();"
 						}
 					],
-					"sid": 259640703826684
+					"sid": 952296541405096
 				}
 			],
 			"sid": 647878788354602

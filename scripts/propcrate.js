@@ -23,10 +23,37 @@ export default class PropCrate extends Prop
  		this.behaviors.Physics.isBullet = false;
  		this.behaviors.Physics.isPreventRotation = false;
  		this.behaviors.Physics.isEnabled = true;
+		
+		this.instVars.burning_time = 3;
+		this.instVars.consuming_time = 1;
+		this.instVars.propagation_time = 0.2;
 	}
 
 	static create(x, y)
 	{
 		globalThis.runtime.objects.prop_crate.createInstance("main", x, y);
+	}
+	
+	isBurning()
+	{
+		return ['burning', 'burned', 'consuming'].includes(this.animationName);
+	}
+	
+	setOnFire()
+	{
+		if (true === this.isBurning())
+		{
+			return;
+		}
+	
+ 		this.setAnimation('burning', 'beginning');
+		
+		setTimeout(function(self) { self.burn(); }, this.instVars.burning_time * 1000, this);
+	}
+	
+	burn()
+	{
+		this.setAnimation('burned', 'beginning');
+		this.animationFrame = Math.floor(Math.random() * 3);
 	}
 }
