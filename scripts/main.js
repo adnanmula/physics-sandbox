@@ -27,9 +27,7 @@ runOnStartup(async runtime =>
 
 function OnBeforeProjectStart()
 {
-	const runtime = globalThis.runtime;
-
-	runtime.addEventListener("tick", () => Tick(runtime));
+	runtime.addEventListener("tick", () => Tick());
 }
 
 function Tick()

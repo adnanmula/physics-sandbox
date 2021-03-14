@@ -4,7 +4,7 @@ import Prop from "./Prop.js";
 export default class PropTnt extends Prop
 {
 	get EXPLOSION_RADIUS() { return 300 };
-	get EXPLOSION_FORCE() { return 300 };
+	get EXPLOSION_FORCE() { return 250 };
 
 	get traits()
 	{

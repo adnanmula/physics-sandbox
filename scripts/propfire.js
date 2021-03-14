@@ -23,7 +23,7 @@ export default class PropFire extends Prop
 		this.behaviors.Physics.isEnabled = true;
 		
 		this.isVisible = false;
-		this.instVars.lifespan = 10;
+		this.instVars.lifespan = 7;
 	}
 	
 	static create(x, y)

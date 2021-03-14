@@ -461,6 +461,58 @@
 					}
 				},
 				{
+					"type": "particles_fire",
+					"properties": {
+						"rate": 50,
+						"spray-cone": 0,
+						"type": "continuous-spray",
+						"object": -1,
+						"live-preview": true,
+						"speed": 10,
+						"size": 20,
+						"opacity": 100,
+						"grow-rate": 10,
+						"x-randomiser": 50,
+						"y-randomiser": 0,
+						"initial-speed-randomiser": 150,
+						"size-randomiser": 0,
+						"grow-rate-randomiser": 50,
+						"acceleration": 200,
+						"gravity": 0,
+						"angle-randomiser": 5,
+						"life-speed-randomiser": 0,
+						"opacity-randomiser": 0,
+						"destroy-mode": "fade-to-invisible",
+						"timeout": 1
+					},
+					"uid": 33,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						}
+					},
+					"world": {
+						"x": -946.9608630101062,
+						"y": -942.7056317038034,
+						"width": 51.13199797709202,
+						"height": 100,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.723213123086168,
+						"zElevation": 0,
+						"blendMode": "additive"
+					}
+				},
+				{
 					"type": "prop_fire",
 					"properties": {
 						"initially-visible": true,
@@ -469,7 +521,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 27,
+					"uid": 34,
 					"instanceVariables": {
 						"lifespan": 1
 					},
@@ -496,10 +548,10 @@
 						}
 					},
 					"world": {
-						"x": -956.2222137451172,
-						"y": -950.2777862548829,
-						"width": 31.11109415690045,
-						"height": 23.11109415690055,
+						"x": -947.4855389606968,
+						"y": -942.1367227794135,
+						"width": 43.81897153145111,
+						"height": 30.65640089274848,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -509,57 +561,6 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "particles_fire",
-					"properties": {
-						"rate": 50,
-						"spray-cone": 60,
-						"type": "continuous-spray",
-						"object": -1,
-						"live-preview": false,
-						"speed": 200,
-						"size": 32,
-						"opacity": 100,
-						"grow-rate": 0,
-						"x-randomiser": 0,
-						"y-randomiser": 0,
-						"initial-speed-randomiser": 0,
-						"size-randomiser": 0,
-						"grow-rate-randomiser": 0,
-						"acceleration": -150,
-						"gravity": 0,
-						"angle-randomiser": 0,
-						"life-speed-randomiser": 200,
-						"opacity-randomiser": 0,
-						"destroy-mode": "fade-to-invisible",
-						"timeout": 0.4
-					},
-					"uid": 29,
-					"instanceVariables": {},
-					"behaviors": {
-						"Pin": {
-							"properties": {
-								"destroy": true
-							}
-						}
-					},
-					"world": {
-						"x": -956.8889058430991,
-						"y": -954.2222137451167,
-						"width": 51.13199797709202,
-						"height": 100,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.723213123086168,
 						"zElevation": 0
 					}
 				}
@@ -632,7 +633,7 @@
 						}
 					},
 					"world": {
-						"x": 686.5,
+						"x": 581.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -676,7 +677,7 @@
 						}
 					},
 					"world": {
-						"x": 764.5,
+						"x": 656.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -720,7 +721,7 @@
 						}
 					},
 					"world": {
-						"x": 842.5,
+						"x": 808.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -764,7 +765,7 @@
 						}
 					},
 					"world": {
-						"x": 920.5,
+						"x": 883.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -808,7 +809,7 @@
 						}
 					},
 					"world": {
-						"x": 998.5,
+						"x": 959.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -852,7 +853,7 @@
 						}
 					},
 					"world": {
-						"x": 1076.5,
+						"x": 1186.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -894,7 +895,7 @@
 						}
 					},
 					"world": {
-						"x": 1225.5,
+						"x": 1262.5,
 						"y": 73,
 						"width": 68.4297520661157,
 						"height": 65.45454545454545,
@@ -936,7 +937,7 @@
 						}
 					},
 					"world": {
-						"x": 1303.5,
+						"x": 1338.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -980,8 +981,8 @@
 						}
 					},
 					"world": {
-						"x": 1149.1270668494085,
-						"y": 74.50267545841939,
+						"x": 1110.5,
+						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
 						"originX": 0.5,
@@ -1024,8 +1025,8 @@
 						}
 					},
 					"world": {
-						"x": 603.57154520227,
-						"y": 74.50272632104964,
+						"x": 1035.5,
+						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
 						"originX": 0.5,
@@ -1170,8 +1171,8 @@
 						}
 					},
 					"world": {
-						"x": 516.145822915541,
-						"y": 73.13674109815247,
+						"x": 732.5,
+						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
 						"originX": 0.5,
