@@ -1,4 +1,5 @@
 import Prop from "./Prop.js";
+import TimerManager from "./TimerManager.js";
 
 export default class PropCrate extends Prop
 {
@@ -23,10 +24,12 @@ export default class PropCrate extends Prop
  		this.behaviors.Physics.isBullet = false;
  		this.behaviors.Physics.isPreventRotation = false;
  		this.behaviors.Physics.isEnabled = true;
-		
+			
 		this.instVars.burning_time = 3;
 		this.instVars.consuming_time = 1;
 		this.instVars.propagation_time = 0.2;
+
+		this.timerManager = new TimerManager();
 	}
 
 	static create(x, y)
@@ -48,7 +51,7 @@ export default class PropCrate extends Prop
 	
  		this.setAnimation('burning', 'beginning');
 		
-		setTimeout(function(self) { self.burn(); }, this.instVars.burning_time * 1000, this);
+		this.timerManager.add('burn', this, 'burn', [], this.instVars.burning_time * 1000, false);
 	}
 	
 	burn()

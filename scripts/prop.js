@@ -21,8 +21,13 @@ export default class Prop extends ISpriteInstance
 		}
 	
 		this.applyGravity(force, Util.toRadians(angle));
-	}
 
+		if (undefined !== this.timerManager)
+		{
+			this.timerManager.tick();
+		}
+	}
+	
 	applyGravity(force, angle)
 	{
 		this.behaviors.Physics.applyForceAtAngle(force, angle);

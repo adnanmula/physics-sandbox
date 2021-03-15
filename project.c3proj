@@ -366,6 +366,28 @@
 					],
 					"subfolders": [],
 					"name": "props"
+				},
+				{
+					"items": [
+						{
+							"name": "Timer.js",
+							"type": "application/javascript",
+							"sid": 732582132152962,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "TimerManager.js",
+							"type": "application/javascript",
+							"sid": 139056807813402,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "timer"
 				}
 			]
 		},

@@ -1,5 +1,6 @@
 import * as Util from "./utils.js";
 import Prop from "./Prop.js";
+import TimerManager from "./TimerManager.js";
 
 export default class PropTnt extends Prop
 {
@@ -30,6 +31,8 @@ export default class PropTnt extends Prop
  		this.behaviors.Physics.isEnabled = true;
 		
 		this.instVars.detonation_time = 3;
+		
+		this.timerManager = new TimerManager();
 	}
 
 	static create(x, y)
@@ -48,10 +51,10 @@ export default class PropTnt extends Prop
 		{
 			return;
 		}
-	
+
 		this.setAnimation('detonating', 'beginning');
-	
-		setTimeout(function(self) { self.detonate(); }, this.instVars.detonation_time * 1000, this);
+		
+		this.timerManager.add('detonate', this, 'detonate', [], this.instVars.detonation_time * 1000, false);	
 	}
 	
 	detonate()
