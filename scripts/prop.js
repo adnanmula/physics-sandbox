@@ -5,31 +5,24 @@ export default class Prop extends ISpriteInstance
 	get TRAIT_DRAGGABLE() { return 'draggable'; }
 	get TRAIT_LIQUID() { return 'liquid'; }
 	get TRAIT_GAS() { return 'gas'; }
-	get TRAIT_FLAMMABLE_SOLID() { return 'flamable-solid'; }
-	get TRAIT_LIMITED_LIFESPAN() { return 'limited-lifespan'; }
+	get TRAIT_FLAMMABLE_SOLID() { return 'flammable'; }
+	get TRAIT_LIMITED_LIFESPAN() { return 'limitedLifespan'; }
 	get TRAIT_EXPLOSIVE() { return 'explosive'; }
+	get TRAIT_GRAVITY() { return 'gravity'; }
 
 	tick()
 	{
-		let force = this.behaviors.Physics.mass;
-		let angle = 90;
-		
-		if (this.traits.includes(this.TRAIT_GAS))
+		for (const trait of this.traits)
 		{
-			force /= 4;
-			angle = 270;
+			if (undefined !== this[trait])
+			{
+				this[trait].tick();
+				
+				if (undefined !== this[trait].timerManager)
+				{
+					this[trait].timerManager.tick();
+				}
+			}
 		}
-	
-		this.applyGravity(force, Util.toRadians(angle));
-
-		if (undefined !== this.timerManager)
-		{
-			this.timerManager.tick();
-		}
-	}
-	
-	applyGravity(force, angle)
-	{
-		this.behaviors.Physics.applyForceAtAngle(force, angle);
 	}
 }

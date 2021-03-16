@@ -364,7 +364,38 @@
 							}
 						}
 					],
-					"subfolders": [],
+					"subfolders": [
+						{
+							"items": [
+								{
+									"name": "FlammableTrait.js",
+									"type": "application/javascript",
+									"sid": 365688299266159,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "ExplosiveTrait.js",
+									"type": "application/javascript",
+									"sid": 514516585101894,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "GravityTrait.js",
+									"type": "application/javascript",
+									"sid": 860695149536879,
+									"script-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "trait"
+						}
+					],
 					"name": "props"
 				},
 				{

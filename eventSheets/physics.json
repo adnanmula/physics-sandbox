@@ -669,7 +669,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "const explosive = runtime.objects.prop_explosive.getFirstPickedInstance();\nexplosive.lightFuse();"
+							"script": "const prop = runtime.objects.prop_explosive.getFirstPickedInstance();\nprop.explosive.lightFuse();"
 						}
 					],
 					"sid": 952296541405096

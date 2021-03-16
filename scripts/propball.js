@@ -1,11 +1,15 @@
 import * as Utils from "./utils.js";
 import Prop from "./Prop.js";
+import GravityTrait from "./GravityTrait.js";
 
 export default class PropBall extends Prop
 {
 	get traits()
 	{
-		return [super.TRAIT_DRAGGABLE];
+		return [
+			super.TRAIT_DRAGGABLE,
+			super.TRAIT_GRAVITY,
+		];
 	}
 
 	constructor()
@@ -21,6 +25,11 @@ export default class PropBall extends Prop
 		this.behaviors.Physics.isBullet = false;
 		this.behaviors.Physics.isPreventRotation = false;
 		this.behaviors.Physics.isEnabled = true;
+		
+		this.gravity = new GravityTrait(this, {
+			'force': this.behaviors.Physics.mass,
+			'angle': 90
+		});
 	}
 
 	static create(x, y)

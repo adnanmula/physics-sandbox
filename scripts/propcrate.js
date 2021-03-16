@@ -1,5 +1,6 @@
 import Prop from "./Prop.js";
-import TimerManager from "./TimerManager.js";
+import FlammableTrait from "./FlammableTrait.js";
+import GravityTrait from "./GravityTrait.js";
 
 export default class PropCrate extends Prop
 {
@@ -7,7 +8,8 @@ export default class PropCrate extends Prop
 	{
 		return [
 			super.TRAIT_DRAGGABLE,
-			super.TRAIT_FLAMMABLE_SOLID
+			super.TRAIT_FLAMMABLE_SOLID,
+			super.TRAIT_GRAVITY,
 		];
 	}
 	
@@ -29,34 +31,16 @@ export default class PropCrate extends Prop
 		this.instVars.consuming_time = 1;
 		this.instVars.propagation_time = 0.2;
 
-		this.timerManager = new TimerManager();
+		this.flammable = new FlammableTrait(this);
+
+		this.gravity = new GravityTrait(this, {
+			'force': this.behaviors.Physics.mass,
+			'angle': 90
+		});
 	}
 
 	static create(x, y)
 	{
 		globalThis.runtime.objects.prop_crate.createInstance("main", x, y);
-	}
-	
-	isBurning()
-	{
-		return ['burning', 'burned', 'consuming'].includes(this.animationName);
-	}
-	
-	setOnFire()
-	{
-		if (true === this.isBurning())
-		{
-			return;
-		}
-	
- 		this.setAnimation('burning', 'beginning');
-		
-		this.timerManager.add('burn', this, 'burn', [], this.instVars.burning_time * 1000, false);
-	}
-	
-	burn()
-	{
-		this.setAnimation('burned', 'beginning');
-		this.animationFrame = Math.floor(Math.random() * 3);
 	}
 }

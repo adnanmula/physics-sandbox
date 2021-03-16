@@ -1,11 +1,15 @@
 import * as Util from "./utils.js";
 import Prop from "./Prop.js";
+import GravityTrait from "./GravityTrait.js";
 
 export default class PropWaterSteam extends Prop
 {
 	get traits()
 	{
-		return [super.TRAIT_GAS];
+		return [
+			super.TRAIT_GAS,
+			super.TRAIT_GRAVITY,
+		];
 	}
 	
 	constructor()
@@ -21,6 +25,11 @@ export default class PropWaterSteam extends Prop
 		this.behaviors.Physics.isBullet = false;
 		this.behaviors.Physics.isPreventRotation = false;
 		this.behaviors.Physics.isEnabled = true;
+		
+		this.gravity = new GravityTrait(this, {
+			'force': this.behaviors.Physics.mass / 4,
+			'angle': 270
+		});
 	}
 	
 	static create(x, y)

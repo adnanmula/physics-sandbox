@@ -14,8 +14,7 @@ export default class Timer
 
 	execute()
 	{
-		this.entity[this.func](...this.params);
-		
+		this.entity[this.func](...this.params);			
 		this.current = 0;
 	}
 	
