@@ -45,4 +45,10 @@ export default class PropTnt extends Prop
 	{
 		globalThis.runtime.objects.prop_tnt.createInstance("main", x, y);
 	}
+	
+	tick()
+	{
+		this.gravity.tick();
+		this.explosive.tick();
+	}
 }

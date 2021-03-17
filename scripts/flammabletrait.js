@@ -8,7 +8,10 @@ export default class FlammableTrait
 		this.timerManager = new TimerManager(this);
 	}
 
-	tick() {}
+	tick()
+	{
+		this.timerManager.tick();
+	}
 
 	isBurning()
 	{
@@ -25,6 +28,17 @@ export default class FlammableTrait
  		this.entity.setAnimation('burning', 'beginning');
 		
 		this.timerManager.add('burn', 'burn', [], this.entity.instVars.burning_time * 1000, false);
+	}
+	
+	putOutFire()
+	{
+		if (false === this.isBurning())
+		{
+			return;
+		}
+		
+		this.timerManager.remove('burn');
+ 		this.entity.setAnimation('default', 'beginning');
 	}
 	
 	burn()

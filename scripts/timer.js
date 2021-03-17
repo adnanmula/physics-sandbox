@@ -17,9 +17,4 @@ export default class Timer
 		this.entity[this.func](...this.params);			
 		this.current = 0;
 	}
-	
-	isRepeat()
-	{
-		return this.isRepeat;
-	}
 }

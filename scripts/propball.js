@@ -36,4 +36,9 @@ export default class PropBall extends Prop
 	{
 		globalThis.runtime.objects.prop_ball.createInstance("main", x, y);
 	}
+	
+	tick()
+	{
+		this.gravity.tick();
+	}
 }

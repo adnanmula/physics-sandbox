@@ -1,6 +1,7 @@
 import * as Util from "./utils.js";
 import Prop from "./Prop.js";
 import GravityTrait from "./GravityTrait.js";
+import LimitedLifespanTrait from "./LimitedLifespanTrait.js";
 
 export default class PropFire extends Prop
 {
@@ -33,10 +34,20 @@ export default class PropFire extends Prop
 			'force': this.behaviors.Physics.mass,
 			'angle': 90
 		});
+		
+		this.limitedLifespan = new LimitedLifespanTrait(this, {
+			'lifespan': this.instVars.lifespan * 1000,
+		});
 	}
 	
 	static create(x, y)
 	{
 		globalThis.runtime.objects.prop_fire.createInstance("main", x, y);
+	}
+	
+	tick()
+	{
+		this.gravity.tick();
+		this.limitedLifespan.tick();
 	}
 }

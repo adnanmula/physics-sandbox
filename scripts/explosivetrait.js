@@ -13,7 +13,10 @@ export default class FlammableTrait
 		this.explosion_force = config.explosion_force;
 	}
 	
-	tick() {}
+	tick()
+	{
+		this.timerManager.tick();
+	}
 
 	isLitFuse()
 	{

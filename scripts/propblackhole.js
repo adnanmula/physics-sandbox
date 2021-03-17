@@ -51,7 +51,8 @@ export default class PropBlackHole extends Prop
 		
 		for (const prop of runtime.objects.props.instances())
 		{
-			if (prop instanceof PropBlackHole || true === prop.behaviors.Physics.isImmovable) {
+			if (prop instanceof PropBlackHole || true === prop.behaviors.Physics.isImmovable)
+			{
 				continue;
 			}
 		

@@ -43,4 +43,10 @@ export default class PropCrate extends Prop
 	{
 		globalThis.runtime.objects.prop_crate.createInstance("main", x, y);
 	}
+	
+	tick()
+	{
+		this.gravity.tick();
+		this.flammable.tick();
+	}
 }

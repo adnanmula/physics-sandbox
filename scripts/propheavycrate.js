@@ -35,4 +35,9 @@ export default class PropHeavyCrate extends Prop
 	{
 		globalThis.runtime.objects.prop_heavycrate.createInstance("main", x, y);
 	}
+	
+	tick()
+	{
+		this.gravity.tick();
+	}
 }

@@ -35,4 +35,9 @@ export default class PropWater extends Prop
 	{
 		globalThis.runtime.objects.prop_water.createInstance("main", x, y);
 	}
+	
+	tick()
+	{
+		this.gravity.tick();
+	}
 }

@@ -110,29 +110,13 @@
 					],
 					"actions": [
 						{
-							"id": "set-animation",
-							"objectClass": "prop_flammable_solid",
-							"sid": 612849958418109,
-							"parameters": {
-								"animation": "\"burning\"",
-								"from": "beginning"
-							}
-						},
-						{
 							"id": "destroy",
 							"objectClass": "prop_fire",
 							"sid": 599740231091177
 						},
 						{
-							"id": "start-timer",
-							"objectClass": "prop_flammable_solid",
-							"sid": 315954585021414,
-							"behaviorType": "Timer",
-							"parameters": {
-								"duration": "Self.burning_time",
-								"type": "once",
-								"tag": "\"burning_time\""
-							}
+							"type": "script",
+							"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nprop.flammable.setOnFire();"
 						}
 					],
 					"sid": 606857579135062
@@ -208,22 +192,8 @@
 					],
 					"actions": [
 						{
-							"id": "set-animation",
-							"objectClass": "prop_flammable_solid",
-							"sid": 591871649806182,
-							"parameters": {
-								"animation": "\"default\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "stop-timer",
-							"objectClass": "prop_flammable_solid",
-							"sid": 219921001968969,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"burning_time\""
-							}
+							"type": "script",
+							"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nprop.flammable.putOutFire();"
 						},
 						{
 							"id": "destroy",
@@ -549,48 +519,6 @@
 						{
 							"id": "on-timer",
 							"objectClass": "prop_flammable_solid",
-							"sid": 904685693776171,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"burning_time\""
-							}
-						},
-						{
-							"id": "is-animation-playing",
-							"objectClass": "prop_flammable_solid",
-							"sid": 507817416302428,
-							"parameters": {
-								"animation": "\"burning\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "prop_flammable_solid",
-							"sid": 579412501953270,
-							"parameters": {
-								"animation": "\"burned\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "prop_flammable_solid",
-							"sid": 879021025477852,
-							"parameters": {
-								"frame-number": "floor(random(0,3))"
-							}
-						}
-					],
-					"sid": 992930831788850
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-timer",
-							"objectClass": "prop_flammable_solid",
 							"sid": 582588485658353,
 							"behaviorType": "Timer",
 							"parameters": {
@@ -622,24 +550,8 @@
 					],
 					"actions": [
 						{
-							"id": "set-animation",
-							"objectClass": "prop_flammable_solid",
-							"sid": 896207184386368,
-							"parameters": {
-								"animation": "\"burning\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "start-timer",
-							"objectClass": "prop_flammable_solid",
-							"sid": 557962229538060,
-							"behaviorType": "Timer",
-							"parameters": {
-								"duration": "Self.burning_time",
-								"type": "once",
-								"tag": "\"burning_time\""
-							}
+							"type": "script",
+							"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nprop.flammable.setOnFire();"
 						}
 					],
 					"sid": 865884168119338
@@ -676,62 +588,6 @@
 				}
 			],
 			"sid": 647878788354602
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Limited lifespan",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-created",
-							"objectClass": "prop_limited_lifespan",
-							"sid": 162483116266601
-						}
-					],
-					"actions": [
-						{
-							"id": "start-timer",
-							"objectClass": "prop_limited_lifespan",
-							"sid": 513568398220712,
-							"behaviorType": "Timer",
-							"parameters": {
-								"duration": "Self.lifespan",
-								"type": "once",
-								"tag": "\"lifespan\""
-							}
-						}
-					],
-					"sid": 268347992908926
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-timer",
-							"objectClass": "prop_limited_lifespan",
-							"sid": 596594207626919,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"lifespan\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "prop_limited_lifespan",
-							"sid": 603033765221475
-						}
-					],
-					"sid": 166838670935022
-				}
-			],
-			"sid": 645974069911592
 		}
 	],
 	"sid": 499630380292425
