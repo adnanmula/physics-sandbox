@@ -1,0 +1,33 @@
+{
+	"name": "particles_burning",
+	"plugin-id": "Particles",
+	"sid": 777962006066779,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "entity",
+			"type": "number",
+			"desc": "",
+			"sid": 348568608256342
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 928184435647241
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 10,
+		"height": 10,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 3815542,
+		"useCollisionPoly": true
+	}
+}
