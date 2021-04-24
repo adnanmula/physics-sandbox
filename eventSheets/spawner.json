@@ -384,13 +384,13 @@
 						{
 							"id": "pin-to-object-properties",
 							"objectClass": "particles_burning",
-							"sid": 940744392812354,
+							"sid": 116349220723048,
 							"behaviorType": "Pin",
 							"parameters": {
 								"pin-to": "prop_crate",
 								"x": true,
 								"y": true,
-								"angle": true,
+								"angle": false,
 								"width-type": "scale",
 								"height-type": "scale",
 								"z": false
@@ -398,46 +398,6 @@
 						}
 					],
 					"sid": 552578911015618
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-animation-playing",
-					"objectClass": "prop_crate",
-					"sid": 819128124777862,
-					"parameters": {
-						"animation": "\"burning\""
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [],
-			"sid": 724503589239857,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 710276004857432,
-							"parameters": {
-								"object": "particles_burning",
-								"expression": "particles_burning.entity = prop_crate.UID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "particles_burning",
-							"sid": 354904524697257
-						}
-					],
-					"sid": 216900227180380
 				}
 			]
 		}

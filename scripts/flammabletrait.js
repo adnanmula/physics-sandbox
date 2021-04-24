@@ -37,13 +37,29 @@ export default class FlammableTrait
 			return;
 		}
 		
+		this.removeFireParticles();
+		
 		this.timerManager.remove('burn');
  		this.entity.setAnimation('default', 'beginning');
 	}
 	
 	burn()
 	{
+		this.removeFireParticles();
+	
 		this.entity.setAnimation('burned', 'beginning');
 		this.entity.animationFrame = Math.floor(Math.random() * 3);
+	}
+	
+	removeFireParticles()
+	{
+		for (const particle of globalThis.runtime.objects.particles_burning.instances())
+		{	
+			if (particle.instVars.entity !== this.entity.uid) {
+				continue;
+			}
+
+			particle.destroy();
+		}
 	}
 }
