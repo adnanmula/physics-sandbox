@@ -24,3 +24,8 @@ export function tickCount()
 {
 	return globalThis.runtime.callFunction('tickCount');
 }
+
+export function pinParticles(particlesUid, propUid)
+{
+	return globalThis.runtime.callFunction('pinParticles', particlesUid, propUid);
+}

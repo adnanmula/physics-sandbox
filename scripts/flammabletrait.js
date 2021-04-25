@@ -1,4 +1,5 @@
 import TimerManager from "./TimerManager.js";
+import * as Util from "./utils.js";
 
 export default class FlammableTrait
 {
@@ -24,9 +25,9 @@ export default class FlammableTrait
 		{
 			return;
 		}
-	
- 		this.entity.setAnimation('burning', 'beginning');
 		
+		this.addFireParticles();
+ 		this.entity.setAnimation('burning', 'beginning');
 		this.timerManager.add('burn', 'burn', [], this.entity.instVars.burning_time * 1000, false);
 	}
 	
@@ -37,8 +38,9 @@ export default class FlammableTrait
 			return;
 		}
 		
-		this.removeFireParticles();
+		console.log('removeeee');
 		
+		this.removeFireParticles();
 		this.timerManager.remove('burn');
  		this.entity.setAnimation('default', 'beginning');
 	}
@@ -46,9 +48,33 @@ export default class FlammableTrait
 	burn()
 	{
 		this.removeFireParticles();
-	
 		this.entity.setAnimation('burned', 'beginning');
 		this.entity.animationFrame = Math.floor(Math.random() * 3);
+	}
+	
+	hasFireParticles()
+	{
+		for (const particle of globalThis.runtime.objects.particles_burning.instances())
+		{	
+			if (particle.instVars.entity === this.entity.uid) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	addFireParticles()
+	{
+		if (true === this.hasFireParticles())
+		{
+			return;
+		}
+		
+		const particles = globalThis.runtime.objects.particles_burning.createInstance("main", this.entity.x, this.entity.y);
+		particles.instVars.entity = this.entity.uid;
+		
+		Util.pinParticles(particles.uid, this.entity.uid);
 	}
 	
 	removeFireParticles()

@@ -21,6 +21,74 @@
 				}
 			],
 			"sid": 163601778192184
+		},
+		{
+			"functionName": "pinParticles",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "particlesUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 567855063988872
+				},
+				{
+					"name": "propUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 914963384914102
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 858309040233886,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "particles_burning",
+							"sid": 360047489016663,
+							"parameters": {
+								"unique-id": "particlesUid"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "props",
+							"sid": 626382273124553,
+							"parameters": {
+								"unique-id": "propUid"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "particles_burning",
+							"sid": 349535229429662,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "props",
+								"x": true,
+								"y": true,
+								"angle": false,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 802535787500251
+				}
+			]
 		}
 	],
 	"sid": 877668586331215
