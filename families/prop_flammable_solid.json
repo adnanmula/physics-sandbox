@@ -31,6 +31,7 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"prop_crate"
+		"prop_crate",
+		"prop_oil"
 	]
 }

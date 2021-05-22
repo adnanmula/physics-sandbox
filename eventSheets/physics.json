@@ -272,7 +272,8 @@
 							}
 						}
 					],
-					"sid": 845313994466747
+					"sid": 845313994466747,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -291,13 +292,13 @@
 					"children": [
 						{
 							"eventType": "variable",
-							"name": "instance_0_animation",
-							"type": "string",
-							"initialValue": "",
+							"name": "instance_0_is_burning",
+							"type": "boolean",
+							"initialValue": "false",
 							"comment": "",
 							"isStatic": false,
 							"isConstant": false,
-							"sid": 938903924904455
+							"sid": 603175451134408
 						},
 						{
 							"eventType": "variable",
@@ -311,13 +312,13 @@
 						},
 						{
 							"eventType": "variable",
-							"name": "instance_1_animation",
-							"type": "string",
-							"initialValue": "",
+							"name": "instance_1_is_burning",
+							"type": "boolean",
+							"initialValue": "false",
 							"comment": "",
 							"isStatic": false,
 							"isConstant": false,
-							"sid": 286720755887051
+							"sid": 229078156360055
 						},
 						{
 							"eventType": "variable",
@@ -344,22 +345,8 @@
 							],
 							"actions": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 604689949087526,
-									"parameters": {
-										"variable": "instance_0_animation",
-										"value": "prop_flammable_solid.AnimationName"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 879377629505432,
-									"parameters": {
-										"variable": "instance_0_uid",
-										"value": "prop_flammable_solid.UID"
-									}
+									"type": "script",
+									"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nlocalVars.instance_0_is_burning = prop.flammable.isBurning;\nlocalVars.instance_0_uid = prop.uid;"
 								}
 							],
 							"sid": 885556452235019
@@ -379,137 +366,118 @@
 							],
 							"actions": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 581325349837090,
-									"parameters": {
-										"variable": "instance_1_animation",
-										"value": "prop_flammable_solid.AnimationName"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 302741831183620,
-									"parameters": {
-										"variable": "instance_1_uid",
-										"value": "prop_flammable_solid.UID"
-									}
+									"type": "script",
+									"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nlocalVars.instance_1_is_burning = prop.flammable.isBurning;\nlocalVars.instance_1_uid = prop.uid;"
 								}
 							],
 							"sid": 995841886671965
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 429235465579626,
-									"parameters": {
-										"first-value": "instance_0_animation",
-										"comparison": 0,
-										"second-value": "\"burning\""
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 559722645263641,
-									"parameters": {
-										"first-value": "instance_1_animation",
-										"comparison": 0,
-										"second-value": "\"default\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 196052007775720,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-unique-id",
-											"objectClass": "prop_flammable_solid",
-											"sid": 831959440601493,
-											"parameters": {
-												"unique-id": "instance_1_uid"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "start-timer",
-											"objectClass": "prop_flammable_solid",
-											"sid": 610023962398658,
-											"behaviorType": "Timer",
-											"parameters": {
-												"duration": "Self.propagation_time",
-												"type": "once",
-												"tag": "\"propagation_time\""
-											}
-										}
-									],
-									"sid": 129595178288634
-								}
-							]
+							"eventType": "script",
+							"script": "if (true == localVars.instance_0_is_burning && false === localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_1_uid);\n\tprop.flammable.startPropagation();\t\n}\n\nif (false == localVars.instance_0_is_burning && true == localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_0_uid);\n\tprop.flammable.startPropagation();\n}"
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "prop_flammable_solid",
+							"sid": 462276647513641,
+							"parameters": {
+								"object": "prop_flammable_solid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 365421298050213,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "instance_0_is_burning",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 190331324143556
+						},
+						{
+							"eventType": "variable",
+							"name": "instance_0_uid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 911705945064718
+						},
+						{
+							"eventType": "variable",
+							"name": "instance_1_is_burning",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 659499675649084
+						},
+						{
+							"eventType": "variable",
+							"name": "instance_1_uid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 986640940615537
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
+									"id": "pick-nth-instance",
 									"objectClass": "System",
-									"sid": 911238686686565,
+									"sid": 160820836646385,
 									"parameters": {
-										"first-value": "instance_1_animation",
-										"comparison": 0,
-										"second-value": "\"burning\""
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 930420332215451,
-									"parameters": {
-										"first-value": "instance_0_animation",
-										"comparison": 0,
-										"second-value": "\"default\""
+										"object": "prop_flammable_solid",
+										"instance": "0"
 									}
 								}
 							],
-							"actions": [],
-							"sid": 174152032265982,
-							"children": [
+							"actions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-unique-id",
-											"objectClass": "prop_flammable_solid",
-											"sid": 871271671378751,
-											"parameters": {
-												"unique-id": "instance_0_uid"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "start-timer",
-											"objectClass": "prop_flammable_solid",
-											"sid": 819679157431278,
-											"behaviorType": "Timer",
-											"parameters": {
-												"duration": "Self.propagation_time",
-												"type": "once",
-												"tag": "\"propagation_time\""
-											}
-										}
-									],
-									"sid": 406347562465019
+									"type": "script",
+									"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nlocalVars.instance_0_is_burning = prop.flammable.isBurning;\nlocalVars.instance_0_uid = prop.uid;"
 								}
-							]
+							],
+							"sid": 116703936514412
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-nth-instance",
+									"objectClass": "System",
+									"sid": 953727921162911,
+									"parameters": {
+										"object": "prop_flammable_solid",
+										"instance": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nlocalVars.instance_1_is_burning = prop.flammable.isBurning;\nlocalVars.instance_1_uid = prop.uid;"
+								}
+							],
+							"sid": 994938427426621
+						},
+						{
+							"eventType": "script",
+							"script": "if (true == localVars.instance_0_is_burning && false === localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_1_uid);\n\tprop.flammable.startPropagation();\t\n}\n\nif (false == localVars.instance_0_is_burning && true == localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_0_uid);\n\tprop.flammable.startPropagation();\n}"
 						}
 					]
 				},
@@ -528,33 +496,11 @@
 					],
 					"actions": [
 						{
-							"id": "destroy",
-							"objectClass": "prop_flammable_solid",
-							"sid": 772875415115220
+							"type": "script",
+							"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nprop.destroy();"
 						}
 					],
 					"sid": 471980814792697
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-timer",
-							"objectClass": "prop_flammable_solid",
-							"sid": 816724841343991,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"propagation_time\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nprop.flammable.setOnFire();"
-						}
-					],
-					"sid": 865884168119338
 				}
 			],
 			"sid": 241845656432357

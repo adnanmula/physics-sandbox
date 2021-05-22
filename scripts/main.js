@@ -7,6 +7,7 @@ import PropWaterSteam from "./PropWaterSteam.js";
 import PropFire from "./PropFire.js";
 import PropBlackHole from "./PropBlackHole.js";
 import PropTnt from "./PropTnt.js";
+import PropOil from "./PropOil.js";
 
 runOnStartup(async runtime =>
 {
@@ -21,6 +22,7 @@ runOnStartup(async runtime =>
 	runtime.objects.prop_blackhole.setInstanceClass(PropBlackHole);
 	runtime.objects.prop_fire.setInstanceClass(PropFire);
 	runtime.objects.prop_tnt.setInstanceClass(PropTnt);
+	runtime.objects.prop_oil.setInstanceClass(PropOil);
 	
 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart());
 });

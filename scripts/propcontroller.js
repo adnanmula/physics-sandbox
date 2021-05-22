@@ -7,6 +7,7 @@ import PropWaterSteam from "./PropWaterSteam.js";
 import PropFire from "./PropFire.js";
 import PropBlackHole from "./PropBlackHole.js";
 import PropTnt from "./PropTnt.js";
+import PropOil from "./PropOil.js";
 
 export default class PropController
 {
@@ -21,7 +22,8 @@ export default class PropController
 			PropBlackHole,
 			PropWaterSteam,
 			PropFire,
-			PropTnt
+			PropTnt,
+			PropOil
 		];
 	
 		props[propId].create(x, y)

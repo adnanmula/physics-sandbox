@@ -25,6 +25,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
+			"renderingMode": "3d",
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"global": false
@@ -444,8 +445,8 @@
 						}
 					},
 					"world": {
-						"x": -1049.78055658115,
-						"y": -1190.6371772388222,
+						"x": -1050.8628893845266,
+						"y": -1201.4606539106478,
 						"width": 42.873184041145045,
 						"height": 42.873184041145045,
 						"originX": 0.5,
@@ -675,6 +676,60 @@
 						"zElevation": 0,
 						"blendMode": "additive"
 					}
+				},
+				{
+					"type": "prop_oil",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 27,
+					"instanceVariables": {
+						"burning_time": 3,
+						"consuming_time": 1,
+						"propagation_time": 0.2
+					},
+					"behaviors": {
+						"DestroyOutsideLayout": {
+							"properties": {}
+						},
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 0.1,
+								"friction": 0,
+								"elasticity": 0.5,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": -978.5034079213151,
+						"y": -1193.7324422619183,
+						"width": 64.45028823228182,
+						"height": 64.45028823228182,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 969717844955551,
@@ -709,6 +764,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
+			"renderingMode": "3d",
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"global": false
@@ -942,6 +998,50 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Default",
+						"initial-frame": 9,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 35,
+					"instanceVariables": {
+						"toolbar_index": 11,
+						"element": "Prop",
+						"index": 9,
+						"prop": "Oil"
+					},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "none",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 956.4208497326783,
+						"y": -71.80137248954469,
+						"width": 65.45454545454545,
+						"height": 65.45454545454545,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ui_prop_selector",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
 						"initial-frame": 5,
 						"enable-collisions": true,
 						"live-preview": false
@@ -951,7 +1051,7 @@
 						"toolbar_index": 5,
 						"element": "Prop",
 						"index": 5,
-						"prop": "BlackHole"
+						"prop": "Black Hole"
 					},
 					"behaviors": {
 						"Anchor": {
@@ -1079,7 +1179,7 @@
 						"toolbar_index": 6,
 						"element": "Prop",
 						"index": 6,
-						"prop": "WaterSteam"
+						"prop": "Water Steam"
 					},
 					"behaviors": {
 						"Anchor": {
@@ -1355,6 +1455,7 @@
 			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
+			"renderingMode": "3d",
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"global": false

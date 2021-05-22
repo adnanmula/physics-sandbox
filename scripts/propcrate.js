@@ -27,15 +27,21 @@ export default class PropCrate extends Prop
  		this.behaviors.Physics.isPreventRotation = false;
  		this.behaviors.Physics.isEnabled = true;
 			
-		this.instVars.burning_time = 3;
-		this.instVars.consuming_time = 1;
-		this.instVars.propagation_time = 0.2;
+		//this.instVars.burning_time = 3;
+		//this.instVars.consuming_time = 1;
+		//this.instVars.propagation_time = 0.2;
 
-		this.flammable = new FlammableTrait(this);
+		this.flammable = new FlammableTrait(this, {
+			'burning_time': 3,
+			'consuming_time': 1,
+			'propagation_time': 0.2,
+			'is_liquid': false,
+			'is_burning': false,
+		});
 
 		this.gravity = new GravityTrait(this, {
 			'force': this.behaviors.Physics.mass,
-			'angle': 90
+			'angle': 90,
 		});
 	}
 

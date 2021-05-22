@@ -3,9 +3,15 @@ import * as Util from "./utils.js";
 
 export default class FlammableTrait
 {
-	constructor(entity)
+	constructor(entity, config)
 	{
 		this.entity = entity;
+		this.burningTime = config.burning_time * 1000;
+		this.consumingTime = config.consuming_time * 1000;
+		this.propagationTime = config.propagation_time * 1000;
+		this.isLiquid = config.is_liquid;
+		this.isBurning = config.is_burning;
+		
 		this.timerManager = new TimerManager(this);
 	}
 
@@ -14,35 +20,37 @@ export default class FlammableTrait
 		this.timerManager.tick();
 	}
 
-	isBurning()
-	{
-		return ['burning', 'burned', 'consuming'].includes(this.entity.animationName);
-	}
+// 	isBurning()
+// 	{
+// 		return this.isBurning;
+// 		return ['burning', 'consuming'].includes(this.entity.animationName);
+// 	}
 	
 	setOnFire()
 	{
-		if (true === this.isBurning())
+		if (true === ['burning', 'burned', 'consuming'].includes(this.entity.animationName))
 		{
 			return;
 		}
 		
 		this.addFireParticles();
+		
+		this.isBurning = true;
  		this.entity.setAnimation('burning', 'beginning');
-		this.timerManager.add('burn', 'burn', [], this.entity.instVars.burning_time * 1000, false);
+		this.timerManager.add('burn', 'burn', [], this.burningTime, false);
 	}
 	
 	putOutFire()
 	{
-		if (false === this.isBurning())
+		if (false === ['burning', 'consuming'].includes(this.entity.animationName))
 		{
 			return;
 		}
 		
-		console.log('removeeee');
-		
 		this.removeFireParticles();
 		this.timerManager.remove('burn');
  		this.entity.setAnimation('default', 'beginning');
+		this.isBurning = false;
 	}
 	
 	burn()
@@ -50,6 +58,12 @@ export default class FlammableTrait
 		this.removeFireParticles();
 		this.entity.setAnimation('burned', 'beginning');
 		this.entity.animationFrame = Math.floor(Math.random() * 3);
+		this.isBurning = false;
+	}
+	
+	startPropagation()
+	{
+		this.timerManager.add('setOnFire', 'setOnFire', [], this.propagationTime, false);
 	}
 	
 	hasFireParticles()
