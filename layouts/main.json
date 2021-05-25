@@ -872,7 +872,7 @@
 					},
 					"uid": 19,
 					"instanceVariables": {
-						"toolbar_index": 2,
+						"toolbar_index": 3,
 						"element": "Prop",
 						"index": 2,
 						"prop": "Ball"
@@ -916,7 +916,7 @@
 					},
 					"uid": 11,
 					"instanceVariables": {
-						"toolbar_index": 3,
+						"toolbar_index": 4,
 						"element": "Prop",
 						"index": 3,
 						"prop": "Solid"
@@ -960,7 +960,7 @@
 					},
 					"uid": 13,
 					"instanceVariables": {
-						"toolbar_index": 4,
+						"toolbar_index": 5,
 						"element": "Prop",
 						"index": 4,
 						"prop": "Water"
@@ -1048,7 +1048,7 @@
 					},
 					"uid": 5,
 					"instanceVariables": {
-						"toolbar_index": 5,
+						"toolbar_index": 8,
 						"element": "Prop",
 						"index": 5,
 						"prop": "Black Hole"
@@ -1092,7 +1092,7 @@
 					},
 					"uid": 22,
 					"instanceVariables": {
-						"toolbar_index": 7,
+						"toolbar_index": 9,
 						"element": "Clear"
 					},
 					"behaviors": {
@@ -1134,7 +1134,7 @@
 					},
 					"uid": 23,
 					"instanceVariables": {
-						"toolbar_index": 8,
+						"toolbar_index": 10,
 						"element": "Erase"
 					},
 					"behaviors": {
@@ -1176,7 +1176,7 @@
 					},
 					"uid": 26,
 					"instanceVariables": {
-						"toolbar_index": 6,
+						"toolbar_index": 7,
 						"element": "Prop",
 						"index": 6,
 						"prop": "Water Steam"
@@ -1220,7 +1220,7 @@
 					},
 					"uid": 28,
 					"instanceVariables": {
-						"toolbar_index": 9,
+						"toolbar_index": 6,
 						"element": "Prop",
 						"index": 7,
 						"prop": "Fire"
@@ -1239,7 +1239,7 @@
 					"world": {
 						"x": 1035.7975570281346,
 						"y": 73,
-						"width": 44.04965951081472,
+						"width": 66.07448926622209,
 						"height": 65.45454545454545,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -1308,7 +1308,7 @@
 					},
 					"uid": 32,
 					"instanceVariables": {
-						"toolbar_index": 10,
+						"toolbar_index": 2,
 						"element": "Prop",
 						"index": 8,
 						"prop": "Tnt"
