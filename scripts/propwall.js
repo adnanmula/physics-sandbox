@@ -1,7 +1,12 @@
-export default class PropSolidInstance extends ISpriteInstance
-{
-	get type() { return 'dragable'; }
+import Prop from "./Prop.js";
 
+export default class PropWall extends Prop
+{
+	get traits()
+	{
+		return [super.TRAIT_DRAGGABLE];
+	}
+	
 	constructor()
 	{
 		super();
@@ -17,8 +22,8 @@ export default class PropSolidInstance extends ISpriteInstance
 		this.behaviors.Physics.isEnabled = true;
 	}
 
-	static create(runtime, x, y)
+	static create(x, y)
 	{
-		runtime.objects.prop_solid.createInstance("main", x, y);
+		globalThis.runtime.objects.prop_wall.createInstance("main", x, y);
 	}
 }

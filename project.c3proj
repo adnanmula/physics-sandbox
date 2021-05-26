@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 23402,
+	"savedWithRelease": 24900,
 	"name": "Physics Sandbox",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -11,7 +11,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Touch",
 			"name": "Touch",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "PlatformInfo",
 			"name": "Platform info",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,15 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r249",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -51,7 +59,23 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r249",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r249",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -59,7 +83,23 @@
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r249",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r249",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -67,7 +107,7 @@
 			"id": "destroy",
 			"name": "Destroy outside layout",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -75,7 +115,7 @@
 			"id": "DragnDrop",
 			"name": "Drag & Drop",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -83,7 +123,15 @@
 			"id": "Anchor",
 			"name": "Anchor",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r249",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -91,13 +139,16 @@
 			"id": "alphaclamp",
 			"name": "Alpha clamp",
 			"author": "Scirra",
-			"version": "r234.2",
+			"version": "r249",
 			"bundled": false
 		}
 	],
 	"uniqueId": "nzjq5ue38ks3",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"particles_burning",
+			"prop_oil"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -115,11 +166,22 @@
 					"prop_ball",
 					"prop_crate",
 					"prop_heavycrate",
-					"prop_solid",
+					"prop_wall",
 					"prop_water",
-					"prop_blackhole"
+					"prop_blackhole",
+					"prop_water_steam",
+					"prop_fire",
+					"prop_tnt"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"particles_fire"
+						],
+						"subfolders": [],
+						"name": "particles"
+					}
+				],
 				"name": "props"
 			},
 			{
@@ -135,7 +197,8 @@
 					"ui_prop_selector",
 					"ui_selector_alt",
 					"ui_selector",
-					"ui_eraser"
+					"ui_eraser",
+					"ui_text"
 				],
 				"subfolders": [],
 				"name": "ui"
@@ -143,14 +206,27 @@
 		]
 	},
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"particles_fire",
+				"prop_fire"
+			],
+			"selectMode": "normal"
+		}
+	],
 	"families": {
 		"items": [
 			"props",
 			"ui",
 			"prop_dragable",
 			"toolbar_item",
-			"prop_liquid"
+			"prop_liquid",
+			"prop_gas",
+			"prop_solid",
+			"prop_limited_lifespan",
+			"prop_flammable_solid",
+			"prop_explosive"
 		],
 		"subfolders": []
 	},
@@ -165,7 +241,9 @@
 			"main",
 			"ui",
 			"spawner",
-			"eraser"
+			"eraser",
+			"physics",
+			"js"
 		],
 		"subfolders": []
 	},
@@ -181,22 +259,6 @@
 					}
 				},
 				{
-					"name": "PropCrate.js",
-					"type": "application/javascript",
-					"sid": 407754180184811,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "PropBall.js",
-					"type": "application/javascript",
-					"sid": 154179289950087,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
 					"name": "imports.js",
 					"type": "application/javascript",
 					"sid": 860485918722038,
@@ -205,25 +267,9 @@
 					}
 				},
 				{
-					"name": "PropHeavyCrate.js",
+					"name": "utils.js",
 					"type": "application/javascript",
-					"sid": 531497755228718,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "PropWater.js",
-					"type": "application/javascript",
-					"sid": 840931020048456,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "PropSolid.js",
-					"type": "application/javascript",
-					"sid": 719318366880709,
+					"sid": 256078139843437,
 					"script-info": {
 						"purpose": "none"
 					}
@@ -235,25 +281,165 @@
 					"script-info": {
 						"purpose": "none"
 					}
-				},
-				{
-					"name": "PropBlackHole.js",
-					"type": "application/javascript",
-					"sid": 862384847103023,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "utils.js",
-					"type": "application/javascript",
-					"sid": 256078139843437,
-					"script-info": {
-						"purpose": "none"
-					}
 				}
 			],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "PropBall.js",
+							"type": "application/javascript",
+							"sid": 154179289950087,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropBlackHole.js",
+							"type": "application/javascript",
+							"sid": 862384847103023,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropCrate.js",
+							"type": "application/javascript",
+							"sid": 407754180184811,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropHeavyCrate.js",
+							"type": "application/javascript",
+							"sid": 531497755228718,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropWall.js",
+							"type": "application/javascript",
+							"sid": 719318366880709,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropWater.js",
+							"type": "application/javascript",
+							"sid": 840931020048456,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropWaterSteam.js",
+							"type": "application/javascript",
+							"sid": 855944356458295,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Prop.js",
+							"type": "application/javascript",
+							"sid": 272906487330361,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropFire.js",
+							"type": "application/javascript",
+							"sid": 913280091019354,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropTnt.js",
+							"type": "application/javascript",
+							"sid": 234986223865570,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropOil.js",
+							"type": "application/javascript",
+							"sid": 924469436363489,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [
+						{
+							"items": [
+								{
+									"name": "FlammableTrait.js",
+									"type": "application/javascript",
+									"sid": 365688299266159,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "ExplosiveTrait.js",
+									"type": "application/javascript",
+									"sid": 514516585101894,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "GravityTrait.js",
+									"type": "application/javascript",
+									"sid": 860695149536879,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "LimitedLifespanTrait.js",
+									"type": "application/javascript",
+									"sid": 654812303897340,
+									"script-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "trait"
+						}
+					],
+					"name": "props"
+				},
+				{
+					"items": [
+						{
+							"name": "Timer.js",
+							"type": "application/javascript",
+							"sid": 732582132152962,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "TimerManager.js",
+							"type": "application/javascript",
+							"sid": 139056807813402,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "timer"
+				}
+			]
 		},
 		"sound": {
 			"items": [],
@@ -340,7 +526,7 @@
 	},
 	"properties": {
 		"description": "Just a physics playground for you to mess with.",
-		"version": "0.1.3",
+		"version": "0.1.4",
 		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "http://",
@@ -378,6 +564,8 @@
 		"compositingMode": "standard",
 		"sampling": "nearest",
 		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "progress-logo",
 		"preloadSounds": true,

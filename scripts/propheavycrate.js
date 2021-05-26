@@ -1,7 +1,16 @@
-export default class PropHeavyCrateInstance extends ISpriteInstance
-{
-	get type() { return 'dragable'; }
+import Prop from "./Prop.js";
+import GravityTrait from "./GravityTrait.js";
 
+export default class PropHeavyCrate extends Prop
+{
+	get traits()
+	{
+		return [
+			super.TRAIT_DRAGGABLE,
+			super.TRAIT_GRAVITY,
+		];
+	}
+	
 	constructor()
 	{
 		super();
@@ -15,10 +24,20 @@ export default class PropHeavyCrateInstance extends ISpriteInstance
 		this.behaviors.Physics.isBullet = false;
 		this.behaviors.Physics.isPreventRotation = false;
 		this.behaviors.Physics.isEnabled = true;
+		
+		this.gravity = new GravityTrait(this, {
+			'force': this.behaviors.Physics.mass,
+			'angle': 90
+		});
 	}
 
-	static create(runtime, x, y)
+	static create(x, y)
 	{
-		runtime.objects.prop_heavycrate.createInstance("main", x, y);
+		globalThis.runtime.objects.prop_heavycrate.createInstance("main", x, y);
+	}
+	
+	tick()
+	{
+		this.gravity.tick();
 	}
 }

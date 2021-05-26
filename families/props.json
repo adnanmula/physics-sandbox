@@ -20,8 +20,12 @@
 		"prop_ball",
 		"prop_crate",
 		"prop_heavycrate",
-		"prop_solid",
+		"prop_wall",
 		"prop_water",
-		"prop_blackhole"
+		"prop_blackhole",
+		"prop_water_steam",
+		"prop_fire",
+		"prop_tnt",
+		"prop_oil"
 	]
 }

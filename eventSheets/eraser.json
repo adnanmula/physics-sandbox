@@ -202,6 +202,16 @@
 					"sid": 814204780254151,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "erase_radius",
+							"type": "number",
+							"initialValue": "100",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 713267992800822
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -217,10 +227,10 @@
 								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 629489855507235,
+									"sid": 233036437787187,
 									"parameters": {
 										"object": "prop_liquid",
-										"expression": "distance(Touch.X, Touch.Y, prop_liquid.X, prop_liquid.Y) < 100"
+										"expression": "distance(Touch.X, Touch.Y, prop_liquid.X, prop_liquid.Y) < erase_radius"
 									}
 								}
 							],
@@ -232,6 +242,38 @@
 								}
 							],
 							"sid": 468369840573648
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 322652276902671,
+									"parameters": {
+										"first-value": "prop_gas.PickedCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 296000141185049,
+									"parameters": {
+										"object": "prop_gas",
+										"expression": "distance(Touch.X, Touch.Y, prop_gas.X, prop_gas.Y) < erase_radius"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "prop_gas",
+									"sid": 348791142666855
+								}
+							],
+							"sid": 830073661519677
 						},
 						{
 							"eventType": "block",

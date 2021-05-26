@@ -1,23 +1,36 @@
-import PropCrateInstance from "./PropCrate.js";
-import PropHeavyCrateInstance from "./PropHeavyCrate.js";
-import PropBallInstance from "./PropBall.js";
-import PropSolidInstance from "./PropSolid.js";
-import PropWaterInstance from "./PropWater.js";
-import PropBlackHoleInstance from "./PropBlackHole.js";
+import PropCrate from "./PropCrate.js";
+import PropHeavyCrate from "./PropHeavyCrate.js";
+import PropBall from "./PropBall.js";
+import PropWall from "./PropWall.js";
+import PropWater from "./PropWater.js";
+import PropWaterSteam from "./PropWaterSteam.js";
+import PropFire from "./PropFire.js";
+import PropBlackHole from "./PropBlackHole.js";
+import PropTnt from "./PropTnt.js";
+import PropOil from "./PropOil.js";
 
 export default class PropController
 {
-	static create(runtime, propId, x, y)
+	static create(propId, x, y)
 	{
 		let props = [
-			PropCrateInstance,
-			PropHeavyCrateInstance,
-			PropBallInstance,
-			PropSolidInstance,
-			PropWaterInstance,
-			PropBlackHoleInstance
+			PropCrate,
+			PropHeavyCrate,
+			PropBall,
+			PropWall,
+			PropWater,
+			PropBlackHole,
+			PropWaterSteam,
+			PropFire,
+			PropTnt,
+			PropOil
 		];
 	
-		props[propId].create(runtime, x, y)
+		props[propId].create(x, y)
+	}
+	
+	static find(uid)
+	{
+		return globalThis.runtime.getInstanceByUid(uid);
 	}
 }

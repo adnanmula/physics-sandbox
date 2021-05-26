@@ -6,6 +6,7 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"prop_water"
+		"prop_water",
+		"prop_oil"
 	]
 }

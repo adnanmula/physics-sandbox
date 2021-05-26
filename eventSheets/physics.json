@@ -1,0 +1,540 @@
+{
+	"name": "physics",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 907860814926173
+				}
+			],
+			"actions": [
+				{
+					"id": "set-world-gravity",
+					"objectClass": "solid",
+					"sid": 223597827374991,
+					"behaviorType": "Physics",
+					"parameters": {
+						"gravity": "0"
+					}
+				},
+				{
+					"id": "enabledisable-collisions",
+					"objectClass": "prop_blackhole",
+					"sid": 700546341402756,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "props",
+						"state": "disable"
+					}
+				},
+				{
+					"id": "enabledisable-collisions",
+					"objectClass": "prop_fire",
+					"sid": 627672781698362,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "prop_gas",
+						"state": "disable"
+					}
+				}
+			],
+			"sid": 116101154591891
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Flammable solid",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_fire",
+							"sid": 551648228595266,
+							"parameters": {
+								"object": "prop_water"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 518514708042336,
+							"parameters": {
+								"object-to-create": "prop_water_steam",
+								"layer": "\"main\"",
+								"x": "prop_fire.X",
+								"y": "prop_fire.Y",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "prop_fire",
+							"sid": 840248461523554
+						},
+						{
+							"id": "destroy",
+							"objectClass": "prop_water",
+							"sid": 490644031479350
+						}
+					],
+					"sid": 375406768400533
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_fire",
+							"sid": 649632286168409,
+							"parameters": {
+								"object": "prop_flammable_solid"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "prop_flammable_solid",
+							"sid": 494503347254589,
+							"parameters": {
+								"animation": "\"default\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "prop_fire",
+							"sid": 599740231091177
+						},
+						{
+							"type": "script",
+							"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nprop.flammable.setOnFire();"
+						}
+					],
+					"sid": 606857579135062
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_fire",
+							"sid": 534984579115300,
+							"parameters": {
+								"object": "prop_flammable_solid"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "prop_flammable_solid",
+							"sid": 492792695255335,
+							"parameters": {
+								"animation": "\"burned\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "prop_fire",
+							"sid": 658189158699466
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "prop_flammable_solid",
+							"sid": 707331598075788,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Self.consuming_time",
+								"type": "once",
+								"tag": "\"consuming_time\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "prop_flammable_solid",
+							"sid": 968997564173622,
+							"parameters": {
+								"animation": "\"consuming\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 317106169748557
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_water",
+							"sid": 473322269706092,
+							"parameters": {
+								"object": "prop_flammable_solid"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "prop_flammable_solid",
+							"sid": 871434689450898,
+							"parameters": {
+								"animation": "\"burning\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nprop.flammable.putOutFire();"
+						},
+						{
+							"id": "destroy",
+							"objectClass": "prop_water",
+							"sid": 941210010559039
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 852929025892001,
+							"parameters": {
+								"object-to-create": "prop_water_steam",
+								"layer": "\"main\"",
+								"x": "prop_flammable_solid.X",
+								"y": "prop_flammable_solid.Y",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 975992576076370
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_water",
+							"sid": 289637479597325,
+							"parameters": {
+								"object": "prop_flammable_solid"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "prop_flammable_solid",
+							"sid": 783558489191267,
+							"parameters": {
+								"animation": "\"burned\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "prop_flammable_solid",
+							"sid": 594129438863237,
+							"parameters": {
+								"animation": "\"burned\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "stop-timer",
+							"objectClass": "prop_flammable_solid",
+							"sid": 897690272059262,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"consuming_time\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "prop_water",
+							"sid": 247042500302260
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 836772053171211,
+							"parameters": {
+								"object-to-create": "prop_water_steam",
+								"layer": "\"main\"",
+								"x": "prop_flammable_solid.X",
+								"y": "prop_flammable_solid.Y",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 845313994466747,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_flammable_solid",
+							"sid": 346062128392140,
+							"parameters": {
+								"object": "prop_flammable_solid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 965991475552010,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "instance_0_is_burning",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 603175451134408
+						},
+						{
+							"eventType": "variable",
+							"name": "instance_0_uid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 604934346457931
+						},
+						{
+							"eventType": "variable",
+							"name": "instance_1_is_burning",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 229078156360055
+						},
+						{
+							"eventType": "variable",
+							"name": "instance_1_uid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 183585849656261
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-nth-instance",
+									"objectClass": "System",
+									"sid": 283901311024459,
+									"parameters": {
+										"object": "prop_flammable_solid",
+										"instance": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nlocalVars.instance_0_is_burning = prop.flammable.isBurning;\nlocalVars.instance_0_uid = prop.uid;"
+								}
+							],
+							"sid": 885556452235019
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-nth-instance",
+									"objectClass": "System",
+									"sid": 166511312931734,
+									"parameters": {
+										"object": "prop_flammable_solid",
+										"instance": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nlocalVars.instance_1_is_burning = prop.flammable.isBurning;\nlocalVars.instance_1_uid = prop.uid;"
+								}
+							],
+							"sid": 995841886671965
+						},
+						{
+							"eventType": "script",
+							"script": "if (true == localVars.instance_0_is_burning && false === localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_1_uid);\n\tprop.flammable.startPropagation();\t\n}\n\nif (false == localVars.instance_0_is_burning && true == localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_0_uid);\n\tprop.flammable.startPropagation();\n}"
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "prop_flammable_solid",
+							"sid": 462276647513641,
+							"parameters": {
+								"object": "prop_flammable_solid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 365421298050213,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "instance_0_is_burning",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 190331324143556
+						},
+						{
+							"eventType": "variable",
+							"name": "instance_0_uid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 911705945064718
+						},
+						{
+							"eventType": "variable",
+							"name": "instance_1_is_burning",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 659499675649084
+						},
+						{
+							"eventType": "variable",
+							"name": "instance_1_uid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 986640940615537
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-nth-instance",
+									"objectClass": "System",
+									"sid": 160820836646385,
+									"parameters": {
+										"object": "prop_flammable_solid",
+										"instance": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nlocalVars.instance_0_is_burning = prop.flammable.isBurning;\nlocalVars.instance_0_uid = prop.uid;"
+								}
+							],
+							"sid": 116703936514412
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-nth-instance",
+									"objectClass": "System",
+									"sid": 953727921162911,
+									"parameters": {
+										"object": "prop_flammable_solid",
+										"instance": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nlocalVars.instance_1_is_burning = prop.flammable.isBurning;\nlocalVars.instance_1_uid = prop.uid;"
+								}
+							],
+							"sid": 994938427426621
+						},
+						{
+							"eventType": "script",
+							"script": "if (true == localVars.instance_0_is_burning && false === localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_1_uid);\n\tprop.flammable.startPropagation();\t\n}\n\nif (false == localVars.instance_0_is_burning && true == localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_0_uid);\n\tprop.flammable.startPropagation();\n}"
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "prop_flammable_solid",
+							"sid": 582588485658353,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"consuming_time\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nprop.destroy();"
+						}
+					],
+					"sid": 471980814792697
+				}
+			],
+			"sid": 241845656432357
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Explosives",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_fire",
+							"sid": 427759220055766,
+							"parameters": {
+								"object": "prop_explosive"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "const prop = runtime.objects.prop_explosive.getFirstPickedInstance();\nprop.explosive.lightFuse();"
+						}
+					],
+					"sid": 952296541405096
+				}
+			],
+			"sid": 647878788354602
+		}
+	],
+	"sid": 499630380292425
+}

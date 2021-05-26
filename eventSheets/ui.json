@@ -779,6 +779,116 @@
 					"sid": 446100239493718
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 792628570045540,
+					"parameters": {
+						"object": "toolbar_item"
+					}
+				},
+				{
+					"id": "pick-by-evaluate",
+					"objectClass": "System",
+					"sid": 152832332406127,
+					"parameters": {
+						"object": "ui_text",
+						"expression": "ui_text.type = \"toolbar_tooltip\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "ui_text",
+					"sid": 126881933814791,
+					"parameters": {
+						"x": "toolbar_item.X - toolbar_item.Width / 4",
+						"y": "toolbar_item.Y + 35"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ui_text",
+					"sid": 573734584377009,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ui_text",
+					"sid": 827231418351064,
+					"parameters": {
+						"text": "toolbar_item.element"
+					}
+				}
+			],
+			"sid": 430014162230336,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 601874917756776,
+							"parameters": {
+								"object": "ui_prop_selector"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "ui_text",
+							"sid": 834309799114497,
+							"parameters": {
+								"text": "ui_prop_selector.prop"
+							}
+						}
+					],
+					"sid": 928998328963595
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 647811720596165,
+					"parameters": {
+						"object": "toolbar_item"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "pick-by-evaluate",
+					"objectClass": "System",
+					"sid": 928127287922054,
+					"parameters": {
+						"object": "ui_text",
+						"expression": "ui_text.type = \"toolbar_tooltip\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ui_text",
+					"sid": 821048923628122,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 991920553069394
 		}
 	],
 	"sid": 283603127988573

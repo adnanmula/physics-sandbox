@@ -1,6 +1,15 @@
-export default class PropWaterInstance extends ISpriteInstance
+import Prop from "./Prop.js";
+import GravityTrait from "./GravityTrait.js";
+
+export default class PropWater extends Prop
 {
-	get type() { return 'liquid'; }
+	get traits()
+	{
+		return [
+			super.TRAIT_LIQUID,
+			super.TRAIT_GRAVITY,
+		];
+	}
 	
 	constructor()
 	{
@@ -15,10 +24,20 @@ export default class PropWaterInstance extends ISpriteInstance
 		this.behaviors.Physics.isBullet = false;
 		this.behaviors.Physics.isPreventRotation = false;
 		this.behaviors.Physics.isEnabled = true;
+		
+		this.gravity = new GravityTrait(this, {
+			'force': this.behaviors.Physics.mass,
+			'angle': 90
+		});
 	}
 	
-	static create(runtime, x, y)
+	static create(x, y)
 	{
-		runtime.objects.prop_water.createInstance("main", x, y);
+		globalThis.runtime.objects.prop_water.createInstance("main", x, y);
+	}
+	
+	tick()
+	{
+		this.gravity.tick();
 	}
 }

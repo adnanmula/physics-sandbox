@@ -7,6 +7,10 @@
 		},
 		{
 			"eventType": "include",
+			"includeSheet": "physics"
+		},
+		{
+			"eventType": "include",
 			"includeSheet": "spawner"
 		},
 		{
@@ -118,8 +122,8 @@
 				},
 				{
 					"id": "set-stepping-iterations",
-					"objectClass": "prop_water",
-					"sid": 247298053199607,
+					"objectClass": "prop_wall",
+					"sid": 861969772572345,
 					"behaviorType": "Physics",
 					"parameters": {
 						"velocity-iterations": "6",
@@ -287,6 +291,15 @@
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [
+				{
+					"id": "set-layer-scale",
+					"objectClass": "System",
+					"sid": 225642813325236,
+					"parameters": {
+						"layer": "\"main\"",
+						"scale": "1"
+					}
+				},
 				{
 					"id": "scroll-to-position",
 					"objectClass": "System",
@@ -483,37 +496,186 @@
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Zoom",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 619656555213822,
-					"parameters": {
-						"key": 80
-					}
+					"eventType": "variable",
+					"name": "ZOOM_STEP",
+					"type": "number",
+					"initialValue": "0.1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 156021586998789
 				},
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 527642066532106,
-					"parameters": {
-						"key": 32
-					}
-				}
-			],
-			"actions": [
+					"eventType": "variable",
+					"name": "ZOOM_MAX",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 372837038754448
+				},
 				{
-					"id": "set-time-scale",
-					"objectClass": "System",
-					"sid": 599428604799337,
-					"parameters": {
-						"time-scale": "timescale = 0 ? 1 : 0"
-					}
+					"eventType": "variable",
+					"name": "ZOOM_MIN",
+					"type": "number",
+					"initialValue": "0.5",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 577502243839621
+				},
+				{
+					"eventType": "variable",
+					"name": "ZOOM_DEFAULT",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 258421076612265
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 638573653280634
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 874850529578045,
+							"parameters": {
+								"layer": "\"main\"",
+								"scale": "ZOOM_DEFAULT"
+							}
+						}
+					],
+					"sid": 743546304908477
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-mouse-wheel",
+							"objectClass": "Mouse",
+							"sid": 908043725865258,
+							"parameters": {
+								"direction": "down"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 276367744417629,
+							"parameters": {
+								"layer": "\"main\"",
+								"scale": "LayerScale(\"main\") - ZOOM_STEP >= ZOOM_MIN ? LayerScale(\"main\") - ZOOM_STEP : ZOOM_MIN"
+							}
+						}
+					],
+					"sid": 730289382975471
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-mouse-wheel",
+							"objectClass": "Mouse",
+							"sid": 546836046382349,
+							"parameters": {
+								"direction": "up"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 380162633809605,
+							"parameters": {
+								"layer": "\"main\"",
+								"scale": "LayerScale(\"main\") + ZOOM_STEP <= ZOOM_MAX ? LayerScale(\"main\") + ZOOM_STEP : ZOOM_MAX"
+							}
+						}
+					],
+					"sid": 147172191421071
 				}
 			],
-			"sid": 165595098390292,
-			"isOrBlock": true
+			"sid": 463138748557434
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Timescale",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 534103302090414,
+							"parameters": {
+								"key": 80
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 474180328070243,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "timescaleToogle",
+							"sid": 476680061040925
+						}
+					],
+					"sid": 849183819005611,
+					"isOrBlock": true
+				},
+				{
+					"functionName": "timescaleToogle",
+					"functionDescription": "Toggles game pause",
+					"functionCategory": "timescale",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 215048549080841,
+							"parameters": {
+								"time-scale": "timescale = 0 ? 1 : 0"
+							}
+						}
+					],
+					"sid": 648986496921917
+				}
+			],
+			"sid": 999834133817755
 		}
 	],
 	"sid": 465004340330817

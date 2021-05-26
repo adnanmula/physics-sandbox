@@ -94,7 +94,7 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "PropController.create(runtime, runtime.globalVars.currentProp0, runtime.mouse.getMouseX(\"main\"), runtime.mouse.getMouseY(\"main\"));"
+									"script": "PropController.create(runtime.globalVars.currentProp0, runtime.mouse.getMouseX(\"main\"), runtime.mouse.getMouseY(\"main\"));"
 								}
 							],
 							"sid": 510069386202793
@@ -153,7 +153,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "PropController.create(runtime, runtime.globalVars.currentProp1, runtime.mouse.getMouseX(\"main\"), runtime.mouse.getMouseY(\"main\"));"
+							"script": "PropController.create(runtime.globalVars.currentProp1, runtime.mouse.getMouseX(\"main\"), runtime.mouse.getMouseY(\"main\"));"
 						}
 					],
 					"sid": 911667024731654
@@ -253,7 +253,7 @@
 								},
 								{
 									"type": "script",
-									"script": "PropController.create(runtime, runtime.globalVars.currentProp0, localVars.x, localVars.y);"
+									"script": "PropController.create(runtime.globalVars.currentProp0, localVars.x, localVars.y);"
 								}
 							],
 							"sid": 400036502300679
@@ -267,22 +267,57 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "props",
-					"sid": 747358963836662,
-					"parameters": {
-						"object": "prop_blackhole"
-					}
+					"id": "on-created",
+					"objectClass": "prop_blackhole",
+					"sid": 363285568741294
 				}
 			],
 			"actions": [
 				{
-					"id": "destroy",
-					"objectClass": "props",
-					"sid": 118397316411719
+					"id": "move-to-bottom",
+					"objectClass": "prop_blackhole",
+					"sid": 752044742301876
 				}
 			],
-			"sid": 149041964741120
+			"sid": 867870574009879
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "prop_fire",
+					"sid": 198166419970972
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "particles_fire",
+					"sid": 884472619703132,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "prop_fire",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"width-type": "no",
+						"height-type": "no",
+						"z": true
+					}
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "prop_fire",
+					"sid": 248565706271367
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "particles_fire",
+					"sid": 413866782763166
+				}
+			],
+			"sid": 374687865821971
 		}
 	],
 	"sid": 100142716717916

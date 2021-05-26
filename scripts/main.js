@@ -1,46 +1,46 @@
-import PropCrateInstance from "./PropCrate.js";
-import PropHeavyCrateInstance from "./PropHeavyCrate.js";
-import PropBallInstance from "./PropBall.js";
-import PropSolidInstance from "./PropSolid.js";
-import PropWaterInstance from "./PropWater.js";
-import PropBlackHoleInstance from "./PropBlackHole.js";
+import PropCrate from "./PropCrate.js";
+import PropHeavyCrate from "./PropHeavyCrate.js";
+import PropBall from "./PropBall.js";
+import PropWall from "./PropWall.js";
+import PropWater from "./PropWater.js";
+import PropWaterSteam from "./PropWaterSteam.js";
+import PropFire from "./PropFire.js";
+import PropBlackHole from "./PropBlackHole.js";
+import PropTnt from "./PropTnt.js";
+import PropOil from "./PropOil.js";
 
 runOnStartup(async runtime =>
 {
-	runtime.objects.prop_crate.setInstanceClass(PropCrateInstance);
-	runtime.objects.prop_heavycrate.setInstanceClass(PropHeavyCrateInstance);
-	runtime.objects.prop_ball.setInstanceClass(PropBallInstance);
-	runtime.objects.prop_solid.setInstanceClass(PropSolidInstance);
-	runtime.objects.prop_water.setInstanceClass(PropWaterInstance);
-	runtime.objects.prop_blackhole.setInstanceClass(PropBlackHoleInstance);
+	globalThis.runtime = runtime;
 
-	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
+	runtime.objects.prop_crate.setInstanceClass(PropCrate);
+	runtime.objects.prop_heavycrate.setInstanceClass(PropHeavyCrate);
+	runtime.objects.prop_ball.setInstanceClass(PropBall);
+	runtime.objects.prop_wall.setInstanceClass(PropWall);
+	runtime.objects.prop_water.setInstanceClass(PropWater);
+	runtime.objects.prop_water_steam.setInstanceClass(PropWaterSteam);
+	runtime.objects.prop_blackhole.setInstanceClass(PropBlackHole);
+	runtime.objects.prop_fire.setInstanceClass(PropFire);
+	runtime.objects.prop_tnt.setInstanceClass(PropTnt);
+	runtime.objects.prop_oil.setInstanceClass(PropOil);
+	
+	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart());
 });
 
-function OnBeforeProjectStart(runtime)
+function OnBeforeProjectStart()
 {
-	setInterval(() => ProcessBlackHoles(runtime), 100);
-
-	//runtime.addEventListener("tick", () => Tick(runtime));
+	runtime.addEventListener("tick", () => Tick());
 }
 
-// function Tick(runtime)
-// {
-// 	for (const blackHole of runtime.objects.prop_blackhole.instances())
-// 	{
-// 		blackHole.absorb(runtime);
-// 	}
-// }
-
-function ProcessBlackHoles(runtime)
+function Tick()
 {
 	if (runtime.dt == 0)
 	{
 		return;
 	}
 	
-	for (const blackHole of runtime.objects.prop_blackhole.instances())
+	for (const instance of globalThis.runtime.objects.props.instances())
 	{
-		blackHole.pull(runtime);
+		instance.tick();
 	}
 }

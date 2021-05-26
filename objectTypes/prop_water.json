@@ -17,7 +17,7 @@
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
-						"exportQuality": 0.8,
+						"exportQuality": 1,
 						"imageSpriteId": 2623696,
 						"collisionPoly": {
 							"points": [

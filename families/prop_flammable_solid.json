@@ -1,0 +1,37 @@
+{
+	"name": "prop_flammable_solid",
+	"plugin-id": "Sprite",
+	"sid": 374535845417299,
+	"instanceVariables": [
+		{
+			"name": "burning_time",
+			"type": "number",
+			"desc": "",
+			"sid": 577769872873085
+		},
+		{
+			"name": "consuming_time",
+			"type": "number",
+			"desc": "",
+			"sid": 305593775738942
+		},
+		{
+			"name": "propagation_time",
+			"type": "number",
+			"desc": "",
+			"sid": 806002585935185
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 811297171811887
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"prop_crate",
+		"prop_oil"
+	]
+}

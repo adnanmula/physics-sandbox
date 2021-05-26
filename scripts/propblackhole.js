@@ -1,11 +1,15 @@
 import * as Util from "./utils.js";
+import Prop from "./Prop.js";
 
-export default class PropBlackHoleInstance extends ISpriteInstance
+export default class PropBlackHole extends Prop
 {
 	get PULL_RADIUS() { return 500; }
-	get PULL_FORCE() { return 500; }
-	get PULL_FORCE_LIQUID() { return 50; }
-	get type() { return 'dragable'; }
+	get PULL_FORCE() { return 4; }
+	
+	get traits()
+	{
+		return [super.TRAIT_DRAGABLE];
+	}
 
 	constructor()
 	{
@@ -22,48 +26,57 @@ export default class PropBlackHoleInstance extends ISpriteInstance
 		this.behaviors.Physics.isEnabled = true;
 	}
 
-	static create(runtime, x, y)
+	static create(x, y)
 	{
-		runtime.objects.prop_blackhole.createInstance("main", x, y);
+		globalThis.runtime.objects.prop_blackhole.createInstance("main", x, y);
 	}
 	
-	pull(runtime)
+	tick()
 	{
-		if (true == Util.isOutsideLayout(this)) {
+		this.pull();
+		
+		if (Util.tickCount() % 10 === 0)
+		{
+			this.absorb();
+		}
+	}
+	
+	pull()
+	{
+		const runtime = globalThis.runtime;
+		
+		if (true === Util.isOutsideLayout(this)) {
 			return;
 		}
 		
 		for (const prop of runtime.objects.props.instances())
 		{
-			if (true == prop.behaviors.Physics.isImmovable) {
+			if (prop instanceof PropBlackHole || true === prop.behaviors.Physics.isImmovable)
+			{
 				continue;
 			}
 		
 			if (Util.distanceTo(this.x, this.y, prop.x, prop.y) < this.PULL_RADIUS)
 			{
-				let force = prop.behaviors.Physics.density * this.PULL_FORCE;
-				
-				if (prop.type == "liquid") {
-					force = prop.behaviors.Physics.density * this.PULL_FORCE_LIQUID;
-				}
-			
+				let force = prop.behaviors.Physics.mass * this.PULL_FORCE;
+	
 				prop.behaviors.Physics.applyForceTowardPosition(force, this.x, this.y, 0);
 			}
 		}
 	}
 	
-// 	absorb(runtime)
-// 	{
-// 		for (const prop of runtime.objects.props.instances())
-// 		{	
-// 			if (prop.uid == this.uid) {
-// 				continue;
-// 			}
+	absorb()
+	{
+		for (const prop of globalThis.runtime.objects.props.instances())
+		{	
+			if (prop instanceof PropBlackHole) {
+				continue;
+			}
 			
-// 			if (Util.distanceTo(this.x, this.y, prop.x, prop.y) < this.width * 0.7)
-// 			{
-// 				prop.destroy();
-// 			}
-// 		}
-// 	}
+			if (this.testOverlap(prop))
+			{
+				prop.destroy();
+			}
+		}
+	}
 }

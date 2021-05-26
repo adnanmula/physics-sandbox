@@ -1,7 +1,18 @@
-export default class PropCrateInstance extends ISpriteInstance
-{
-	get type() { return 'dragable'; }
+import Prop from "./Prop.js";
+import FlammableTrait from "./FlammableTrait.js";
+import GravityTrait from "./GravityTrait.js";
 
+export default class PropCrate extends Prop
+{
+	get traits()
+	{
+		return [
+			super.TRAIT_DRAGGABLE,
+			super.TRAIT_FLAMMABLE_SOLID,
+			super.TRAIT_GRAVITY,
+		];
+	}
+	
 	constructor()
 	{
 		super();
@@ -15,10 +26,33 @@ export default class PropCrateInstance extends ISpriteInstance
  		this.behaviors.Physics.isBullet = false;
  		this.behaviors.Physics.isPreventRotation = false;
  		this.behaviors.Physics.isEnabled = true;
+			
+		//this.instVars.burning_time = 3;
+		//this.instVars.consuming_time = 1;
+		//this.instVars.propagation_time = 0.2;
+
+		this.flammable = new FlammableTrait(this, {
+			'burning_time': 3,
+			'consuming_time': 1,
+			'propagation_time': 0.2,
+			'is_liquid': false,
+			'is_burning': false,
+		});
+
+		this.gravity = new GravityTrait(this, {
+			'force': this.behaviors.Physics.mass,
+			'angle': 90,
+		});
 	}
 
-	static create(runtime, x, y)
+	static create(x, y)
 	{
-		runtime.objects.prop_crate.createInstance("main", x, y);
+		globalThis.runtime.objects.prop_crate.createInstance("main", x, y);
+	}
+	
+	tick()
+	{
+		this.gravity.tick();
+		this.flammable.tick();
 	}
 }
