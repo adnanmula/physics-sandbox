@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/adnanmula/physics-sandbox/issues"
   },
-  "homepage": "https://github.com/adnanmula/physics-sandbox#readme"
+  "homepage": "https://github.com/adnanmula/physics-sandbox#readme",
+  "dependencies": {
+    "npm-check-updates": "^12.5.5"
+  }
 }
