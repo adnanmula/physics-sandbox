@@ -37,7 +37,7 @@
 					}
 				],
 				"sid": 376310105848789,
-				"name": "Default",
+				"name": "default",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -53,8 +53,8 @@
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 3907590,
+						"exportQuality": 1,
+						"imageSpriteId": 2031072,
 						"collisionPoly": {
 							"points": [
 								0.30000000000000004,
@@ -72,8 +72,80 @@
 						"tag": ""
 					}
 				],
-				"sid": 762171344564766,
-				"name": "Animation 1",
+				"sid": 359246596578715,
+				"name": "burning",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 20,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 1,
+						"imageSpriteId": 5267553,
+						"collisionPoly": {
+							"points": [
+								0.30000000000000004,
+								0.30000000000000004,
+								0.7000000000000002,
+								0.30000000000000004,
+								0.7000000000000002,
+								0.7000000000000002,
+								0.30000000000000004,
+								0.7000000000000002
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 667167670684610,
+				"name": "burned",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 20,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 1,
+						"imageSpriteId": 2691747,
+						"collisionPoly": {
+							"points": [
+								0.30000000000000004,
+								0.30000000000000004,
+								0.7000000000000002,
+								0.30000000000000004,
+								0.7000000000000002,
+								0.7000000000000002,
+								0.30000000000000004,
+								0.7000000000000002
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 507488648402839,
+				"name": "consuming",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

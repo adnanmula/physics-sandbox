@@ -688,7 +688,7 @@
 					"type": "prop_oil",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Default",
+						"initial-animation": "default",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -813,7 +813,7 @@
 						}
 					},
 					"world": {
-						"x": 581.5,
+						"x": 511.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -857,7 +857,7 @@
 						}
 					},
 					"world": {
-						"x": 656.5,
+						"x": 586.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -901,7 +901,7 @@
 						}
 					},
 					"world": {
-						"x": 808.5,
+						"x": 738.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -945,7 +945,7 @@
 						}
 					},
 					"world": {
-						"x": 883.5,
+						"x": 813.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -989,7 +989,7 @@
 						}
 					},
 					"world": {
-						"x": 959.5,
+						"x": 889.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
@@ -1016,7 +1016,7 @@
 					},
 					"uid": 35,
 					"instanceVariables": {
-						"toolbar_index": 11,
+						"toolbar_index": 6,
 						"element": "Prop",
 						"index": 9,
 						"prop": "Oil"
@@ -1033,8 +1033,8 @@
 						}
 					},
 					"world": {
-						"x": 487,
-						"y": 72,
+						"x": 967.4223424745334,
+						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
 						"originX": 0.5,
@@ -1060,7 +1060,7 @@
 					},
 					"uid": 5,
 					"instanceVariables": {
-						"toolbar_index": 8,
+						"toolbar_index": 9,
 						"element": "Prop",
 						"index": 5,
 						"prop": "Black Hole"
@@ -1104,7 +1104,7 @@
 					},
 					"uid": 22,
 					"instanceVariables": {
-						"toolbar_index": 9,
+						"toolbar_index": 10,
 						"element": "Clear"
 					},
 					"behaviors": {
@@ -1146,7 +1146,7 @@
 					},
 					"uid": 23,
 					"instanceVariables": {
-						"toolbar_index": 10,
+						"toolbar_index": 11,
 						"element": "Erase"
 					},
 					"behaviors": {
@@ -1188,7 +1188,7 @@
 					},
 					"uid": 26,
 					"instanceVariables": {
-						"toolbar_index": 7,
+						"toolbar_index": 8,
 						"element": "Prop",
 						"index": 6,
 						"prop": "Water Steam"
@@ -1232,7 +1232,7 @@
 					},
 					"uid": 28,
 					"instanceVariables": {
-						"toolbar_index": 6,
+						"toolbar_index": 7,
 						"element": "Prop",
 						"index": 7,
 						"prop": "Fire"
@@ -1339,7 +1339,7 @@
 						}
 					},
 					"world": {
-						"x": 732.5,
+						"x": 662.5,
 						"y": 73,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,

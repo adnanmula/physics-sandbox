@@ -283,25 +283,25 @@
 						"tag": ""
 					},
 					{
-						"width": 25,
-						"height": 25,
+						"width": 12,
+						"height": 12,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8746210,
+						"imageSpriteId": 6940947,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "right",
-								"x": 0.8181818181818182,
-								"y": 0.9090909090909091
+								"x": 0.8183333333333334,
+								"y": 0.9091666666666667
 							},
 							{
 								"name": "left",
-								"x": 0.18181818181818182,
-								"y": 0.9090909090909091
+								"x": 0.18166666666666667,
+								"y": 0.9091666666666667
 							}
 						],
 						"duration": 1,

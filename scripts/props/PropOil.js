@@ -37,8 +37,8 @@ export default class PropOil extends Prop
 // 		this.flammable = new FlammableTrait(this);
 		
 		this.flammable = new FlammableTrait(this, {
-			'burning_time': 0.2,
-			'consuming_time': 0.2,
+			'burning_time': 0.1,
+			'consuming_time': 0.1,
 			'propagation_time': 0.01,
 			'is_liquid': true,
 			'is_burning': false,
