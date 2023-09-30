@@ -128,10 +128,7 @@
 	],
 	"uniqueId": "nzjq5ue38ks3",
 	"objectTypes": {
-		"items": [
-			"particles_burning",
-			"prop_oil"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -154,12 +151,14 @@
 					"prop_blackhole",
 					"prop_water_steam",
 					"prop_fire",
-					"prop_tnt"
+					"prop_tnt",
+					"prop_oil"
 				],
 				"subfolders": [
 					{
 						"items": [
-							"particles_fire"
+							"particles_fire",
+							"particles_burning"
 						],
 						"subfolders": [],
 						"name": "particles"
