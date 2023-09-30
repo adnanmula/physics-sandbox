@@ -7,18 +7,21 @@
 			"name": "burning_time",
 			"type": "number",
 			"desc": "",
+			"show": true,
 			"sid": 577769872873085
 		},
 		{
 			"name": "consuming_time",
 			"type": "number",
 			"desc": "",
+			"show": true,
 			"sid": 305593775738942
 		},
 		{
 			"name": "propagation_time",
 			"type": "number",
 			"desc": "",
+			"show": true,
 			"sid": 806002585935185
 		}
 	],

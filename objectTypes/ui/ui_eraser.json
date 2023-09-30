@@ -1,7 +1,7 @@
 {
-	"name": "prop_fire",
+	"name": "ui_eraser",
 	"plugin-id": "Sprite",
-	"sid": 965467880460442,
+	"sid": 947664557710838,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,25 +11,26 @@
 			{
 				"frames": [
 					{
-						"width": 25,
-						"height": 25,
+						"width": 11,
+						"height": 11,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2663288,
+						"imageSpriteId": 4497928,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
-				"sid": 521377389816966,
-				"name": "Animation 1",
+				"sid": 465199276772683,
+				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			}
 		],
 		"subfolders": []

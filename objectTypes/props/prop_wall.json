@@ -1,7 +1,7 @@
 {
-	"name": "ui_eraser",
+	"name": "prop_wall",
 	"plugin-id": "Sprite",
-	"sid": 947664557710838,
+	"sid": 811226407980185,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -13,23 +13,24 @@
 					{
 						"width": 11,
 						"height": 11,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 0.545455,
+						"originY": 0.545455,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4497928,
+						"imageSpriteId": 826015,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
-				"sid": 465199276772683,
+				"sid": 497185147464260,
 				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 0
+				"speed": 5
 			}
 		],
 		"subfolders": []

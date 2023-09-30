@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 24900,
+	"savedWithRelease": 36000,
 	"name": "Physics Sandbox",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -8,34 +8,9 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
-			"id": "Mouse",
-			"name": "Mouse",
-			"author": "Scirra",
-			"version": "r249",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r249",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Touch",
-			"name": "Touch",
-			"author": "Scirra",
-			"version": "r249",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "PlatformInfo",
-			"name": "Platform info",
-			"author": "Scirra",
-			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -43,7 +18,13 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r249",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
 			"bundled": false
 		},
 		{
@@ -51,7 +32,13 @@
 			"id": "Particles",
 			"name": "Particles",
 			"author": "Scirra",
-			"version": "r249",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "PlatformInfo",
+			"name": "Platform info",
+			"author": "Scirra",
 			"bundled": false
 		},
 		{
@@ -59,7 +46,6 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -67,55 +53,13 @@
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
-			"version": "r249",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "Pin",
-			"name": "Pin",
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
 			"author": "Scirra",
-			"version": "r249",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Physics",
-			"name": "Physics",
-			"author": "Scirra",
-			"version": "r249",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "solid",
-			"name": "Solid",
-			"author": "Scirra",
-			"version": "r249",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "scrollto",
-			"name": "Scroll To",
-			"author": "Scirra",
-			"version": "r249",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "destroy",
-			"name": "Destroy outside layout",
-			"author": "Scirra",
-			"version": "r249",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "DragnDrop",
-			"name": "Drag & Drop",
-			"author": "Scirra",
-			"version": "r249",
 			"bundled": false
 		},
 		{
@@ -123,7 +67,27 @@
 			"id": "Anchor",
 			"name": "Anchor",
 			"author": "Scirra",
-			"version": "r249",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
 			"bundled": false
 		},
 		{
@@ -131,7 +95,27 @@
 			"id": "Timer",
 			"name": "Timer",
 			"author": "Scirra",
-			"version": "r249",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
 			"bundled": false
 		},
 		{
@@ -139,7 +123,6 @@
 			"id": "alphaclamp",
 			"name": "Alpha clamp",
 			"author": "Scirra",
-			"version": "r249",
 			"bundled": false
 		}
 	],
@@ -211,8 +194,7 @@
 			"members": [
 				"particles_fire",
 				"prop_fire"
-			],
-			"selectMode": "normal"
+			]
 		}
 	],
 	"families": {
@@ -532,6 +514,8 @@
 		"authorWebsite": "http://",
 		"appId": "com.adnanmula.physicssandbox",
 		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",
@@ -555,9 +539,8 @@
 			1,
 			0
 		],
-		"useHighDpi": true,
 		"orientations": "landscape",
-		"enableWebGL": true,
+		"webgpu": "auto",
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
@@ -566,12 +549,16 @@
 		"downscaling": "medium",
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "progress-logo",
 		"preloadSounds": true,
-		"clearBackground": true,
-		"enhancedAccelerationPrecision": true,
-		"cordovaiOSScheme": "app"
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "file",
+		"autoReloadScriptsOnPreview": false,
+		"exportFileStructure": "flat",
+		"uidAllocationMode": "increment"
 	},
 	"viewportWidth": 1920,
 	"viewportHeight": 1080,

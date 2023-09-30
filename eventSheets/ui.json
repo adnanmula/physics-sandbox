@@ -388,6 +388,7 @@
 			"functionDescription": "",
 			"functionCategory": "ui",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{

@@ -1,7 +1,7 @@
 {
-	"name": "prop_heavycrate",
+	"name": "prop_fire",
 	"plugin-id": "Sprite",
-	"sid": 243536145388234,
+	"sid": 965467880460442,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,20 +11,21 @@
 			{
 				"frames": [
 					{
-						"width": 11,
-						"height": 11,
-						"originX": 0.545455,
-						"originY": 0.545455,
+						"width": 25,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8541593,
+						"imageSpriteId": 2663288,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
-				"sid": 481341911014951,
-				"name": "Default",
+				"sid": 521377389816966,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

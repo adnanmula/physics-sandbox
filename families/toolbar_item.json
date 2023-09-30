@@ -7,12 +7,14 @@
 			"name": "toolbar_index",
 			"type": "number",
 			"desc": "",
+			"show": true,
 			"sid": 362047591169535
 		},
 		{
 			"name": "element",
 			"type": "string",
 			"desc": "",
+			"show": true,
 			"sid": 283167854166926
 		}
 	],

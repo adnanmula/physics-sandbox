@@ -1,7 +1,7 @@
 {
-	"name": "prop_wall",
+	"name": "prop_heavycrate",
 	"plugin-id": "Sprite",
-	"sid": 811226407980185,
+	"sid": 243536145388234,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -16,14 +16,15 @@
 						"originX": 0.545455,
 						"originY": 0.545455,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 826015,
+						"imageSpriteId": 8541593,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
-				"sid": 497185147464260,
+				"sid": 481341911014951,
 				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,

@@ -18,9 +18,10 @@
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
-		"exportFormat": "png",
+		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"imageSpriteId": 7147502,
-		"useCollisionPoly": true
+		"useCollisionPoly": true,
+		"tag": ""
 	}
 }

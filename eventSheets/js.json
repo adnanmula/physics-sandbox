@@ -6,6 +6,7 @@
 			"functionDescription": "Returns current tick count.",
 			"functionCategory": "",
 			"functionReturnType": "number",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -27,6 +28,7 @@
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{

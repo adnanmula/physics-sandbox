@@ -8,6 +8,7 @@
 			"name": "type",
 			"type": "string",
 			"desc": "",
+			"show": true,
 			"sid": 414860819149989
 		}
 	],

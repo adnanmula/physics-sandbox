@@ -1,14 +1,15 @@
 {
-	"name": "ui_selector_alt",
+	"name": "ui_selector",
 	"plugin-id": "Sprite",
-	"sid": 580063701720366,
+	"sid": 450734575490654,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
 			"name": "index",
 			"type": "number",
 			"desc": "",
-			"sid": 302946016219265
+			"show": true,
+			"sid": 110276829996486
 		}
 	],
 	"behaviorTypes": [],
@@ -18,37 +19,26 @@
 			{
 				"frames": [
 					{
-						"width": 13,
-						"height": 13,
+						"width": 20,
+						"height": 20,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1147296,
+						"imageSpriteId": 7332541,
 						"useCollisionPoly": true,
-						"duration": 1
-					},
-					{
-						"width": 13,
-						"height": 13,
-						"originX": 0.5,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "png",
-						"exportQuality": 0.8,
-						"imageSpriteId": 4458836,
-						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
-				"sid": 529865599276047,
+				"sid": 993805619482972,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 0
+				"speed": 5
 			}
 		],
 		"subfolders": []

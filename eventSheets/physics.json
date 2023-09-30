@@ -72,7 +72,8 @@
 								"layer": "\"main\"",
 								"x": "prop_fire.X",
 								"y": "prop_fire.Y",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
@@ -209,7 +210,8 @@
 								"layer": "\"main\"",
 								"x": "prop_flammable_solid.X",
 								"y": "prop_flammable_solid.Y",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						}
 					],
@@ -268,7 +270,8 @@
 								"layer": "\"main\"",
 								"x": "prop_flammable_solid.X",
 								"y": "prop_flammable_solid.Y",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						}
 					],

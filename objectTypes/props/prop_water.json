@@ -1,7 +1,7 @@
 {
-	"name": "ui_clean",
+	"name": "prop_water",
 	"plugin-id": "Sprite",
-	"sid": 667827818383968,
+	"sid": 532607340265200,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,31 +11,32 @@
 			{
 				"frames": [
 					{
-						"width": 23,
-						"height": 23,
+						"width": 20,
+						"height": 20,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
-						"exportQuality": 0.8,
-						"imageSpriteId": 1948175,
+						"exportFormat": "lossless",
+						"exportQuality": 1,
+						"imageSpriteId": 2623696,
 						"collisionPoly": {
 							"points": [
-								0.13043478260869565,
-								0,
-								0.8695652173913043,
-								0,
-								0.8695652173913043,
-								1,
-								0.13043478260869565,
-								1
+								0.30000000000000004,
+								0.30000000000000004,
+								0.7000000000000002,
+								0.30000000000000004,
+								0.7000000000000002,
+								0.7000000000000002,
+								0.30000000000000004,
+								0.7000000000000002
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
-				"sid": 214158126300569,
+				"sid": 155237956399257,
 				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,
