@@ -181,7 +181,8 @@
 					"ui_selector_alt",
 					"ui_selector",
 					"ui_eraser",
-					"ui_text"
+					"ui_text",
+					"ui_pause"
 				],
 				"subfolders": [],
 				"name": "ui"
@@ -508,7 +509,7 @@
 	},
 	"properties": {
 		"description": "Just a physics playground for you to mess with.",
-		"version": "0.1.4",
+		"version": "0.1.5",
 		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "http://",

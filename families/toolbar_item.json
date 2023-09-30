@@ -29,6 +29,7 @@
 	"members": [
 		"ui_eraser",
 		"ui_clean",
-		"ui_prop_selector"
+		"ui_prop_selector",
+		"ui_pause"
 	]
 }

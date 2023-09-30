@@ -1033,8 +1033,8 @@
 						}
 					},
 					"world": {
-						"x": 956.4208497326783,
-						"y": -71.80137248954469,
+						"x": 940.6103627306704,
+						"y": -45.06724746785579,
 						"width": 65.45454545454545,
 						"height": 65.45454545454545,
 						"originX": 0.5,
@@ -1438,6 +1438,48 @@
 						"height": 20.98376316673261,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ui_pause",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 36,
+					"instanceVariables": {
+						"toolbar_index": -1,
+						"element": "Pause"
+					},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "none",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 72,
+						"y": 73.53071253071253,
+						"width": 65.45454545454545,
+						"height": 65.45454545454545,
+						"originX": 0.5449101796407185,
+						"originY": 0.5081081081081081,
 						"color": [
 							1,
 							1,

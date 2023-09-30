@@ -644,6 +644,14 @@
 							"parameters": {
 								"key": 32
 							}
+						},
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 982289314164839,
+							"parameters": {
+								"object": "ui_pause"
+							}
 						}
 					],
 					"actions": [
@@ -672,6 +680,14 @@
 							"sid": 215048549080841,
 							"parameters": {
 								"time-scale": "timescale = 0 ? 1 : 0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "ui_pause",
+							"sid": 560196196284381,
+							"parameters": {
+								"frame-number": "timescale = 0 ? 1 : 0"
 							}
 						}
 					],
