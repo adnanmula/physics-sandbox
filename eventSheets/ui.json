@@ -532,6 +532,26 @@
 									"sid": 738052718267285
 								},
 								{
+									"eventType": "variable",
+									"name": "toX",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 477427450536615
+								},
+								{
+									"eventType": "variable",
+									"name": "toY",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 119920062190130
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -560,19 +580,118 @@
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 111846853216352,
+									"children": [
 										{
-											"id": "set-layer-scroll",
-											"objectClass": "System",
-											"sid": 453722541027710,
-											"parameters": {
-												"layer": "\"main\"",
-												"scroll-x": "LayerScrollX(\"main\") + (Touch.XAt(0) - mobileScrollStartX) / 20",
-												"scroll-y": "LayerScrollY(\"main\") + (Touch.YAt(0) - mobileScrollStartY) / 20"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 921320720680728,
+													"parameters": {
+														"first-value": "Touch.XAt(0) - mobileScrollStartX",
+														"comparison": 2,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "camera",
+													"sid": 505084361908934,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "left"
+													}
+												}
+											],
+											"sid": 600684770233397
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 233977587726108,
+													"parameters": {
+														"first-value": "Touch.XAt(0) - mobileScrollStartX",
+														"comparison": 4,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "camera",
+													"sid": 837403540024246,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "right"
+													}
+												}
+											],
+											"sid": 542441431616720
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 866488118921160,
+													"parameters": {
+														"first-value": "Touch.YAt(0) - mobileScrollStartY",
+														"comparison": 2,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "camera",
+													"sid": 235405173613965,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "up"
+													}
+												}
+											],
+											"sid": 579617675328279
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 468917845659970,
+													"parameters": {
+														"first-value": "Touch.YAt(0) - mobileScrollStartY",
+														"comparison": 4,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "camera",
+													"sid": 214374051949048,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "down"
+													}
+												}
+											],
+											"sid": 860994930729010
 										}
-									],
-									"sid": 111846853216352
+									]
 								}
 							]
 						}

@@ -78,6 +78,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
@@ -128,7 +135,9 @@
 	],
 	"uniqueId": "nzjq5ue38ks3",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"solid_camera"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -181,7 +190,8 @@
 					"ui_selector",
 					"ui_eraser",
 					"ui_text",
-					"ui_pause"
+					"ui_pause",
+					"camera"
 				],
 				"subfolders": [],
 				"name": "ui"
