@@ -41,7 +41,7 @@
 			"eventType": "variable",
 			"name": "currentProp0",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "10",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -100,6 +100,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 293691613075781
+		},
+		{
+			"eventType": "variable",
+			"name": "MODE_SCROLL",
+			"type": "string",
+			"initialValue": "mode_scroll",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 866240880633623
 		},
 		{
 			"eventType": "block",

@@ -587,9 +587,9 @@
 							"actions": [
 								{
 									"callFunction": "modeToggle",
-									"sid": 763795057437333,
+									"sid": 491323075390801,
 									"parameters": [
-										"\"\""
+										"MODE_ERASER"
 									]
 								}
 							],
@@ -607,17 +607,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 945056805659883,
-									"parameters": {
-										"variable": "currentProp0",
-										"value": "ui_prop_selector.index"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 541609282655910,
 							"children": [
 								{
@@ -629,38 +619,128 @@
 											"sid": 671212758134893,
 											"parameters": {
 												"variable": "ALT_BRUSH_ENABLED"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "pick-by-evaluate",
-											"objectClass": "System",
-											"sid": 217556760448236,
-											"parameters": {
-												"object": "ui_selector",
-												"expression": "ui_selector.index = 0"
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-position",
-											"objectClass": "ui_selector",
-											"sid": 100513783767283,
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 757447654161782,
 											"parameters": {
-												"x": "ui_prop_selector.X",
-												"y": "ui_prop_selector.Y"
+												"variable": "currentProp0",
+												"value": "ui_prop_selector.index"
 											}
-										},
-										{
-											"callFunction": "modeToggle",
-											"sid": 175113618843118,
-											"parameters": [
-												"MODE_BRUSH"
-											]
 										}
 									],
 									"sid": 550794359490797
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 473827314443152,
+											"parameters": {
+												"variable": "ALT_BRUSH_ENABLED"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 805196282547882,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-random-instance",
+													"objectClass": "System",
+													"sid": 687543267616097,
+													"parameters": {
+														"object": "ui_selector"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 638991753367547,
+													"parameters": {
+														"first-value": "currentProp0",
+														"comparison": 0,
+														"second-value": "ui_prop_selector.index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 247420411522680,
+													"parameters": {
+														"variable": "currentProp0",
+														"value": "-currentProp0"
+													}
+												},
+												{
+													"id": "set-position",
+													"objectClass": "ui_selector",
+													"sid": 889776853095425,
+													"parameters": {
+														"x": "-100",
+														"y": "-100"
+													}
+												},
+												{
+													"callFunction": "modeToggle",
+													"sid": 894710215841740,
+													"parameters": [
+														"MODE_SCROLL"
+													]
+												}
+											],
+											"sid": 675179496238973
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 901803056528774
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 983579259171954,
+													"parameters": {
+														"variable": "currentProp0",
+														"value": "ui_prop_selector.index"
+													}
+												},
+												{
+													"callFunction": "modeToggle",
+													"sid": 278957010952010,
+													"parameters": [
+														"MODE_BRUSH"
+													]
+												},
+												{
+													"id": "set-position",
+													"objectClass": "ui_selector",
+													"sid": 896536745079479,
+													"parameters": {
+														"x": "ui_prop_selector.X",
+														"y": "ui_prop_selector.Y"
+													}
+												}
+											],
+											"sid": 702530316534566
+										}
+									]
 								}
 							]
 						}
@@ -779,7 +859,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 129269951515375,
+							"sid": 272797392780437,
 							"parameters": {
 								"first-value": "currentMode",
 								"comparison": 0,
@@ -800,7 +880,7 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 354015886621137,
+							"sid": 835409745983739,
 							"parameters": {
 								"variable": "mode",
 								"value": "MODE_BRUSH"
@@ -814,6 +894,15 @@
 								"x": "ui_prop_selector.X",
 								"y": "ui_prop_selector.Y"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 219244169918936,
+							"parameters": {
+								"variable": "currentProp0",
+								"value": "abs(currentProp0)"
+							}
 						}
 					],
 					"sid": 584187801140148,
@@ -824,7 +913,7 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 487144463576259,
+									"sid": 547033751830274,
 									"parameters": {
 										"variable": "ALT_BRUSH_ENABLED"
 									}
@@ -834,13 +923,13 @@
 								{
 									"id": "set-visible",
 									"objectClass": "ui_selector",
-									"sid": 116783103182953,
+									"sid": 254439989770322,
 									"parameters": {
 										"visibility": "invisible"
 									}
 								}
 							],
-							"sid": 982300834824905
+							"sid": 113931994366560
 						},
 						{
 							"eventType": "block",
@@ -848,7 +937,7 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 228091017309231,
+									"sid": 738533683885374,
 									"parameters": {
 										"variable": "ALT_BRUSH_ENABLED"
 									},
@@ -859,13 +948,128 @@
 								{
 									"id": "set-visible",
 									"objectClass": "ui_selector",
-									"sid": 971937291860982,
+									"sid": 572550873173091,
 									"parameters": {
 										"visibility": "visible"
 									}
 								}
 							],
-							"sid": 942912285533461
+							"sid": 213389329399920
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 262268791281931,
+							"parameters": {
+								"first-value": "force",
+								"comparison": 0,
+								"second-value": "\"\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 150916423047874,
+							"parameters": {
+								"first-value": "currentMode",
+								"comparison": 0,
+								"second-value": "MODE_SCROLL"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 830123981506622,
+							"parameters": {
+								"object": "ui_prop_selector",
+								"expression": "ui_prop_selector.index = abs(currentProp0)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 977483192008208,
+							"parameters": {
+								"variable": "currentProp0",
+								"value": "abs(currentProp0)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 153908701343769,
+							"parameters": {
+								"variable": "mode",
+								"value": "MODE_BRUSH"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ui_selector",
+							"sid": 663993126896240,
+							"parameters": {
+								"x": "ui_prop_selector.X",
+								"y": "ui_prop_selector.Y"
+							}
+						}
+					],
+					"sid": 800681713314179,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 546238727328951,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ui_selector",
+									"sid": 160058482675676,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 334976334730654
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 919336078108222,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ui_selector",
+									"sid": 755056808408980,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 883042226922120
 						}
 					]
 				},
@@ -899,6 +1103,15 @@
 							"parameters": {
 								"variable": "mode",
 								"value": "MODE_BRUSH"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 559156529684216,
+							"parameters": {
+								"variable": "currentProp0",
+								"value": "abs(currentProp0)"
 							}
 						}
 					],
@@ -986,6 +1199,15 @@
 								"variable": "mode",
 								"value": "MODE_ERASER"
 							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ui_selector",
+							"sid": 688303085869125,
+							"parameters": {
+								"x": "ui_eraser.X",
+								"y": "ui_eraser.Y"
+							}
 						}
 					],
 					"sid": 318692307218889,
@@ -1003,15 +1225,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "ui_selector",
-									"sid": 864172446573982,
-									"parameters": {
-										"x": "ui_eraser.X",
-										"y": "ui_eraser.Y"
-									}
-								},
 								{
 									"id": "set-visible",
 									"objectClass": "ui_selector",
@@ -1047,6 +1260,68 @@
 								}
 							],
 							"sid": 280390791621263
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 648915523824403,
+							"parameters": {
+								"first-value": "force",
+								"comparison": 0,
+								"second-value": "MODE_SCROLL"
+							}
+						},
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 502506031261139,
+							"parameters": {
+								"object": "ui_selector"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 743753363635570,
+							"parameters": {
+								"variable": "mode",
+								"value": "MODE_SCROLL"
+							}
+						}
+					],
+					"sid": 505100942575234,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 446190946288569,
+									"parameters": {
+										"variable": "ALT_BRUSH_ENABLED"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ui_selector",
+									"sid": 135866914166092,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 404972336001935
 						}
 					]
 				},
@@ -1189,112 +1464,131 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-nth-touch-start",
-							"objectClass": "Touch",
-							"sid": 895270747597507,
-							"parameters": {
-								"touch-number": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 693916511211462,
-							"parameters": {
-								"variable": "mobileScrollStartX",
-								"value": "Touch.XAt(0)"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 673078510495447,
-							"parameters": {
-								"variable": "mobileScrollStartY",
-								"value": "Touch.YAt(0)"
-							}
-						}
-					],
-					"sid": 214999500747888
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-nth-touch-end",
-							"objectClass": "Touch",
-							"sid": 405897459470299,
-							"parameters": {
-								"touch-number": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 132031211329319,
-							"parameters": {
-								"variable": "mobileScrollStartX",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 174492228456062,
-							"parameters": {
-								"variable": "mobileScrollStartY",
-								"value": "0"
-							}
-						}
-					],
-					"sid": 447840190564531
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-in-touch",
-							"objectClass": "Touch",
-							"sid": 559060161731392
-						},
-						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 247609482049341,
+							"sid": 126174349695259,
 							"parameters": {
-								"first-value": "mobileScrollStartX",
-								"comparison": 1,
-								"second-value": "0"
+								"first-value": "currentMode",
+								"comparison": 0,
+								"second-value": "MODE_SCROLL"
 							}
+						}
+					],
+					"actions": [],
+					"sid": 219304401382819,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-nth-touch-start",
+									"objectClass": "Touch",
+									"sid": 752515431895357,
+									"parameters": {
+										"touch-number": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 215400276165970,
+									"parameters": {
+										"variable": "mobileScrollStartX",
+										"value": "Touch.XAt(0)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 848117872360650,
+									"parameters": {
+										"variable": "mobileScrollStartY",
+										"value": "Touch.YAt(0)"
+									}
+								}
+							],
+							"sid": 879453721503231
 						},
 						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 660747942750884,
-							"parameters": {
-								"first-value": "mobileScrollStartY",
-								"comparison": 1,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-nth-touch-end",
+									"objectClass": "Touch",
+									"sid": 628923788662108,
+									"parameters": {
+										"touch-number": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 886677064420826,
+									"parameters": {
+										"variable": "mobileScrollStartX",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 711660010875152,
+									"parameters": {
+										"variable": "mobileScrollStartY",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 294179059607295
+						},
 						{
-							"id": "set-layer-scroll",
-							"objectClass": "System",
-							"sid": 480353405175513,
-							"parameters": {
-								"layer": "\"main\"",
-								"scroll-x": "LayerScrollX(\"main\") + (Touch.XAt(0) - mobileScrollStartX) / 20",
-								"scroll-y": "LayerScrollY(\"main\") + (Touch.YAt(0) - mobileScrollStartY) / 20"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-in-touch",
+									"objectClass": "Touch",
+									"sid": 968484157554222
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 991299675970061,
+									"parameters": {
+										"first-value": "mobileScrollStartX",
+										"comparison": 1,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 292535228148924,
+									"parameters": {
+										"first-value": "mobileScrollStartY",
+										"comparison": 1,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-scroll",
+									"objectClass": "System",
+									"sid": 874298788655167,
+									"parameters": {
+										"layer": "\"main\"",
+										"scroll-x": "LayerScrollX(\"main\") + (Touch.XAt(0) - mobileScrollStartX) / 20",
+										"scroll-y": "LayerScrollY(\"main\") + (Touch.YAt(0) - mobileScrollStartY) / 20"
+									}
+								}
+							],
+							"sid": 651031824097794
 						}
-					],
-					"sid": 670288314392016
+					]
 				}
 			],
 			"sid": 826967762004423
