@@ -922,17 +922,10 @@
 								"enabled": true
 							}
 						},
-						"Custom": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						},
 						"8Direction": {
 							"properties": {
-								"max-speed": 10000,
-								"acceleration": 10000,
+								"max-speed": 20000,
+								"acceleration": 100000,
 								"deceleration": 100000,
 								"directions": "dir-8",
 								"set-angle": "smooth",

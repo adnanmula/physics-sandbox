@@ -579,11 +579,11 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 836864110242588,
+													"sid": 443744897115421,
 													"parameters": {
 														"first-value": "Touch.XAt(0)",
 														"comparison": 2,
-														"second-value": "mobileScrollStartX"
+														"second-value": "mobileScrollStartX - 100"
 													}
 												}
 											],
@@ -606,11 +606,11 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 243671275437749,
+													"sid": 613913381961586,
 													"parameters": {
 														"first-value": "Touch.XAt(0)",
 														"comparison": 4,
-														"second-value": "mobileScrollStartX"
+														"second-value": "mobileScrollStartX + 100"
 													}
 												}
 											],
@@ -633,11 +633,11 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 281745021179587,
+													"sid": 499643462623492,
 													"parameters": {
 														"first-value": "Touch.YAt(0)",
 														"comparison": 2,
-														"second-value": "mobileScrollStartY"
+														"second-value": "mobileScrollStartY  - 100"
 													}
 												}
 											],
@@ -660,11 +660,11 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 561552252875783,
+													"sid": 719802741291493,
 													"parameters": {
 														"first-value": "Touch.YAt(0)",
 														"comparison": 4,
-														"second-value": "mobileScrollStartY"
+														"second-value": "mobileScrollStartY + 100"
 													}
 												}
 											],
@@ -1701,125 +1701,6 @@
 				}
 			],
 			"sid": 991920553069394
-		},
-		{
-			"eventType": "block",
-			"conditions": [],
-			"actions": [],
-			"sid": 152184153444485,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 824269602444544,
-							"parameters": {
-								"key": 65
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "camera",
-							"sid": 618000117521686,
-							"behaviorType": "Custom",
-							"parameters": {
-								"angle": "270"
-							}
-						},
-						{
-							"id": "set-speed",
-							"objectClass": "camera",
-							"sid": 915161666632317,
-							"behaviorType": "Custom",
-							"parameters": {
-								"which": "overall",
-								"speed": "2000"
-							}
-						},
-						{
-							"id": "push-out-solid",
-							"objectClass": "camera",
-							"sid": 832045334388411,
-							"behaviorType": "Custom",
-							"parameters": {
-								"direction": "opposite-angle"
-							}
-						}
-					],
-					"sid": 304153404560329
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 756198578623748,
-							"parameters": {
-								"key": 68
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "camera",
-							"sid": 893622326313061,
-							"behaviorType": "Custom",
-							"parameters": {
-								"angle": "90"
-							}
-						},
-						{
-							"id": "set-speed",
-							"objectClass": "camera",
-							"sid": 164536733386166,
-							"behaviorType": "Custom",
-							"parameters": {
-								"which": "overall",
-								"speed": "2000"
-							}
-						},
-						{
-							"id": "push-out-solid",
-							"objectClass": "camera",
-							"sid": 832045334388411,
-							"behaviorType": "Custom",
-							"parameters": {
-								"direction": "opposite-angle"
-							}
-						}
-					],
-					"sid": 512343786384214
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 688426392024225
-						}
-					],
-					"actions": [
-						{
-							"id": "set-speed",
-							"objectClass": "camera",
-							"sid": 958782817119833,
-							"behaviorType": "Custom",
-							"parameters": {
-								"which": "overall",
-								"speed": "0"
-							}
-						}
-					],
-					"sid": 378334070296779
-				}
-			]
 		}
 	],
 	"sid": 283603127988573
