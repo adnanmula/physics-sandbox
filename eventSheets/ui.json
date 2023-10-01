@@ -603,10 +603,10 @@
 												{
 													"id": "simulate-control",
 													"objectClass": "camera",
-													"sid": 884896014292352,
+													"sid": 598185689172679,
 													"behaviorType": "8Direction",
 													"parameters": {
-														"control": "left"
+														"control": "right"
 													}
 												}
 											],
@@ -630,10 +630,10 @@
 												{
 													"id": "simulate-control",
 													"objectClass": "camera",
-													"sid": 117942456166273,
+													"sid": 419218506064952,
 													"behaviorType": "8Direction",
 													"parameters": {
-														"control": "right"
+														"control": "left"
 													}
 												}
 											],
@@ -657,10 +657,10 @@
 												{
 													"id": "simulate-control",
 													"objectClass": "camera",
-													"sid": 922467198094270,
+													"sid": 889074664674863,
 													"behaviorType": "8Direction",
 													"parameters": {
-														"control": "up"
+														"control": "down"
 													}
 												}
 											],
@@ -684,10 +684,10 @@
 												{
 													"id": "simulate-control",
 													"objectClass": "camera",
-													"sid": 886987421665375,
+													"sid": 930127082357437,
 													"behaviorType": "8Direction",
 													"parameters": {
-														"control": "down"
+														"control": "up"
 													}
 												}
 											],
