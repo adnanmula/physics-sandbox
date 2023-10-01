@@ -545,9 +545,21 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-in-touch",
+											"id": "has-nth-touch",
 											"objectClass": "Touch",
-											"sid": 590803716974904
+											"sid": 334739123913960,
+											"parameters": {
+												"touch-number": "0"
+											}
+										},
+										{
+											"id": "has-nth-touch",
+											"objectClass": "Touch",
+											"sid": 795545784322348,
+											"parameters": {
+												"touch-number": "1"
+											},
+											"isInverted": true
 										},
 										{
 											"id": "compare-two-values",
