@@ -164,7 +164,8 @@
 					"instanceVariables": {
 						"burning_time": 3,
 						"consuming_time": 1,
-						"propagation_time": 0.2
+						"propagation_time": 0.2,
+						"is_liquid": false
 					},
 					"behaviors": {
 						"DestroyOutsideLayout": {
@@ -695,9 +696,10 @@
 					},
 					"uid": 27,
 					"instanceVariables": {
-						"burning_time": 3,
-						"consuming_time": 1,
-						"propagation_time": 0.2
+						"burning_time": 1,
+						"consuming_time": 0.5,
+						"propagation_time": 0.1,
+						"is_liquid": true
 					},
 					"behaviors": {
 						"DestroyOutsideLayout": {

@@ -23,6 +23,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 806002585935185
+		},
+		{
+			"name": "is_liquid",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 310536398510054
 		}
 	],
 	"behaviorTypes": [

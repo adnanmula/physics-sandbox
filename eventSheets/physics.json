@@ -136,7 +136,7 @@
 						{
 							"id": "is-animation-playing",
 							"objectClass": "prop_flammable_solid",
-							"sid": 492792695255335,
+							"sid": 695391122232427,
 							"parameters": {
 								"animation": "\"burned\""
 							}
@@ -146,12 +146,12 @@
 						{
 							"id": "destroy",
 							"objectClass": "prop_fire",
-							"sid": 658189158699466
+							"sid": 602874888722277
 						},
 						{
 							"id": "start-timer",
 							"objectClass": "prop_flammable_solid",
-							"sid": 707331598075788,
+							"sid": 945887056834478,
 							"behaviorType": "Timer",
 							"parameters": {
 								"duration": "Self.consuming_time",
@@ -162,7 +162,7 @@
 						{
 							"id": "set-animation",
 							"objectClass": "prop_flammable_solid",
-							"sid": 968997564173622,
+							"sid": 193614123654343,
 							"parameters": {
 								"animation": "\"consuming\"",
 								"from": "current-frame"
@@ -216,67 +216,6 @@
 						}
 					],
 					"sid": 975992576076370
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "prop_water",
-							"sid": 289637479597325,
-							"parameters": {
-								"object": "prop_flammable_solid"
-							}
-						},
-						{
-							"id": "is-animation-playing",
-							"objectClass": "prop_flammable_solid",
-							"sid": 783558489191267,
-							"parameters": {
-								"animation": "\"burned\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "prop_flammable_solid",
-							"sid": 594129438863237,
-							"parameters": {
-								"animation": "\"burned\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "stop-timer",
-							"objectClass": "prop_flammable_solid",
-							"sid": 897690272059262,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"consuming_time\""
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "prop_water",
-							"sid": 247042500302260
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 836772053171211,
-							"parameters": {
-								"object-to-create": "prop_water_steam",
-								"layer": "\"main\"",
-								"x": "prop_flammable_solid.X",
-								"y": "prop_flammable_solid.Y",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						}
-					],
-					"sid": 845313994466747,
-					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -480,7 +419,7 @@
 						},
 						{
 							"eventType": "script",
-							"script": "if (true == localVars.instance_0_is_burning && false === localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_1_uid);\n\tprop.flammable.startPropagation();\t\n}\n\nif (false == localVars.instance_0_is_burning && true == localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_0_uid);\n\tprop.flammable.startPropagation();\n}"
+							"script": "if (true == localVars.instance_0_is_burning && false === localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_1_uid);\n\tprop.flammable.startPropagation();\n}\n\nif (false == localVars.instance_0_is_burning && true == localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_0_uid);\n\tprop.flammable.startPropagation();\n}"
 						}
 					]
 				},
