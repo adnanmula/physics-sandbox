@@ -450,6 +450,84 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-nth-touch-start",
+									"objectClass": "Touch",
+									"sid": 417227378264742,
+									"parameters": {
+										"touch-number": "0"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 255304892460022,
+									"parameters": {
+										"first-value": "currentMode",
+										"comparison": 0,
+										"second-value": "MODE_SCROLL"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 549268684745211,
+									"parameters": {
+										"variable": "mobileScrollStartX",
+										"value": "Touch.XAt(0)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 723175247055661,
+									"parameters": {
+										"variable": "mobileScrollStartY",
+										"value": "Touch.YAt(0)"
+									}
+								}
+							],
+							"sid": 463690237138708
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-nth-touch-end",
+									"objectClass": "Touch",
+									"sid": 661590444489819,
+									"parameters": {
+										"touch-number": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 397534208481051,
+									"parameters": {
+										"variable": "mobileScrollStartX",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 376591515058989,
+									"parameters": {
+										"variable": "mobileScrollStartY",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 622186313997033
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "compare-two-values",
 									"objectClass": "System",
 									"sid": 226239003380445,
@@ -467,102 +545,14 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "on-nth-touch-start",
-											"objectClass": "Touch",
-											"sid": 518131598283117,
-											"parameters": {
-												"touch-number": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 911834472912325,
-											"parameters": {
-												"variable": "mobileScrollStartX",
-												"value": "Touch.XAt(0)"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 995818580608044,
-											"parameters": {
-												"variable": "mobileScrollStartY",
-												"value": "Touch.YAt(0)"
-											}
-										}
-									],
-									"sid": 538240611594875
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-nth-touch-end",
-											"objectClass": "Touch",
-											"sid": 472201138201545,
-											"parameters": {
-												"touch-number": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 358067900487350,
-											"parameters": {
-												"variable": "mobileScrollStartX",
-												"value": "0"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 566452666093083,
-											"parameters": {
-												"variable": "mobileScrollStartY",
-												"value": "0"
-											}
-										}
-									],
-									"sid": 738052718267285
-								},
-								{
-									"eventType": "variable",
-									"name": "toX",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 477427450536615
-								},
-								{
-									"eventType": "variable",
-									"name": "toY",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 119920062190130
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
 											"id": "is-in-touch",
 											"objectClass": "Touch",
-											"sid": 199482547018314
+											"sid": 590803716974904
 										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 907735268922007,
+											"sid": 569589814999082,
 											"parameters": {
 												"first-value": "mobileScrollStartX",
 												"comparison": 1,
@@ -572,7 +562,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 178440849749022,
+											"sid": 307962530212797,
 											"parameters": {
 												"first-value": "mobileScrollStartY",
 												"comparison": 1,
@@ -581,7 +571,7 @@
 										}
 									],
 									"actions": [],
-									"sid": 111846853216352,
+									"sid": 246055020726686,
 									"children": [
 										{
 											"eventType": "block",
@@ -589,11 +579,11 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 921320720680728,
+													"sid": 836864110242588,
 													"parameters": {
-														"first-value": "Touch.XAt(0) - mobileScrollStartX",
+														"first-value": "Touch.XAt(0)",
 														"comparison": 2,
-														"second-value": "0"
+														"second-value": "mobileScrollStartX"
 													}
 												}
 											],
@@ -601,14 +591,14 @@
 												{
 													"id": "simulate-control",
 													"objectClass": "camera",
-													"sid": 505084361908934,
+													"sid": 884896014292352,
 													"behaviorType": "8Direction",
 													"parameters": {
 														"control": "left"
 													}
 												}
 											],
-											"sid": 600684770233397
+											"sid": 912278961618845
 										},
 										{
 											"eventType": "block",
@@ -616,11 +606,11 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 233977587726108,
+													"sid": 243671275437749,
 													"parameters": {
-														"first-value": "Touch.XAt(0) - mobileScrollStartX",
+														"first-value": "Touch.XAt(0)",
 														"comparison": 4,
-														"second-value": "0"
+														"second-value": "mobileScrollStartX"
 													}
 												}
 											],
@@ -628,14 +618,14 @@
 												{
 													"id": "simulate-control",
 													"objectClass": "camera",
-													"sid": 837403540024246,
+													"sid": 117942456166273,
 													"behaviorType": "8Direction",
 													"parameters": {
 														"control": "right"
 													}
 												}
 											],
-											"sid": 542441431616720
+											"sid": 976548310162663
 										},
 										{
 											"eventType": "block",
@@ -643,11 +633,11 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 866488118921160,
+													"sid": 281745021179587,
 													"parameters": {
-														"first-value": "Touch.YAt(0) - mobileScrollStartY",
+														"first-value": "Touch.YAt(0)",
 														"comparison": 2,
-														"second-value": "0"
+														"second-value": "mobileScrollStartY"
 													}
 												}
 											],
@@ -655,14 +645,14 @@
 												{
 													"id": "simulate-control",
 													"objectClass": "camera",
-													"sid": 235405173613965,
+													"sid": 922467198094270,
 													"behaviorType": "8Direction",
 													"parameters": {
 														"control": "up"
 													}
 												}
 											],
-											"sid": 579617675328279
+											"sid": 269769954735085
 										},
 										{
 											"eventType": "block",
@@ -670,11 +660,11 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 468917845659970,
+													"sid": 561552252875783,
 													"parameters": {
-														"first-value": "Touch.YAt(0) - mobileScrollStartY",
+														"first-value": "Touch.YAt(0)",
 														"comparison": 4,
-														"second-value": "0"
+														"second-value": "mobileScrollStartY"
 													}
 												}
 											],
@@ -682,14 +672,14 @@
 												{
 													"id": "simulate-control",
 													"objectClass": "camera",
-													"sid": 214374051949048,
+													"sid": 886987421665375,
 													"behaviorType": "8Direction",
 													"parameters": {
 														"control": "down"
 													}
 												}
 											],
-											"sid": 860994930729010
+											"sid": 731054142749130
 										}
 									]
 								}
@@ -1711,6 +1701,125 @@
 				}
 			],
 			"sid": 991920553069394
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 152184153444485,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 824269602444544,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "camera",
+							"sid": 618000117521686,
+							"behaviorType": "Custom",
+							"parameters": {
+								"angle": "270"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "camera",
+							"sid": 915161666632317,
+							"behaviorType": "Custom",
+							"parameters": {
+								"which": "overall",
+								"speed": "2000"
+							}
+						},
+						{
+							"id": "push-out-solid",
+							"objectClass": "camera",
+							"sid": 832045334388411,
+							"behaviorType": "Custom",
+							"parameters": {
+								"direction": "opposite-angle"
+							}
+						}
+					],
+					"sid": 304153404560329
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 756198578623748,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "camera",
+							"sid": 893622326313061,
+							"behaviorType": "Custom",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "camera",
+							"sid": 164536733386166,
+							"behaviorType": "Custom",
+							"parameters": {
+								"which": "overall",
+								"speed": "2000"
+							}
+						},
+						{
+							"id": "push-out-solid",
+							"objectClass": "camera",
+							"sid": 832045334388411,
+							"behaviorType": "Custom",
+							"parameters": {
+								"direction": "opposite-angle"
+							}
+						}
+					],
+					"sid": 512343786384214
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 688426392024225
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "camera",
+							"sid": 958782817119833,
+							"behaviorType": "Custom",
+							"parameters": {
+								"which": "overall",
+								"speed": "0"
+							}
+						}
+					],
+					"sid": 378334070296779
+				}
+			]
 		}
 	],
 	"sid": 283603127988573

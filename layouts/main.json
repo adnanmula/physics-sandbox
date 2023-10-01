@@ -892,7 +892,7 @@
 						"x": 6551.9983468117825,
 						"y": 1371.0069703412978,
 						"width": 5191.996552793789,
-						"height": 2803.9981426793443,
+						"height": 2803.998142679344,
 						"originX": 0.5,
 						"originY": 0.6,
 						"color": [
@@ -922,14 +922,21 @@
 								"enabled": true
 							}
 						},
+						"Custom": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						},
 						"8Direction": {
 							"properties": {
-								"max-speed": 20000,
-								"acceleration": 20000,
-								"deceleration": 9999999,
+								"max-speed": 10000,
+								"acceleration": 10000,
+								"deceleration": 100000,
 								"directions": "dir-8",
-								"set-angle": "no",
-								"allow-sliding": true,
+								"set-angle": "smooth",
+								"allow-sliding": false,
 								"default-controls": true,
 								"enabled": true
 							}
@@ -937,7 +944,7 @@
 					},
 					"world": {
 						"x": 1920,
-						"y": 1078,
+						"y": 2318,
 						"width": 129.99189163902452,
 						"height": 138.4086328242851,
 						"originX": 0.5,

@@ -11,9 +11,14 @@
 			"sid": 941792942398270
 		},
 		{
+			"behaviorId": "custom",
+			"name": "Custom",
+			"sid": 229406048221083
+		},
+		{
 			"behaviorId": "EightDir",
 			"name": "8Direction",
-			"sid": 873652101677739
+			"sid": 648076150331131
 		}
 	],
 	"effectTypes": [],
