@@ -37,8 +37,13 @@ export default class FlammableTrait
 		if (this.isLiquid) {
 			for (const propToTest of runtime.objects.props.instances())
 			{
-				if (propToTest instanceof PropOil && Util.distanceTo(propToTest.x, propToTest.y, this.entity.x, this.entity.y) < 10)
+				if (propToTest instanceof PropOil && Util.distanceTo(propToTest.x, propToTest.y, this.entity.x, this.entity.y) < 50)
 				{
+					if (true === ['burning', 'burned', 'consuming'].includes(propToTest.animationName))
+					{
+						continue;
+					}
+
 					propToTest.flammable.setOnFire();
 				}
 			}
@@ -63,7 +68,7 @@ export default class FlammableTrait
 		this.removeFireParticles();
 		
 		if (this.isLiquid) {
-			this.destroy;
+			this.entity.destroy();
 		} else {
 			this.entity.setAnimation('burned', 'beginning');
 			this.entity.animationFrame = Math.floor(Math.random() * 3);
