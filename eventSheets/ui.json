@@ -442,6 +442,146 @@
 				{
 					"eventType": "group",
 					"disabled": false,
+					"title": "Ui - Mobile - Camera",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 226239003380445,
+									"parameters": {
+										"first-value": "currentMode",
+										"comparison": 0,
+										"second-value": "MODE_SCROLL"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 431079413374305,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-nth-touch-start",
+											"objectClass": "Touch",
+											"sid": 518131598283117,
+											"parameters": {
+												"touch-number": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 911834472912325,
+											"parameters": {
+												"variable": "mobileScrollStartX",
+												"value": "Touch.XAt(0)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 995818580608044,
+											"parameters": {
+												"variable": "mobileScrollStartY",
+												"value": "Touch.YAt(0)"
+											}
+										}
+									],
+									"sid": 538240611594875
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-nth-touch-end",
+											"objectClass": "Touch",
+											"sid": 472201138201545,
+											"parameters": {
+												"touch-number": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 358067900487350,
+											"parameters": {
+												"variable": "mobileScrollStartX",
+												"value": "0"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 566452666093083,
+											"parameters": {
+												"variable": "mobileScrollStartY",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 738052718267285
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-in-touch",
+											"objectClass": "Touch",
+											"sid": 199482547018314
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 907735268922007,
+											"parameters": {
+												"first-value": "mobileScrollStartX",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 178440849749022,
+											"parameters": {
+												"first-value": "mobileScrollStartY",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-scroll",
+											"objectClass": "System",
+											"sid": 453722541027710,
+											"parameters": {
+												"layer": "\"main\"",
+												"scroll-x": "LayerScrollX(\"main\") + (Touch.XAt(0) - mobileScrollStartX) / 20",
+												"scroll-y": "LayerScrollY(\"main\") + (Touch.YAt(0) - mobileScrollStartY) / 20"
+											}
+										}
+									],
+									"sid": 111846853216352
+								}
+							]
+						}
+					],
+					"sid": 141890689217141
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
 					"title": "Ui - Mobile - Zoom",
 					"description": "",
 					"isActiveOnStart": true,
@@ -1452,146 +1592,6 @@
 				}
 			],
 			"sid": 991920553069394
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Ui - Mobile - Camera",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 126174349695259,
-							"parameters": {
-								"first-value": "currentMode",
-								"comparison": 0,
-								"second-value": "MODE_SCROLL"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 219304401382819,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-nth-touch-start",
-									"objectClass": "Touch",
-									"sid": 752515431895357,
-									"parameters": {
-										"touch-number": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 215400276165970,
-									"parameters": {
-										"variable": "mobileScrollStartX",
-										"value": "Touch.XAt(0)"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 848117872360650,
-									"parameters": {
-										"variable": "mobileScrollStartY",
-										"value": "Touch.YAt(0)"
-									}
-								}
-							],
-							"sid": 879453721503231
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-nth-touch-end",
-									"objectClass": "Touch",
-									"sid": 628923788662108,
-									"parameters": {
-										"touch-number": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 886677064420826,
-									"parameters": {
-										"variable": "mobileScrollStartX",
-										"value": "0"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 711660010875152,
-									"parameters": {
-										"variable": "mobileScrollStartY",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 294179059607295
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-in-touch",
-									"objectClass": "Touch",
-									"sid": 968484157554222
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 991299675970061,
-									"parameters": {
-										"first-value": "mobileScrollStartX",
-										"comparison": 1,
-										"second-value": "0"
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 292535228148924,
-									"parameters": {
-										"first-value": "mobileScrollStartY",
-										"comparison": 1,
-										"second-value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-layer-scroll",
-									"objectClass": "System",
-									"sid": 874298788655167,
-									"parameters": {
-										"layer": "\"main\"",
-										"scroll-x": "LayerScrollX(\"main\") + (Touch.XAt(0) - mobileScrollStartX) / 20",
-										"scroll-y": "LayerScrollY(\"main\") + (Touch.YAt(0) - mobileScrollStartY) / 20"
-									}
-								}
-							],
-							"sid": 651031824097794
-						}
-					]
-				}
-			],
-			"sid": 826967762004423
 		}
 	],
 	"sid": 283603127988573
