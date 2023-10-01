@@ -1,24 +1,14 @@
 {
-	"name": "solid",
+	"name": "solid_camera",
 	"plugin-id": "Sprite",
-	"sid": 832040793152864,
+	"sid": 244502885555618,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Physics",
-			"name": "Physics",
-			"sid": 592060286940837
-		},
-		{
 			"behaviorId": "solid",
 			"name": "Solid",
-			"sid": 279913572079510
-		},
-		{
-			"behaviorId": "scrollto",
-			"name": "ScrollTo",
-			"sid": 369917683533409
+			"sid": 520870000782236
 		}
 	],
 	"effectTypes": [],
@@ -27,21 +17,21 @@
 			{
 				"frames": [
 					{
-						"width": 20,
-						"height": 5,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
-						"originY": 0.6,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8629263,
+						"imageSpriteId": 1174603,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 481162172229390,
-				"name": "Default",
+				"sid": 530890599195176,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

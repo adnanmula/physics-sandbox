@@ -78,6 +78,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
@@ -129,8 +136,7 @@
 	"uniqueId": "nzjq5ue38ks3",
 	"objectTypes": {
 		"items": [
-			"particles_burning",
-			"prop_oil"
+			"solid_camera"
 		],
 		"subfolders": [
 			{
@@ -154,12 +160,14 @@
 					"prop_blackhole",
 					"prop_water_steam",
 					"prop_fire",
-					"prop_tnt"
+					"prop_tnt",
+					"prop_oil"
 				],
 				"subfolders": [
 					{
 						"items": [
-							"particles_fire"
+							"particles_fire",
+							"particles_burning"
 						],
 						"subfolders": [],
 						"name": "particles"
@@ -182,7 +190,8 @@
 					"ui_selector",
 					"ui_eraser",
 					"ui_text",
-					"ui_pause"
+					"ui_pause",
+					"camera"
 				],
 				"subfolders": [],
 				"name": "ui"

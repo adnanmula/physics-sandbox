@@ -1,5 +1,6 @@
 import TimerManager from "./TimerManager.js";
 import * as Util from "./utils.js";
+import PropOil from "./PropOil.js";
 
 export default class FlammableTrait
 {
@@ -20,12 +21,6 @@ export default class FlammableTrait
 		this.timerManager.tick();
 	}
 
-// 	isBurning()
-// 	{
-// 		return this.isBurning;
-// 		return ['burning', 'consuming'].includes(this.entity.animationName);
-// 	}
-	
 	setOnFire()
 	{
 		if (true === ['burning', 'burned', 'consuming'].includes(this.entity.animationName))
@@ -35,9 +30,24 @@ export default class FlammableTrait
 		
 		this.addFireParticles();
 		
-		this.isBurning = true;
+		this.isBurning = true;	
  		this.entity.setAnimation('burning', 'beginning');
 		this.timerManager.add('burn', 'burn', [], this.burningTime, false);
+		
+		if (this.isLiquid) {
+			for (const propToTest of runtime.objects.props.instances())
+			{
+				if (propToTest instanceof PropOil && Util.distanceTo(propToTest.x, propToTest.y, this.entity.x, this.entity.y) < 50)
+				{
+					if (true === ['burning', 'burned', 'consuming'].includes(propToTest.animationName))
+					{
+						continue;
+					}
+
+					propToTest.flammable.setOnFire();
+				}
+			}
+		}
 	}
 	
 	putOutFire()
@@ -56,9 +66,14 @@ export default class FlammableTrait
 	burn()
 	{
 		this.removeFireParticles();
-		this.entity.setAnimation('burned', 'beginning');
-		this.entity.animationFrame = Math.floor(Math.random() * 3);
-		this.isBurning = false;
+		
+		if (this.isLiquid) {
+			this.entity.destroy();
+		} else {
+			this.entity.setAnimation('burned', 'beginning');
+			this.entity.animationFrame = Math.floor(Math.random() * 3);
+			this.isBurning = false;
+		}
 	}
 	
 	startPropagation()

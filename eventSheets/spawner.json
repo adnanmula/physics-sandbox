@@ -236,19 +236,19 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 264213671869930,
+									"sid": 949936834200722,
 									"parameters": {
 										"variable": "x",
-										"value": "Touch.X"
+										"value": "Touch.X(\"main\")"
 									}
 								},
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 997609798822914,
+									"sid": 302403574791976,
 									"parameters": {
 										"variable": "y",
-										"value": "Touch.Y"
+										"value": "Touch.Y(\"main\")"
 									}
 								},
 								{

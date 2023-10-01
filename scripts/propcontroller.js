@@ -23,7 +23,8 @@ export default class PropController
 			PropWaterSteam,
 			PropFire,
 			PropTnt,
-			PropOil
+			PropOil,
+			PropCrate,
 		];
 	
 		props[propId].create(x, y)
