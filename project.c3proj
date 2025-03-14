@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 36000,
+	"savedWithRelease": 42402,
 	"name": "Physics Sandbox",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -128,7 +128,7 @@
 		{
 			"type": "effect",
 			"id": "alphaclamp",
-			"name": "Alpha clamp",
+			"name": "Alpha cutoff",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -267,9 +267,9 @@
 					}
 				},
 				{
-					"name": "PropController.js",
+					"name": "propcontroller.js",
 					"type": "application/javascript",
-					"sid": 652347761970120,
+					"sid": 602675596685039,
 					"script-info": {
 						"purpose": "none"
 					}
@@ -516,9 +516,14 @@
 			}
 		]
 	},
+	"flowcharts": {
+		"items": [],
+		"subfolders": []
+	},
 	"properties": {
 		"description": "Just a physics playground for you to mess with.",
 		"version": "0.1.5",
+		"autoIncrementVersion": false,
 		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "http://",
@@ -554,7 +559,6 @@
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
-		"compositingMode": "standard",
 		"sampling": "nearest",
 		"downscaling": "medium",
 		"renderingMode": "auto",
@@ -565,9 +569,8 @@
 		"loaderStyle": "progress-logo",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
-		"cordovaAndroidScheme": "file",
-		"autoReloadScriptsOnPreview": false,
-		"exportFileStructure": "flat",
+		"cordovaAndroidScheme": "https",
+		"exportFileStructure": "folders",
 		"uidAllocationMode": "increment"
 	},
 	"viewportWidth": 1920,
