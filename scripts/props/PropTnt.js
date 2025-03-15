@@ -17,18 +17,6 @@ export default class PropTnt extends Prop
 	{
 		super();
 
-		const physics = this.behaviors.Physics.behavior;
-
-		physics.density = 1;
- 		physics.friction = 0.5;
- 		physics.elasticity = 0.2;
- 		physics.linearDamping = 0;
- 		physics.angularDamping = 0.01;
- 		physics.isImmovable = false;
- 		physics.isBullet = false;
- 		physics.isPreventRotation = false;
- 		physics.isEnabled = true;
-		
 		this.instVars.detonation_time = 3;
 		
 		this.explosive = new ExplosiveTrait(this, {

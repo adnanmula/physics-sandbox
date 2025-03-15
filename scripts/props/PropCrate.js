@@ -16,19 +16,7 @@ export default class PropCrate extends Prop
 	constructor()
 	{
 		super();
-
-		const physics = this.behaviors.Physics.behavior;
-
-		physics.density = 1;
- 		physics.friction = 0.5;
- 		physics.elasticity = 0.2;
- 		physics.linearDamping = 0;
- 		physics.angularDamping = 0.01;
- 		physics.isImmovable = false;
- 		physics.isBullet = false;
- 		physics.isPreventRotation = false;
- 		physics.isEnabled = true;
-			
+		
 		this.flammable = new FlammableTrait(this, {
 			'burning_time': 3,
 			'consuming_time': 1,

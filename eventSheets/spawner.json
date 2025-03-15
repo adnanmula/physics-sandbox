@@ -94,7 +94,9 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "PropController.create(runtime.globalVars.currentProp0, runtime.mouse.getMouseX(\"main\"), runtime.mouse.getMouseY(\"main\"));"
+									"script": [
+										"PropController.create(runtime.globalVars.currentProp0, runtime.mouse.getMouseX(\"main\"), runtime.mouse.getMouseY(\"main\"));"
+									]
 								}
 							],
 							"sid": 510069386202793
@@ -153,7 +155,9 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "PropController.create(runtime.globalVars.currentProp1, runtime.mouse.getMouseX(\"main\"), runtime.mouse.getMouseY(\"main\"));"
+							"script": [
+								"PropController.create(runtime.globalVars.currentProp1, runtime.mouse.getMouseX(\"main\"), runtime.mouse.getMouseY(\"main\"));"
+							]
 						}
 					],
 					"sid": 911667024731654
@@ -253,7 +257,9 @@
 								},
 								{
 									"type": "script",
-									"script": "PropController.create(runtime.globalVars.currentProp0, localVars.x, localVars.y);"
+									"script": [
+										"PropController.create(runtime.globalVars.currentProp0, localVars.x, localVars.y);"
+									]
 								}
 							],
 							"sid": 400036502300679

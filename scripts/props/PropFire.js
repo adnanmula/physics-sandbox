@@ -16,18 +16,6 @@ export default class PropFire extends Prop
 	{
 		super();
 
-		const physics = this.behaviors.Physics.behavior;
-		
-		physics.density = 1;
-		physics.friction = 1;
-		physics.elasticity = 0;
-		physics.linearDamping = 0;
-		physics.angularDamping = 0.01;
-		physics.isImmovable = false;
-		physics.isBullet = false;
-		physics.isPreventRotation = false;
-		physics.isEnabled = true;
-		
 		this.isVisible = false;
 		this.instVars.lifespan = 7;
 		

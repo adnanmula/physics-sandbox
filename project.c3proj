@@ -78,13 +78,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "EightDir",
-			"name": "8 Direction",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
@@ -135,9 +128,7 @@
 	],
 	"uniqueId": "nzjq5ue38ks3",
 	"objectTypes": {
-		"items": [
-			"solid_camera"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -190,8 +181,7 @@
 					"ui_selector",
 					"ui_eraser",
 					"ui_text",
-					"ui_pause",
-					"camera"
+					"ui_pause"
 				],
 				"subfolders": [],
 				"name": "ui"
@@ -523,7 +513,7 @@
 	},
 	"properties": {
 		"description": "Just a physics playground for you to mess with.",
-		"version": "0.1.5",
+		"version": "0.2",
 		"autoIncrementVersion": false,
 		"author": "Adnan Mula",
 		"authorEmail": "",

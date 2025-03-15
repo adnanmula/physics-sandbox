@@ -15,18 +15,6 @@ export default class PropBall extends Prop
 	{
 		super();
 
-		const physics = this.behaviors.Physics.behavior;
-
-		physics.density = 0.15;
-		physics.friction = 0.2;
-		physics.elasticity = 1;
-		physics.linearDamping = 0;
-		physics.angularDamping = 0.1;
-		physics.isImmovable = false;
-		physics.isBullet = false;
-		physics.isPreventRotation = false;
-		physics.isEnabled = true;
-
 		this.gravity = new GravityTrait(this, {
 			'force': 52,
 			'angle': 90,

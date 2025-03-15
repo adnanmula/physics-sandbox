@@ -139,15 +139,6 @@
 						"velocity-iterations": "6",
 						"position-iterations": "2"
 					}
-				},
-				{
-					"id": "set-solid-collision-filter",
-					"objectClass": "camera",
-					"sid": 554983587589579,
-					"parameters": {
-						"mode": "inclusive",
-						"tags": "\"camera\""
-					}
 				}
 			],
 			"sid": 588893151483275
@@ -325,7 +316,6 @@
 					"id": "scroll-to-position",
 					"objectClass": "System",
 					"sid": 355727342262801,
-					"disabled": true,
 					"parameters": {
 						"x": "LayoutWidth / 2",
 						"y": "LayoutHeight"

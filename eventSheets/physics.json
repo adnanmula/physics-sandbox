@@ -117,7 +117,10 @@
 						},
 						{
 							"type": "script",
-							"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nprop.flammable.setOnFire();"
+							"script": [
+								"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
+								"prop.flammable.setOnFire();"
+							]
 						}
 					],
 					"sid": 606857579135062
@@ -194,7 +197,10 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nprop.flammable.putOutFire();"
+							"script": [
+								"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
+								"prop.flammable.putOutFire();"
+							]
 						},
 						{
 							"id": "destroy",
@@ -288,7 +294,11 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nlocalVars.instance_0_is_burning = prop.flammable.isBurning;\nlocalVars.instance_0_uid = prop.uid;"
+									"script": [
+										"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
+										"localVars.instance_0_is_burning = prop.flammable.isBurning;",
+										"localVars.instance_0_uid = prop.uid;"
+									]
 								}
 							],
 							"sid": 885556452235019
@@ -309,14 +319,30 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nlocalVars.instance_1_is_burning = prop.flammable.isBurning;\nlocalVars.instance_1_uid = prop.uid;"
+									"script": [
+										"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
+										"localVars.instance_1_is_burning = prop.flammable.isBurning;",
+										"localVars.instance_1_uid = prop.uid;"
+									]
 								}
 							],
 							"sid": 995841886671965
 						},
 						{
 							"eventType": "script",
-							"script": "if (true == localVars.instance_0_is_burning && false === localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_1_uid);\n\tprop.flammable.startPropagation();\t\n}\n\nif (false == localVars.instance_0_is_burning && true == localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_0_uid);\n\tprop.flammable.startPropagation();\n}"
+							"script": [
+								"if (true == localVars.instance_0_is_burning && false === localVars.instance_1_is_burning)",
+								"{",
+								"\tconst prop = PropController.find(localVars.instance_1_uid);",
+								"\tprop.flammable.startPropagation();\t",
+								"}",
+								"",
+								"if (false == localVars.instance_0_is_burning && true == localVars.instance_1_is_burning)",
+								"{",
+								"\tconst prop = PropController.find(localVars.instance_0_uid);",
+								"\tprop.flammable.startPropagation();",
+								"}"
+							]
 						}
 					]
 				},
@@ -391,7 +417,11 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nlocalVars.instance_0_is_burning = prop.flammable.isBurning;\nlocalVars.instance_0_uid = prop.uid;"
+									"script": [
+										"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
+										"localVars.instance_0_is_burning = prop.flammable.isBurning;",
+										"localVars.instance_0_uid = prop.uid;"
+									]
 								}
 							],
 							"sid": 116703936514412
@@ -412,14 +442,30 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nlocalVars.instance_1_is_burning = prop.flammable.isBurning;\nlocalVars.instance_1_uid = prop.uid;"
+									"script": [
+										"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
+										"localVars.instance_1_is_burning = prop.flammable.isBurning;",
+										"localVars.instance_1_uid = prop.uid;"
+									]
 								}
 							],
 							"sid": 994938427426621
 						},
 						{
 							"eventType": "script",
-							"script": "if (true == localVars.instance_0_is_burning && false === localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_1_uid);\n\tprop.flammable.startPropagation();\n}\n\nif (false == localVars.instance_0_is_burning && true == localVars.instance_1_is_burning)\n{\n\tconst prop = PropController.find(localVars.instance_0_uid);\n\tprop.flammable.startPropagation();\n}"
+							"script": [
+								"if (true == localVars.instance_0_is_burning && false === localVars.instance_1_is_burning)",
+								"{",
+								"\tconst prop = PropController.find(localVars.instance_1_uid);",
+								"\tprop.flammable.startPropagation();",
+								"}",
+								"",
+								"if (false == localVars.instance_0_is_burning && true == localVars.instance_1_is_burning)",
+								"{",
+								"\tconst prop = PropController.find(localVars.instance_0_uid);",
+								"\tprop.flammable.startPropagation();",
+								"}"
+							]
 						}
 					]
 				},
@@ -439,7 +485,10 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();\nprop.destroy();"
+							"script": [
+								"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
+								"prop.destroy();"
+							]
 						}
 					],
 					"sid": 471980814792697
@@ -469,7 +518,10 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "const prop = runtime.objects.prop_explosive.getFirstPickedInstance();\nprop.explosive.lightFuse();"
+							"script": [
+								"const prop = runtime.objects.prop_explosive.getFirstPickedInstance();",
+								"prop.explosive.lightFuse();"
+							]
 						}
 					],
 					"sid": 952296541405096

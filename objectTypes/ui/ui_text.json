@@ -3,6 +3,7 @@
 	"plugin-id": "Text",
 	"sid": 374945684128271,
 	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [
 		{
 			"name": "type",
