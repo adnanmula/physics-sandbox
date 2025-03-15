@@ -1,5 +1,5 @@
-import Prop from "./Prop.js";
-import GravityTrait from "./GravityTrait.js";
+import Prop from "/Props/Prop.js";
+import GravityTrait from "/Props/Trait/GravityTrait.js";
 
 export default class PropHeavyCrate extends Prop
 {
@@ -15,18 +15,20 @@ export default class PropHeavyCrate extends Prop
 	{
 		super();
 
-		this.behaviors.Physics.density = 15;
-		this.behaviors.Physics.friction = 0.8;
-		this.behaviors.Physics.elasticity = 0;
-		this.behaviors.Physics.linearDamping = 0;
-		this.behaviors.Physics.angularDamping = 0.01;
-		this.behaviors.Physics.isImmovable = false;
-		this.behaviors.Physics.isBullet = false;
-		this.behaviors.Physics.isPreventRotation = false;
-		this.behaviors.Physics.isEnabled = true;
+		const physics = this.behaviors.Physics.behavior;
+
+		physics.density = 15;
+		physics.friction = 0.8;
+		physics.elasticity = 0;
+		physics.linearDamping = 0;
+		physics.angularDamping = 0.01;
+		physics.isImmovable = false;
+		physics.isBullet = false;
+		physics.isPreventRotation = false;
+		physics.isEnabled = true;
 		
 		this.gravity = new GravityTrait(this, {
-			'force': this.behaviors.Physics.mass,
+			'force': 2000,
 			'angle': 90
 		});
 	}

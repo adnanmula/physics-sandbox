@@ -820,7 +820,8 @@
 									"objectClass": "Touch",
 									"sid": 584392244540560,
 									"parameters": {
-										"object": "ui_clean"
+										"object": "ui_clean",
+										"type": "start"
 									}
 								}
 							],
@@ -841,7 +842,8 @@
 									"objectClass": "Touch",
 									"sid": 190952740214970,
 									"parameters": {
-										"object": "ui_eraser"
+										"object": "ui_eraser",
+										"type": "start"
 									}
 								}
 							],
@@ -864,7 +866,8 @@
 									"objectClass": "Touch",
 									"sid": 493276685658665,
 									"parameters": {
-										"object": "ui_prop_selector"
+										"object": "ui_prop_selector",
+										"type": "start"
 									}
 								}
 							],

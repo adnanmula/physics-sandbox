@@ -1,5 +1,5 @@
-import * as Util from "./utils.js";
-import TimerManager from "./TimerManager.js";
+import * as Util from "/utils.js";
+import TimerManager from "/Timer/TimerManager.js";
 
 export default class FlammableTrait
 {
@@ -54,8 +54,8 @@ export default class FlammableTrait
 					prop.flammable.setOnFire();
 				}
 			
-				let force = prop.behaviors.Physics.mass * this.explosion_force;
-				let angle =  Math.atan2(prop.y - this.entity.y, prop.x - this.entity.x);
+				const force = prop.behaviors.Physics.mass * this.explosion_force;
+				const angle =  Math.atan2(prop.y - this.entity.y, prop.x - this.entity.x);
 	
 				prop.behaviors.Physics.applyForceAtAngle(force, angle, 0);
 			}

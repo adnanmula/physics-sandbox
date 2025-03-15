@@ -1,5 +1,3 @@
-import * as Util from "./utils.js";
-
 export default class Prop extends ISpriteInstance
 {
 	get TRAIT_DRAGGABLE() { return 'draggable'; }

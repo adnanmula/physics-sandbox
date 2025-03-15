@@ -386,7 +386,8 @@
 									"objectClass": "System",
 									"sid": 951396892856195,
 									"parameters": {
-										"seconds": "0.1"
+										"seconds": "0.1",
+										"use-timescale": true
 									}
 								},
 								{
@@ -429,7 +430,8 @@
 									"objectClass": "System",
 									"sid": 377912401701824,
 									"parameters": {
-										"seconds": "0.1"
+										"seconds": "0.1",
+										"use-timescale": true
 									}
 								},
 								{
@@ -491,7 +493,8 @@
 							"objectClass": "System",
 							"sid": 403379764340175,
 							"parameters": {
-								"seconds": "0.1"
+								"seconds": "0.1",
+								"use-timescale": true
 							}
 						},
 						{
@@ -548,7 +551,8 @@
 							"objectClass": "Touch",
 							"sid": 982289314164839,
 							"parameters": {
-								"object": "ui_pause"
+								"object": "ui_pause",
+								"type": "start"
 							}
 						}
 					],

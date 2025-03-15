@@ -1,4 +1,4 @@
-import * as Util from "./utils.js";
+import * as Util from "/utils.js";
 
 export default class GravityTrait
 {

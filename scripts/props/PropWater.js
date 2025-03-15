@@ -1,5 +1,5 @@
-import Prop from "./Prop.js";
-import GravityTrait from "./GravityTrait.js";
+import Prop from "/Props/Prop.js";
+import GravityTrait from "/Props/Trait/GravityTrait.js";
 
 export default class PropWater extends Prop
 {
@@ -15,18 +15,20 @@ export default class PropWater extends Prop
 	{
 		super();
 
-		this.behaviors.Physics.density = 0.1;
-		this.behaviors.Physics.friction = 0;
-		this.behaviors.Physics.elasticity = 0.5;
-		this.behaviors.Physics.linearDamping = 0;
-		this.behaviors.Physics.angularDamping = 0.01;
-		this.behaviors.Physics.isImmovable = false;
-		this.behaviors.Physics.isBullet = false;
-		this.behaviors.Physics.isPreventRotation = false;
-		this.behaviors.Physics.isEnabled = true;
+		const physics = this.behaviors.Physics.behavior;
+
+		physics.density = 0.1;
+		physics.friction = 0;
+		physics.elasticity = 0.5;
+		physics.linearDamping = 0;
+		physics.angularDamping = 0.01;
+		physics.isImmovable = false;
+		physics.isBullet = false;
+		physics.isPreventRotation = false;
+		physics.isEnabled = true;
 		
 		this.gravity = new GravityTrait(this, {
-			'force': this.behaviors.Physics.mass,
+			'force': 1.3,
 			'angle': 90
 		});
 	}

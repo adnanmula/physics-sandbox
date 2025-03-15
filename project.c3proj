@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 42402,
+	"savedWithRelease": 43000,
 	"name": "Physics Sandbox",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -267,9 +267,9 @@
 					}
 				},
 				{
-					"name": "propcontroller.js",
+					"name": "PropController.js",
 					"type": "application/javascript",
-					"sid": 602675596685039,
+					"sid": 406823472579626,
 					"script-info": {
 						"purpose": "none"
 					}
@@ -404,10 +404,10 @@
 								}
 							],
 							"subfolders": [],
-							"name": "trait"
+							"name": "Trait"
 						}
 					],
-					"name": "props"
+					"name": "Props"
 				},
 				{
 					"items": [
@@ -429,9 +429,10 @@
 						}
 					],
 					"subfolders": [],
-					"name": "timer"
+					"name": "Timer"
 				}
-			]
+			],
+			"autoReloadOnPreview": true
 		},
 		"sound": {
 			"items": [],

@@ -1,7 +1,6 @@
-import * as Util from "./utils.js";
-import Prop from "./Prop.js";
-import GravityTrait from "./GravityTrait.js";
-import LimitedLifespanTrait from "./LimitedLifespanTrait.js";
+import Prop from "/Props/Prop.js";
+import LimitedLifespanTrait from "/Props/Trait/LimitedLifespanTrait.js";
+import GravityTrait from "/Props/Trait/GravityTrait.js";
 
 export default class PropFire extends Prop
 {
@@ -17,21 +16,23 @@ export default class PropFire extends Prop
 	{
 		super();
 
-		this.behaviors.Physics.density = 1;
-		this.behaviors.Physics.friction = 1;
-		this.behaviors.Physics.elasticity = 0;
-		this.behaviors.Physics.linearDamping = 0;
-		this.behaviors.Physics.angularDamping = 0.01;
-		this.behaviors.Physics.isImmovable = false;
-		this.behaviors.Physics.isBullet = false;
-		this.behaviors.Physics.isPreventRotation = false;
-		this.behaviors.Physics.isEnabled = true;
+		const physics = this.behaviors.Physics.behavior;
+		
+		physics.density = 1;
+		physics.friction = 1;
+		physics.elasticity = 0;
+		physics.linearDamping = 0;
+		physics.angularDamping = 0.01;
+		physics.isImmovable = false;
+		physics.isBullet = false;
+		physics.isPreventRotation = false;
+		physics.isEnabled = true;
 		
 		this.isVisible = false;
 		this.instVars.lifespan = 7;
 		
 		this.gravity = new GravityTrait(this, {
-			'force': this.behaviors.Physics.mass,
+			'force': 1,
 			'angle': 90
 		});
 		
@@ -47,7 +48,13 @@ export default class PropFire extends Prop
 	
 	tick()
 	{
+			const physics = this.behaviors.Physics.behavior;
+
+			physics.isImmovable = false;
+
 		this.gravity.tick();
 		this.limitedLifespan.tick();
+
+		console.log(this);
 	}
 }

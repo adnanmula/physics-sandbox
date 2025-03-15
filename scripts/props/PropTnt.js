@@ -1,6 +1,6 @@
-import Prop from "./Prop.js";
-import ExplosiveTrait from "./ExplosiveTrait.js";
-import GravityTrait from "./GravityTrait.js";
+import Prop from "/Props/Prop.js";
+import ExplosiveTrait from "/Props/Trait/ExplosiveTrait.js";
+import GravityTrait from "/Props/Trait/GravityTrait.js";
 
 export default class PropTnt extends Prop
 {
@@ -17,15 +17,17 @@ export default class PropTnt extends Prop
 	{
 		super();
 
-		this.behaviors.Physics.density = 1;
- 		this.behaviors.Physics.friction = 0.5;
- 		this.behaviors.Physics.elasticity = 0.2;
- 		this.behaviors.Physics.linearDamping = 0;
- 		this.behaviors.Physics.angularDamping = 0.01;
- 		this.behaviors.Physics.isImmovable = false;
- 		this.behaviors.Physics.isBullet = false;
- 		this.behaviors.Physics.isPreventRotation = false;
- 		this.behaviors.Physics.isEnabled = true;
+		const physics = this.behaviors.Physics.behavior;
+
+		physics.density = 1;
+ 		physics.friction = 0.5;
+ 		physics.elasticity = 0.2;
+ 		physics.linearDamping = 0;
+ 		physics.angularDamping = 0.01;
+ 		physics.isImmovable = false;
+ 		physics.isBullet = false;
+ 		physics.isPreventRotation = false;
+ 		physics.isEnabled = true;
 		
 		this.instVars.detonation_time = 3;
 		
@@ -36,7 +38,7 @@ export default class PropTnt extends Prop
 		});
 		
 		this.gravity = new GravityTrait(this, {
-			'force': this.behaviors.Physics.mass,
+			'force': 134,
 			'angle': 90
 		});
 	}

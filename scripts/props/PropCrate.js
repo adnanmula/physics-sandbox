@@ -1,6 +1,6 @@
-import Prop from "./Prop.js";
-import FlammableTrait from "./FlammableTrait.js";
-import GravityTrait from "./GravityTrait.js";
+import Prop from "/Props/Prop.js";
+import FlammableTrait from "/Props/Trait/FlammableTrait.js";
+import GravityTrait from "/Props/Trait/GravityTrait.js";
 
 export default class PropCrate extends Prop
 {
@@ -17,20 +17,18 @@ export default class PropCrate extends Prop
 	{
 		super();
 
-		this.behaviors.Physics.density = 1;
- 		this.behaviors.Physics.friction = 0.5;
- 		this.behaviors.Physics.elasticity = 0.2;
- 		this.behaviors.Physics.linearDamping = 0;
- 		this.behaviors.Physics.angularDamping = 0.01;
- 		this.behaviors.Physics.isImmovable = false;
- 		this.behaviors.Physics.isBullet = false;
- 		this.behaviors.Physics.isPreventRotation = false;
- 		this.behaviors.Physics.isEnabled = true;
-			
-		//this.instVars.burning_time = 3;
-		//this.instVars.consuming_time = 1;
-		//this.instVars.propagation_time = 0.2;
+		const physics = this.behaviors.Physics.behavior;
 
+		physics.density = 1;
+ 		physics.friction = 0.5;
+ 		physics.elasticity = 0.2;
+ 		physics.linearDamping = 0;
+ 		physics.angularDamping = 0.01;
+ 		physics.isImmovable = false;
+ 		physics.isBullet = false;
+ 		physics.isPreventRotation = false;
+ 		physics.isEnabled = true;
+			
 		this.flammable = new FlammableTrait(this, {
 			'burning_time': 3,
 			'consuming_time': 1,
@@ -40,7 +38,7 @@ export default class PropCrate extends Prop
 		});
 
 		this.gravity = new GravityTrait(this, {
-			'force': this.behaviors.Physics.mass,
+			'force': 134,
 			'angle': 90,
 		});
 	}
