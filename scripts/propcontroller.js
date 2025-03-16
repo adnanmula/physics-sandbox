@@ -1,14 +1,14 @@
-import PropBall from "/Props/PropBall.js";
-import PropBlackHole from "/Props/PropBlackHole.js";
-import PropCrate from "/Props/PropCrate.js";
-import PropFire from "/Props/PropFire.js";
-import PropHeavyCrate from "/Props/PropHeavyCrate.js";
-import PropLava from "/Props/PropLava.js";
-import PropOil from "/Props/PropOil.js";
-import PropTnt from "/Props/PropTnt.js";
-import PropWall from "/Props/PropWall.js";
-import PropWater from "/Props/PropWater.js";
-import PropWaterSteam from "/Props/PropWaterSteam.js";
+import PropBall from "/PropBall.js";
+import PropBlackHole from "/PropBlackHole.js";
+import PropCrate from "/PropCrate.js";
+import PropFire from "/PropFire.js";
+import PropHeavyCrate from "/PropHeavyCrate.js";
+import PropLava from "/PropLava.js";
+import PropOil from "/PropOil.js";
+import PropTnt from "/PropTnt.js";
+import PropWall from "/PropWall.js";
+import PropWater from "/PropWater.js";
+import PropWaterSteam from "/PropWaterSteam.js";
 
 export default class PropController
 {

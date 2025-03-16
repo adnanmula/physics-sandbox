@@ -1,6 +1,6 @@
-import Prop from "/Props/Prop.js";
-import ExplosiveTrait from "/Props/Trait/ExplosiveTrait.js";
-import GravityTrait from "/Props/Trait/GravityTrait.js";
+import Prop from "/Prop.js";
+import ExplosiveTrait from "/ExplosiveTrait.js";
+import GravityTrait from "/GravityTrait.js";
 
 export default class PropTnt extends Prop
 {

@@ -1,4 +1,4 @@
-import TimerManager from "/Timer/TimerManager.js";
+import TimerManager from "/TimerManager.js";
 
 export default class FlammableTrait
 {

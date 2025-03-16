@@ -523,7 +523,7 @@
 	},
 	"properties": {
 		"description": "Just a physics playground for you to mess with.",
-		"version": "0.2",
+		"version": "0.2.0",
 		"autoIncrementVersion": false,
 		"author": "Adnan Mula",
 		"authorEmail": "",
@@ -571,7 +571,7 @@
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
-		"exportFileStructure": "folders",
+		"exportFileStructure": "flat",
 		"uidAllocationMode": "increment"
 	},
 	"viewportWidth": 1920,
