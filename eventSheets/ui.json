@@ -47,7 +47,127 @@
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "Ui- Desktop - Toolbar",
+					"title": "Ui - Desktop - Label",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 334102775599602,
+									"parameters": {
+										"object": "toolbar_item"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 890592541875322,
+									"parameters": {
+										"object": "ui_text",
+										"expression": "ui_text.type = \"toolbar_tooltip\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "ui_text",
+									"sid": 807959791699972,
+									"parameters": {
+										"x": "toolbar_item.X - toolbar_item.Width / 4",
+										"y": "toolbar_item.Y + 35"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ui_text",
+									"sid": 845457387137373,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "ui_text",
+									"sid": 504550344294203,
+									"parameters": {
+										"text": "toolbar_item.element"
+									}
+								}
+							],
+							"sid": 870168894639944,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 219514516007812,
+											"parameters": {
+												"object": "ui_prop_selector"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "ui_text",
+											"sid": 664335773961779,
+											"parameters": {
+												"text": "ui_prop_selector.prop"
+											}
+										}
+									],
+									"sid": 440452860476844
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 736517361000628,
+									"parameters": {
+										"object": "toolbar_item"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 279738641568068,
+									"parameters": {
+										"object": "ui_text",
+										"expression": "ui_text.type = \"toolbar_tooltip\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ui_text",
+									"sid": 878961122712211,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 929314758021662
+						}
+					],
+					"sid": 466238798363435
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Ui - Desktop - Toolbar",
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
@@ -57,7 +177,7 @@
 								{
 									"id": "on-object-clicked",
 									"objectClass": "Mouse",
-									"sid": 187769427388165,
+									"sid": 604417747164119,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
@@ -69,10 +189,10 @@
 								{
 									"id": "destroy",
 									"objectClass": "props",
-									"sid": 870882990831083
+									"sid": 706732631736707
 								}
 							],
-							"sid": 616816559926619
+							"sid": 755292753046906
 						},
 						{
 							"eventType": "block",
@@ -80,7 +200,7 @@
 								{
 									"id": "on-object-clicked",
 									"objectClass": "Mouse",
-									"sid": 655005855543582,
+									"sid": 372024653464848,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
@@ -91,13 +211,13 @@
 							"actions": [
 								{
 									"callFunction": "modeToggle",
-									"sid": 857323884923016,
+									"sid": 477782628403943,
 									"parameters": [
 										"\"\""
 									]
 								}
 							],
-							"sid": 459411763800185
+							"sid": 334585956934278
 						},
 						{
 							"eventType": "block",
@@ -105,7 +225,7 @@
 								{
 									"id": "on-object-clicked",
 									"objectClass": "Mouse",
-									"sid": 103556729038991,
+									"sid": 686673421769120,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
@@ -117,14 +237,14 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 400309234619840,
+									"sid": 118814394765604,
 									"parameters": {
 										"variable": "currentProp0",
 										"value": "ui_prop_selector.index"
 									}
 								}
 							],
-							"sid": 991075483622024,
+							"sid": 440614895547687,
 							"children": [
 								{
 									"eventType": "block",
@@ -132,7 +252,7 @@
 										{
 											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 460341469597022,
+											"sid": 755925096947668,
 											"parameters": {
 												"variable": "ALT_BRUSH_ENABLED"
 											}
@@ -140,7 +260,7 @@
 										{
 											"id": "pick-by-evaluate",
 											"objectClass": "System",
-											"sid": 341549481492631,
+											"sid": 456939159798702,
 											"parameters": {
 												"object": "ui_selector_alt",
 												"expression": "ui_selector_alt.index = 0"
@@ -151,7 +271,7 @@
 										{
 											"id": "set-position-to-another-object",
 											"objectClass": "ui_selector_alt",
-											"sid": 167914118761237,
+											"sid": 489783291187275,
 											"parameters": {
 												"object": "ui_prop_selector",
 												"image-point-optional": "\"left\""
@@ -159,13 +279,13 @@
 										},
 										{
 											"callFunction": "modeToggle",
-											"sid": 120346202337929,
+											"sid": 246273305436012,
 											"parameters": [
 												"MODE_BRUSH"
 											]
 										}
 									],
-									"sid": 929643707219084
+									"sid": 288521534720687
 								},
 								{
 									"eventType": "block",
@@ -173,7 +293,7 @@
 										{
 											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 946171144636048,
+											"sid": 189012540952019,
 											"parameters": {
 												"variable": "ALT_BRUSH_ENABLED"
 											},
@@ -182,7 +302,7 @@
 										{
 											"id": "pick-by-evaluate",
 											"objectClass": "System",
-											"sid": 939504289164765,
+											"sid": 140536208655196,
 											"parameters": {
 												"object": "ui_selector",
 												"expression": "ui_selector.index = 0"
@@ -193,7 +313,7 @@
 										{
 											"id": "set-position",
 											"objectClass": "ui_selector",
-											"sid": 745117817537504,
+											"sid": 923824324624202,
 											"parameters": {
 												"x": "ui_prop_selector.X",
 												"y": "ui_prop_selector.Y"
@@ -201,13 +321,13 @@
 										},
 										{
 											"callFunction": "modeToggle",
-											"sid": 735641505441315,
+											"sid": 130693414640886,
 											"parameters": [
 												"MODE_BRUSH"
 											]
 										}
 									],
-									"sid": 730587576690364
+									"sid": 892528429798387
 								}
 							]
 						},
@@ -217,7 +337,7 @@
 								{
 									"id": "on-object-clicked",
 									"objectClass": "Mouse",
-									"sid": 936475806982021,
+									"sid": 283977758655969,
 									"parameters": {
 										"mouse-button": "right",
 										"click-type": "clicked",
@@ -227,7 +347,7 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 555924939611068,
+									"sid": 447965727330947,
 									"parameters": {
 										"variable": "ALT_BRUSH_ENABLED"
 									}
@@ -235,7 +355,7 @@
 								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 336351465025606,
+									"sid": 353692643763636,
 									"parameters": {
 										"object": "ui_selector_alt",
 										"expression": "ui_selector_alt.index = 1"
@@ -246,7 +366,7 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 568995154153027,
+									"sid": 563518486179643,
 									"parameters": {
 										"variable": "currentProp1",
 										"value": "ui_prop_selector.index"
@@ -255,20 +375,236 @@
 								{
 									"id": "set-position-to-another-object",
 									"objectClass": "ui_selector_alt",
-									"sid": 686561397595273,
+									"sid": 524835316117674,
 									"parameters": {
 										"object": "ui_prop_selector",
 										"image-point-optional": "\"right\""
 									}
 								}
 							],
-							"sid": 261342394493841
+							"sid": 913632678033671
 						}
 					],
-					"sid": 984702557506294
+					"sid": 299517897762442
 				}
 			],
 			"sid": 331685499866591
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Ui - Mobile",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Ui - Mobile - Toolbar",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-touched-object",
+									"objectClass": "Touch",
+									"sid": 882928613693803,
+									"parameters": {
+										"object": "ui_clean",
+										"type": "start"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "props",
+									"sid": 632841927308379
+								}
+							],
+							"sid": 160689930687942
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-touched-object",
+									"objectClass": "Touch",
+									"sid": 832798380856354,
+									"parameters": {
+										"object": "ui_eraser",
+										"type": "start"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "modeToggle",
+									"sid": 720485357182632,
+									"parameters": [
+										"MODE_ERASER"
+									]
+								}
+							],
+							"sid": 267645173951698
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-touched-object",
+									"objectClass": "Touch",
+									"sid": 372442372902704,
+									"parameters": {
+										"object": "ui_prop_selector",
+										"type": "start"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 754492641185878,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 106587031506403,
+											"parameters": {
+												"variable": "ALT_BRUSH_ENABLED"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 493781091102325,
+											"parameters": {
+												"variable": "currentProp0",
+												"value": "ui_prop_selector.index"
+											}
+										}
+									],
+									"sid": 958267828466999
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 194928684009683,
+											"parameters": {
+												"variable": "ALT_BRUSH_ENABLED"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 782765025188840,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-random-instance",
+													"objectClass": "System",
+													"sid": 693852688162698,
+													"parameters": {
+														"object": "ui_selector"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 506802086528872,
+													"parameters": {
+														"first-value": "currentProp0",
+														"comparison": 0,
+														"second-value": "ui_prop_selector.index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 602479707224413,
+													"parameters": {
+														"variable": "currentProp0",
+														"value": "-currentProp0"
+													}
+												},
+												{
+													"id": "set-position",
+													"objectClass": "ui_selector",
+													"sid": 328226436149103,
+													"parameters": {
+														"x": "-100",
+														"y": "-100"
+													}
+												},
+												{
+													"callFunction": "modeToggle",
+													"sid": 648311798854750,
+													"parameters": [
+														"MODE_SCROLL"
+													]
+												}
+											],
+											"sid": 653539268123451
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 628610186735008
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 307696817694079,
+													"parameters": {
+														"variable": "currentProp0",
+														"value": "ui_prop_selector.index"
+													}
+												},
+												{
+													"callFunction": "modeToggle",
+													"sid": 385996400799008,
+													"parameters": [
+														"MODE_BRUSH"
+													]
+												},
+												{
+													"id": "set-position",
+													"objectClass": "ui_selector",
+													"sid": 896884211210154,
+													"parameters": {
+														"x": "ui_prop_selector.X",
+														"y": "ui_prop_selector.Y"
+													}
+												}
+											],
+											"sid": 548379378466019
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 258136316047933
+				}
+			],
+			"sid": 100035051298346
 		},
 		{
 			"functionName": "modeToggle",
@@ -862,116 +1198,6 @@
 					"sid": 446100239493718
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "cursor-is-over-object",
-					"objectClass": "Mouse",
-					"sid": 792628570045540,
-					"parameters": {
-						"object": "toolbar_item"
-					}
-				},
-				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 152832332406127,
-					"parameters": {
-						"object": "ui_text",
-						"expression": "ui_text.type = \"toolbar_tooltip\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-position",
-					"objectClass": "ui_text",
-					"sid": 126881933814791,
-					"parameters": {
-						"x": "toolbar_item.X - toolbar_item.Width / 4",
-						"y": "toolbar_item.Y + 35"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "ui_text",
-					"sid": 573734584377009,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "ui_text",
-					"sid": 827231418351064,
-					"parameters": {
-						"text": "toolbar_item.element"
-					}
-				}
-			],
-			"sid": 430014162230336,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 601874917756776,
-							"parameters": {
-								"object": "ui_prop_selector"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "ui_text",
-							"sid": 834309799114497,
-							"parameters": {
-								"text": "ui_prop_selector.prop"
-							}
-						}
-					],
-					"sid": 928998328963595
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "cursor-is-over-object",
-					"objectClass": "Mouse",
-					"sid": 647811720596165,
-					"parameters": {
-						"object": "toolbar_item"
-					},
-					"isInverted": true
-				},
-				{
-					"id": "pick-by-evaluate",
-					"objectClass": "System",
-					"sid": 928127287922054,
-					"parameters": {
-						"object": "ui_text",
-						"expression": "ui_text.type = \"toolbar_tooltip\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "ui_text",
-					"sid": 821048923628122,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 991920553069394
 		}
 	],
 	"sid": 283603127988573

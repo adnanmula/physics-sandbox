@@ -41,7 +41,7 @@
 			"eventType": "variable",
 			"name": "currentProp0",
 			"type": "number",
-			"initialValue": "10",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
