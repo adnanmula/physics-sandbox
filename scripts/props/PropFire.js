@@ -36,13 +36,7 @@ export default class PropFire extends Prop
 	
 	tick()
 	{
-			const physics = this.behaviors.Physics.behavior;
-
-			physics.isImmovable = false;
-
 		this.gravity.tick();
 		this.limitedLifespan.tick();
-
-		console.log(this);
 	}
 }

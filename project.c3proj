@@ -152,7 +152,8 @@
 					"prop_water_steam",
 					"prop_fire",
 					"prop_tnt",
-					"prop_oil"
+					"prop_oil",
+					"prop_lava"
 				],
 				"subfolders": [
 					{
@@ -208,7 +209,8 @@
 			"prop_solid",
 			"prop_limited_lifespan",
 			"prop_flammable_solid",
-			"prop_explosive"
+			"prop_explosive",
+			"prop_incendiary"
 		],
 		"subfolders": []
 	},
@@ -352,6 +354,14 @@
 							"name": "PropOil.js",
 							"type": "application/javascript",
 							"sid": 924469436363489,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PropLava.js",
+							"type": "application/javascript",
+							"sid": 800221982227047,
 							"script-info": {
 								"purpose": "none"
 							}

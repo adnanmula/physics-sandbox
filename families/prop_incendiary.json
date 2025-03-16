@@ -1,13 +1,12 @@
 {
-	"name": "prop_liquid",
+	"name": "prop_incendiary",
 	"plugin-id": "Sprite",
-	"sid": 842729672780609,
+	"sid": 327070030305077,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"prop_water",
-		"prop_oil",
-		"prop_lava"
+		"prop_lava",
+		"prop_fire"
 	]
 }

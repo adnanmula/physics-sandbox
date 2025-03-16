@@ -39,6 +39,16 @@
 						"object": "prop_gas",
 						"state": "disable"
 					}
+				},
+				{
+					"id": "enabledisable-collisions",
+					"objectClass": "prop_lava",
+					"sid": 176855396405740,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "prop_gas",
+						"state": "disable"
+					}
 				}
 			],
 			"sid": 116101154591891
@@ -94,6 +104,40 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
+							"objectClass": "prop_lava",
+							"sid": 335349845574861,
+							"parameters": {
+								"object": "prop_water"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 797259288666144,
+							"parameters": {
+								"object-to-create": "prop_water_steam",
+								"layer": "\"main\"",
+								"x": "prop_lava.X",
+								"y": "prop_lava.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "prop_water",
+							"sid": 501975660466789
+						}
+					],
+					"sid": 738381112442256
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
 							"objectClass": "prop_fire",
 							"sid": 649632286168409,
 							"parameters": {
@@ -124,6 +168,37 @@
 						}
 					],
 					"sid": 606857579135062
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_lava",
+							"sid": 707478549743799,
+							"parameters": {
+								"object": "prop_flammable_solid"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "prop_flammable_solid",
+							"sid": 579549145371048,
+							"parameters": {
+								"animation": "\"default\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": [
+								"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
+								"prop.flammable.setOnFireFast();"
+							]
+						}
+					],
+					"sid": 796411446975921
 				},
 				{
 					"eventType": "block",
@@ -508,7 +583,7 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
-							"objectClass": "prop_fire",
+							"objectClass": "prop_incendiary",
 							"sid": 427759220055766,
 							"parameters": {
 								"object": "prop_explosive"

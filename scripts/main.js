@@ -1,13 +1,14 @@
-import PropCrate from "/Props/PropCrate.js";
-import PropHeavyCrate from "/Props/PropHeavyCrate.js";
 import PropBall from "/Props/PropBall.js";
+import PropBlackHole from "/Props/PropBlackHole.js";
+import PropCrate from "/Props/PropCrate.js";
+import PropFire from "/Props/PropFire.js";
+import PropHeavyCrate from "/Props/PropHeavyCrate.js";
+import PropLava from "/Props/PropLava.js";
+import PropOil from "/Props/PropOil.js";
+import PropTnt from "/Props/PropTnt.js";
 import PropWall from "/Props/PropWall.js";
 import PropWater from "/Props/PropWater.js";
 import PropWaterSteam from "/Props/PropWaterSteam.js";
-import PropFire from "/Props/PropFire.js";
-import PropBlackHole from "/Props/PropBlackHole.js";
-import PropTnt from "/Props/PropTnt.js";
-import PropOil from "/Props/PropOil.js";
 
 runOnStartup(async runtime =>
 {
@@ -23,6 +24,7 @@ runOnStartup(async runtime =>
 	runtime.objects.prop_fire.setInstanceClass(PropFire);
 	runtime.objects.prop_tnt.setInstanceClass(PropTnt);
 	runtime.objects.prop_oil.setInstanceClass(PropOil);
+	runtime.objects.prop_lava.setInstanceClass(PropLava);
 	
 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart());
 });

@@ -49,6 +49,30 @@ export default class FlammableTrait
 			}
 		}
 	}
+
+	setOnFireFast()
+	{	
+		this.addFireParticles();
+		
+		this.isBurning = true;	
+ 		this.entity.setAnimation('burning', 'beginning');
+		this.timerManager.add('burnFast', 'burnFast', [], this.burningTime, false);
+		
+		if (this.isLiquid) {
+			for (const propToTest of runtime.objects.props.instances())
+			{
+				if (propToTest instanceof PropOil && Util.distanceTo(propToTest.x, propToTest.y, this.entity.x, this.entity.y) < 50)
+				{
+					if (true === ['burning', 'burned', 'consuming'].includes(propToTest.animationName))
+					{
+						continue;
+					}
+
+					propToTest.flammable.setOnFireFast();
+				}
+			}
+		}
+	}
 	
 	putOutFire()
 	{
@@ -74,6 +98,12 @@ export default class FlammableTrait
 			this.entity.animationFrame = Math.floor(Math.random() * 3);
 			this.isBurning = false;
 		}
+	}
+
+	burnFast()
+	{
+		this.removeFireParticles();
+		this.entity.destroy();
 	}
 	
 	startPropagation()
