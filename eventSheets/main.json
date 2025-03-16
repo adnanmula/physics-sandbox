@@ -170,10 +170,10 @@
 				{
 					"id": "set-size",
 					"objectClass": "toolbar_item",
-					"sid": 899623736986191,
+					"sid": 621366174540733,
 					"parameters": {
-						"width": "Self.Width * 2",
-						"height": "Self.Height * 2"
+						"width": "Self.Width * 1.7",
+						"height": "Self.Height * 1.7"
 					}
 				}
 			],
