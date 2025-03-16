@@ -16,7 +16,7 @@ export default class PropLava extends Prop
 		super();
 
 		this.gravity = new GravityTrait(this, {
-			'force': 1.3,
+			'force': 6,
 			'angle': 90
 		});
 	}

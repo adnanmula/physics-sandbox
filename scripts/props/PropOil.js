@@ -26,7 +26,7 @@ export default class PropOil extends Prop
 		});
 		
 		this.gravity = new GravityTrait(this, {
-			'force': 1.3,
+			'force': 4,
 			'angle': 90
 		});
 	}

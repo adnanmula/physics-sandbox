@@ -1,3 +1,4 @@
+import * as Util from "/utils.js";
 import PropBall from "/Props/PropBall.js";
 import PropBlackHole from "/Props/PropBlackHole.js";
 import PropCrate from "/Props/PropCrate.js";
@@ -45,4 +46,22 @@ function Tick()
 	{
 		instance.tick();
 	}
+
+	if (Util.tickCount() % 360 === 0)
+	{
+		removeOrphanParticles();
+	}
+}
+
+function removeOrphanParticles() {
+    const particles = globalThis.runtime.objects.particles_burning.instances();
+    const propsUids = [...globalThis.runtime.objects.props.instances()].map(prop => prop.uid);
+
+    for (const particle of particles) {
+        const parentId = particle.instVars.entity;
+
+        if (parentId !== 0 && false === propsUids.includes(parentId)) {
+            particle.destroy();
+        }
+    }
 }

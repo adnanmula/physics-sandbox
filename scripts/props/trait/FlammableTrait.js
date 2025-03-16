@@ -140,11 +140,10 @@ export default class FlammableTrait
 	{
 		for (const particle of globalThis.runtime.objects.particles_burning.instances())
 		{	
-			if (particle.instVars.entity !== this.entity.uid) {
-				continue;
+			if (particle.instVars.entity === this.entity.uid) {
+				particle.destroy();
+				return;
 			}
-
-			particle.destroy();
 		}
 	}
 }

@@ -179,14 +179,6 @@
 							"parameters": {
 								"object": "prop_flammable_solid"
 							}
-						},
-						{
-							"id": "is-animation-playing",
-							"objectClass": "prop_flammable_solid",
-							"sid": 579549145371048,
-							"parameters": {
-								"animation": "\"default\""
-							}
 						}
 					],
 					"actions": [

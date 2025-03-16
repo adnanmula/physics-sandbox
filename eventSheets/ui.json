@@ -190,6 +190,16 @@
 									"id": "destroy",
 									"objectClass": "props",
 									"sid": 706732631736707
+								},
+								{
+									"id": "destroy",
+									"objectClass": "particles_fire",
+									"sid": 789842415752136
+								},
+								{
+									"id": "destroy",
+									"objectClass": "particles_burning",
+									"sid": 235239710616600
 								}
 							],
 							"sid": 755292753046906
@@ -422,6 +432,16 @@
 									"id": "destroy",
 									"objectClass": "props",
 									"sid": 632841927308379
+								},
+								{
+									"id": "destroy",
+									"objectClass": "particles_fire",
+									"sid": 658835818908967
+								},
+								{
+									"id": "destroy",
+									"objectClass": "particles_burning",
+									"sid": 836192718501618
 								}
 							],
 							"sid": 160689930687942
