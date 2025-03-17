@@ -523,7 +523,7 @@
 	},
 	"properties": {
 		"description": "Just a physics playground for you to mess with.",
-		"version": "0.2.0",
+		"version": "0.2.1",
 		"autoIncrementVersion": false,
 		"author": "Adnan Mula",
 		"authorEmail": "",
