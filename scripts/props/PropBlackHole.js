@@ -1,5 +1,5 @@
 import * as Util from "/utils.js";
-import Prop from "/Prop.js";
+import Prop from "/Props/Prop.js";
 
 export default class PropBlackHole extends Prop
 {

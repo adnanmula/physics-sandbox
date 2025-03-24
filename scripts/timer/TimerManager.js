@@ -1,4 +1,4 @@
-import Timer from "/Timer.js";
+import Timer from "/Timer/Timer.js";
 
 export default class TimerManager
 {

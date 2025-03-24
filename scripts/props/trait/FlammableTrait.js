@@ -1,6 +1,6 @@
 import * as Util from "/utils.js";
-import TimerManager from "/TimerManager.js";
-import PropOil from "/PropOil.js";
+import TimerManager from "/Timer/TimerManager.js";
+import PropOil from "/Props/PropOil.js";
 
 export default class FlammableTrait
 {

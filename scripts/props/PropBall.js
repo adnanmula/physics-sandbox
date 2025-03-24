@@ -1,5 +1,5 @@
-import Prop from "/Prop.js";
-import GravityTrait from "/GravityTrait.js";
+import Prop from "/Props/Prop.js";
+import GravityTrait from "/Props/Trait/GravityTrait.js";
 
 export default class PropBall extends Prop
 {
