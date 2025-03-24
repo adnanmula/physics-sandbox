@@ -1,5 +1,5 @@
-import * as Util from "/utils.js";
-import TimerManager from "/Timer/TimerManager.js";
+import * as Util from "../../utils.js";
+import TimerManager from "../../Timer/TimerManager.js";
 
 export default class FlammableTrait
 {

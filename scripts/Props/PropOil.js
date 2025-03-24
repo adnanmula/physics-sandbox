@@ -1,6 +1,6 @@
-import Prop from "/Props/Prop.js";
-import FlammableTrait from "/Props/Trait/FlammableTrait.js";
-import GravityTrait from "/Props/Trait/GravityTrait.js";
+import Prop from "./Prop.js";
+import FlammableTrait from "./Trait/FlammableTrait.js";
+import GravityTrait from "./Trait/GravityTrait.js";
 
 export default class PropOil extends Prop
 {

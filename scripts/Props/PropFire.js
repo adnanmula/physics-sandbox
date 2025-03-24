@@ -1,6 +1,6 @@
-import Prop from "/Props/Prop.js";
-import LimitedLifespanTrait from "/Props/Trait/LimitedLifespanTrait.js";
-import GravityTrait from "/Props/Trait/GravityTrait.js";
+import Prop from "./Prop.js";
+import LimitedLifespanTrait from "./Trait/LimitedLifespanTrait.js";
+import GravityTrait from "./Trait/GravityTrait.js";
 
 export default class PropFire extends Prop
 {

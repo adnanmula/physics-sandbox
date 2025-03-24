@@ -1,6 +1,6 @@
-import Prop from "/Props/Prop.js";
-import FlammableTrait from "/Props/Trait/FlammableTrait.js";
-import GravityTrait from "/Props/Trait/GravityTrait.js";
+import Prop from "./Prop.js";
+import GravityTrait from "./Trait/GravityTrait.js";
+import FlammableTrait from "./Trait/FlammableTrait.js";
 
 export default class PropCrate extends Prop
 {

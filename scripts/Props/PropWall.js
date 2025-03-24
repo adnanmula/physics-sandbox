@@ -1,4 +1,4 @@
-import Prop from "/Props/Prop.js";
+import Prop from "./Prop.js";
 
 export default class PropWall extends Prop
 {
