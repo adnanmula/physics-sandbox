@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 43200,
+	"savedWithRelease": 44002,
 	"name": "Physics Sandbox",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -189,6 +189,7 @@
 			}
 		]
 	},
+	"functionsName": "Functions",
 	"autosaveData": null,
 	"containers": [
 		{
@@ -523,7 +524,7 @@
 	},
 	"properties": {
 		"description": "Just a physics playground for you to mess with.",
-		"version": "0.2.2",
+		"version": "0.2.3",
 		"autoIncrementVersion": false,
 		"author": "Adnan Mula",
 		"authorEmail": "",
