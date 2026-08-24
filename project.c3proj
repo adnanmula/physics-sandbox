@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 45900,
+	"savedWithRelease": 49502,
 	"name": "Physics Sandbox",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -100,7 +100,7 @@
 		{
 			"type": "behavior",
 			"id": "destroy",
-			"name": "Destroy outside layout",
+			"name": "Destroy outside",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -522,6 +522,10 @@
 		"items": [],
 		"subfolders": []
 	},
+	"models3d": {
+		"items": [],
+		"subfolders": []
+	},
 	"properties": {
 		"description": "Just a physics playground for you to mess with.",
 		"version": "0.2.3",
@@ -531,7 +535,7 @@
 		"authorWebsite": "http://",
 		"appId": "com.adnanmula.physicssandbox",
 		"pixelRounding": false,
-		"zAxisScale": "normalized",
+		"zAxisScale": "regular",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
@@ -561,6 +565,7 @@
 		"multitexturing": "auto",
 		"gpuPreference": "high-performance",
 		"framerateMode": "vsync",
+		"fixedFramerate": 30,
 		"sampling": "nearest",
 		"downscaling": "medium",
 		"renderingMode": "auto",

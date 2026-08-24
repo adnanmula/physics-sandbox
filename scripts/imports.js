@@ -1,1 +1,1 @@
-import PropController from "/PropController.js";
+import PropController from "/scripts/project/PropController.js";
