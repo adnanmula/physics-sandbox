@@ -94,6 +94,7 @@
 							"actions": [
 								{
 									"type": "script",
+									"language": "javascript",
 									"script": [
 										"PropController.create(runtime.globalVars.currentProp0, runtime.mouse.getMouseX(\"main\"), runtime.mouse.getMouseY(\"main\"));"
 									]
@@ -155,6 +156,7 @@
 					"actions": [
 						{
 							"type": "script",
+							"language": "javascript",
 							"script": [
 								"PropController.create(runtime.globalVars.currentProp1, runtime.mouse.getMouseX(\"main\"), runtime.mouse.getMouseY(\"main\"));"
 							]
@@ -257,6 +259,7 @@
 								},
 								{
 									"type": "script",
+									"language": "javascript",
 									"script": [
 										"PropController.create(runtime.globalVars.currentProp0, localVars.x, localVars.y);"
 									]

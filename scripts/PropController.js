@@ -28,7 +28,7 @@ export default class PropController
 			PropLava,
 		];
 	
-		props[propId].create(x, y)
+		props[propId].create(x, y);
 	}
 	
 	static find(uid)

@@ -23,6 +23,7 @@ export default class PropCrate extends Prop
 			'propagation_time': 0.2,
 			'is_liquid': false,
 			'is_burning': false,
+			'is_custom': false,
 		});
 
 		this.gravity = new GravityTrait(this, {

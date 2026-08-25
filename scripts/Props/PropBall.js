@@ -1,5 +1,6 @@
 import Prop from "./Prop.js";
 import GravityTrait from "./Trait/GravityTrait.js";
+import FlammableTrait from "./Trait/FlammableTrait.js";
 
 export default class PropBall extends Prop
 {
@@ -8,6 +9,7 @@ export default class PropBall extends Prop
 		return [
 			super.TRAIT_DRAGGABLE,
 			super.TRAIT_GRAVITY,
+			super.TRAIT_FLAMMABLE_SOLID,	
 		];
 	}
 
@@ -19,6 +21,15 @@ export default class PropBall extends Prop
 			'force': 52,
 			'angle': 90,
 		});
+
+		this.flammable = new FlammableTrait(this, {
+			'burning_time': 3,
+			'consuming_time': 1,
+			'propagation_time': 0.2,
+			'is_liquid': false,
+			'is_burning': false,
+			'is_custom': true,
+		});
 	}
 
 	static create(x, y)
@@ -29,5 +40,6 @@ export default class PropBall extends Prop
 	tick()
 	{
 		this.gravity.tick();
+		this.flammable.tick();
 	}
 }

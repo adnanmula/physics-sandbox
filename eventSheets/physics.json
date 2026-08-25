@@ -161,6 +161,7 @@
 						},
 						{
 							"type": "script",
+							"language": "javascript",
 							"script": [
 								"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
 								"prop.flammable.setOnFire();"
@@ -184,6 +185,7 @@
 					"actions": [
 						{
 							"type": "script",
+							"language": "javascript",
 							"script": [
 								"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
 								"prop.flammable.setOnFireFast();"
@@ -264,6 +266,7 @@
 					"actions": [
 						{
 							"type": "script",
+							"language": "javascript",
 							"script": [
 								"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
 								"prop.flammable.putOutFire();"
@@ -361,6 +364,7 @@
 							"actions": [
 								{
 									"type": "script",
+									"language": "javascript",
 									"script": [
 										"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
 										"localVars.instance_0_is_burning = prop.flammable.isBurning;",
@@ -386,6 +390,7 @@
 							"actions": [
 								{
 									"type": "script",
+									"language": "javascript",
 									"script": [
 										"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
 										"localVars.instance_1_is_burning = prop.flammable.isBurning;",
@@ -397,6 +402,7 @@
 						},
 						{
 							"eventType": "script",
+							"language": "javascript",
 							"script": [
 								"if (true == localVars.instance_0_is_burning && false === localVars.instance_1_is_burning)",
 								"{",
@@ -484,6 +490,7 @@
 							"actions": [
 								{
 									"type": "script",
+									"language": "javascript",
 									"script": [
 										"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
 										"localVars.instance_0_is_burning = prop.flammable.isBurning;",
@@ -509,6 +516,7 @@
 							"actions": [
 								{
 									"type": "script",
+									"language": "javascript",
 									"script": [
 										"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
 										"localVars.instance_1_is_burning = prop.flammable.isBurning;",
@@ -520,6 +528,7 @@
 						},
 						{
 							"eventType": "script",
+							"language": "javascript",
 							"script": [
 								"if (true == localVars.instance_0_is_burning && false === localVars.instance_1_is_burning)",
 								"{",
@@ -552,6 +561,7 @@
 					"actions": [
 						{
 							"type": "script",
+							"language": "javascript",
 							"script": [
 								"const prop = runtime.objects.prop_flammable_solid.getFirstPickedInstance();",
 								"prop.destroy();"
@@ -585,6 +595,7 @@
 					"actions": [
 						{
 							"type": "script",
+							"language": "javascript",
 							"script": [
 								"const prop = runtime.objects.prop_explosive.getFirstPickedInstance();",
 								"prop.explosive.lightFuse();"

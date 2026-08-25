@@ -432,8 +432,7 @@
 					"subfolders": [],
 					"name": "Timer"
 				}
-			],
-			"autoReloadOnPreview": true
+			]
 		},
 		"sound": {
 			"items": [],

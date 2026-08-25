@@ -374,7 +374,12 @@
 					"uid": 4,
 					"sid": 977464856504425,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"burning_time": 3,
+						"consuming_time": 1,
+						"propagation_time": 0.2,
+						"is_liquid": false
+					},
 					"behaviors": {
 						"DestroyOutsideLayout": {
 							"properties": {
@@ -402,6 +407,9 @@
 								"axes": "both",
 								"enabled": true
 							}
+						},
+						"Timer": {
+							"properties": {}
 						}
 					},
 					"showing": true,

@@ -12,6 +12,7 @@ export default class FlammableTrait
 		this.propagationTime = config.propagation_time * 1000;
 		this.isLiquid = config.is_liquid;
 		this.isBurning = config.is_burning;
+		this.isCustom = config.is_custom;
 		
 		this.timerManager = new TimerManager(this);
 	}
@@ -93,6 +94,9 @@ export default class FlammableTrait
 		
 		if (this.isLiquid) {
 			this.entity.destroy();
+		} else if (this.isCustom) {
+			this.burnFast();
+			PropOil.create(this.entity.x, this.entity.y);
 		} else {
 			this.entity.setAnimation('burned', 'beginning');
 			this.entity.animationFrame = Math.floor(Math.random() * 3);
