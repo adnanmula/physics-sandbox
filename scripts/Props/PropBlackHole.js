@@ -23,8 +23,11 @@ export default class PropBlackHole extends Prop
 	
 	tick()
 	{
-		this.pull();
-		
+		if (Util.tickCount() % 2 === 0)
+		{
+			this.pull();
+		}
+
 		if (Util.tickCount() % 10 === 0)
 		{
 			this.absorb();

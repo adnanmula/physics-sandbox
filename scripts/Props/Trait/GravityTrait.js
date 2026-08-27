@@ -12,6 +12,9 @@ export default class GravityTrait
 
 	tick()
 	{
-		this.entity.behaviors.Physics.applyForceAtAngle(this.force, Util.toRadians(this.angle))
+		if (Util.tickCount() % 2 === 0)
+		{
+			this.entity.behaviors.Physics.applyForceAtAngle(this.force, Util.toRadians(this.angle))
+		}
 	}
 }

@@ -244,7 +244,7 @@
 					}
 				},
 				{
-					"name": "imports.js",
+					"name": "eventImports.js",
 					"type": "application/javascript",
 					"sid": 860485918722038,
 					"script-info": {
@@ -527,7 +527,7 @@
 	},
 	"properties": {
 		"description": "Just a physics playground for you to mess with.",
-		"version": "0.2.3",
+		"version": "0.2.4",
 		"autoIncrementVersion": false,
 		"author": "Adnan Mula",
 		"authorEmail": "",
